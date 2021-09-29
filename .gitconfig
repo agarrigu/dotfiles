@@ -1,0 +1,7 @@
+[user]
+	name = alonsogmunoz
+	email = alonso.g.munoz@gmail.com
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[core]
+	excludefile = /home/bob/.gitignore
