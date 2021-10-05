@@ -10,7 +10,7 @@ On a second machine, we again define the alias, clone, and checkout.
 
 ❯ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-❯ git clone --bare git@github.com:HappyCerberus/dotfiles-demo.git $HOME/.dotfiles
+❯ git clone --bare git@github.com:alonsogmunoz/dotfiles.git $HOME/.dotfiles
 
 ❯ dotfiles config --local status.showUntrackedFiles no
 
