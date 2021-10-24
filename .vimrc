@@ -1,14 +1,5 @@
+" Aparently I need this
 set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ycm-core/YouCompleteMe'
-
-call vundle#end()
-
 filetype plugin indent on
 
 " UI
@@ -18,11 +9,6 @@ set backspace=indent,eol,start
 set wrap
 set showmatch
 set clipboard=unnamedplus
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
 
 " Indentation
 set autoindent
@@ -38,6 +24,11 @@ set smarttab
 " Terminal
 let &titlestring = @%
 set title
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " Searches
 set hlsearch
@@ -55,11 +46,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 "Plug 'sheerun/vim-polyglot'
 Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop' }
 Plug 'vim-python/python-syntax'
-Plug 'honza/vim-snippets'
 "Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 "Plug 'vim-syntastic/syntastic'
