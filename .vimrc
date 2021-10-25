@@ -37,8 +37,9 @@ endif
 set hlsearch
 
 " MY REMAPS
+let mapleader = "\\"
 inoremap <ESC> <ESC>:w<cr> 
-nnoremap <ESC> :noh<RETURN><ESC> <bar> :let @/ = "" <CR>
+nnoremap <ESC> :let @/ = "" <CR>
 
 " PLUGINS!
 call plug#begin('~/.vim/plugged')
@@ -51,21 +52,24 @@ Plug 'Yggdroot/indentLine'
 
 " Autocomplete stuff
 Plug 'SirVer/ultisnips'
-Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/taglist.vim' " delete when installing coc
 
 " Editing stuff
 Plug 'tpope/vim-surround'
 
 " Git stuff
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Navigation stuff
+Plug 'sharkdp/fd' " find entries in file system for telescope
 Plug 'scrooloose/nerdtree'
+Plug 'BurntSushi/ripgrep' " grep for telescope
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' } " native telescope sorter
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'ervandew/supertab'
+Plug 'kyazdani42/nvim-web-devicons' " icons for telescope
 
 " LANGUAGE SPECIFIC PLUGINS
 
@@ -121,6 +125,13 @@ set t_Co=256
 " Python syntax
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
+
+" Telscope
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Theme -- molokai
 colorscheme molokai

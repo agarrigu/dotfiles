@@ -40,13 +40,13 @@ switch " and @
 # THINGS TO UNDERSTAND AND INSTALL #
 ####################################
 
-fuzzy finder (telescope?)
 alacritty
 coc
 LSPs
 nvim debugger
 Lua
 convert nvim configuration to Lua from vimscript
+integrate fzf to telescope properly
 paq
 
 ########################
