@@ -1,13 +1,19 @@
 " Aparently I need this
 set nocompatible
+
+" Big stuff
 filetype plugin indent on
+set mouse=a
+set updatetime=100
 
 " Display and metadata
 syntax on
-set number
-set wrap
-set showmatch
 set background=dark
+set conceallevel=0
+set laststatus=2
+set number
+set showmatch
+set wrap
 
 " Navigation and editig
 set backspace=indent,eol,start
@@ -17,12 +23,15 @@ set clipboard=unnamedplus
 set autoindent
 set smartindent
 
+" Searches
+set hlsearch
+
 " Tabs and Spaces
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
 set expandtab
+set shiftwidth=4
 set smarttab
+set softtabstop=0
+set tabstop=4
 
 " Terminal
 let &titlestring = @%
@@ -32,9 +41,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif 
-
-" Searches
-set hlsearch
 
 " MY REMAPS
 let mapleader = "\\"
