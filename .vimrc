@@ -2,12 +2,15 @@
 set nocompatible
 filetype plugin indent on
 
-" UI
+" Display and metadata
 syntax on
 set number
-set backspace=indent,eol,start
 set wrap
 set showmatch
+set background=dark
+
+" Navigation and editig
+set backspace=indent,eol,start
 set clipboard=unnamedplus
 
 " Indentation
@@ -28,39 +31,54 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
-endif
+endif 
 
 " Searches
 set hlsearch
 
 " MY REMAPS
-inoremap <ESC> <ESC>:w<cr>
-call plug#begin('~/.vim/plugged')
+inoremap <ESC> <ESC>:w<cr> 
+nnoremap <ESC> :noh<RETURN><ESC> <bar> :let @/ = "" <CR>
 
+" PLUGINS!
+call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
+" Aesthetics and metadata stuff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
+Plug 'Yggdroot/indentLine'
+
+" Git stuff
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'pangloss/vim-javascript'
+
+" Navigation and editing stuff
 Plug 'scrooloose/nerdtree'
-"Plug 'sonph/onehalf', { 'rtp': 'vim' }
-"Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/taglist.vim'
+Plug 'SirVer/ultisnips'
+Plug 'christoomey/vim-tmux-navigator'
+"Plug 'ervandew/supertab'
+
+" LANGUAGE SPECIFIC PLUGINS
+
+" Front-end stuff
+Plug 'mattn/emmet-vim'
+
+" Java stuff
+
+" JS stuff
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+
+" Python stuff
 Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop' }
 Plug 'vim-python/python-syntax'
-"Plug 'ervandew/supertab'
-Plug 'tpope/vim-surround'
-"Plug 'vim-syntastic/syntastic'
-Plug 'vim-scripts/taglist.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'leafgarland/typescript-vim'
-Plug 'SirVer/ultisnips'
 
 call plug#end()
 
-" PLUGs CONF
+" PLUGIN CONFIGURATIONS
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -83,6 +101,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Emmet
 let g:user_emmet_leader_key=','
 
+" Indent Line
+let g:indentLine_color_term = 239
+let g:indetLine_char = '|'
+
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 set t_Co=256
@@ -90,15 +112,6 @@ set t_Co=256
 " Python syntax
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
-
-" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 " Theme -- molokai
 colorscheme molokai
@@ -109,11 +122,3 @@ let g:rehash256 = 1
 let g:UltiSnipsExpandTrigger = "<c-b>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" YouCompleteMe
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-set completeopt-=preview

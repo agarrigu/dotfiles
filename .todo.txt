@@ -1,0 +1,61 @@
+ _______  _______  ______   _______ 
+|       ||       ||      | |       |
+|_     _||   _   ||  _    ||   _   |
+  |   |  |  | |  || | |   ||  | |  |
+  |   |  |  |_|  || |_|   ||  |_|  |
+  |   |  |       ||       ||       |
+  |___|  |_______||______| |_______|
+
+######################
+# THINGS TO AUTOMATE #
+######################
+
+# INSTALL APPS #
+
+# Essentials:
+
+nvim
+tmux
+zsh
+
+# Tools:
+
+chsh
+
+# Fancy:
+
+oh-my-zsh
+powerover10k
+lolcat
+figlet
+sl
+
+# CONFIGURATIONS #
+
+set zsh as deafult
+set nvim as deafult when entering 'vim' in command line
+switch " and @
+
+####################################
+# THINGS TO UNDERSTAND AND INSTALL #
+####################################
+
+fuzzy finder (telescope?)
+alacritty
+coc
+LSPs
+nvim debugger
+Lua
+convert nvim configuration to Lua from vimscript
+paq
+
+########################
+# CONFIGURATION TO ADD #
+########################
+
+######################
+# THINGS TO WAIT FOR #
+######################
+
+advent-of-code 2021
+Neovim 0.6 with Treesitter December 25
