@@ -49,15 +49,21 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 
+" Autocomplete stuff
+Plug 'SirVer/ultisnips'
+Plug 'vim-scripts/taglist.vim'
+
+" Editing stuff
+Plug 'tpope/vim-surround'
+
 " Git stuff
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Navigation and editing stuff
+" Navigation stuff
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/taglist.vim'
-Plug 'SirVer/ultisnips'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' }
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'ervandew/supertab'
 
@@ -71,6 +77,9 @@ Plug 'mattn/emmet-vim'
 " JS stuff
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+
+" Lua stuff
+Plug 'nvim-lua/plenary.nvim'
 
 " Python stuff
 Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop' }
