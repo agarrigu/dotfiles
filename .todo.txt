@@ -36,6 +36,20 @@ set zsh as deafult
 set nvim as deafult when entering 'vim' in command line
 switch " and @
 
+# Add treesitter parsers 
+
+bash
+java
+python
+css
+sass
+html
+lua
+vim
+regex
+JS
+TS
+
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
 ####################################
@@ -53,6 +67,7 @@ paq
 # CONFIGURATION TO ADD #
 ########################
 
+folding for nvim
 ######################
 # THINGS TO WAIT FOR #
 ######################
