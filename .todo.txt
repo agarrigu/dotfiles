@@ -18,13 +18,15 @@ nvim
 tmux
 zsh
 
+
 # Tools:
 
+oh-my-zsh
 chsh
+thefuck
 
 # Fancy:
 
-oh-my-zsh
 powerover10k
 lolcat
 figlet
@@ -35,7 +37,6 @@ sl
 set zsh as deafult
 set nvim as deafult when entering 'vim' in command line
 switch " and @
-install nvim plugins
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
@@ -54,6 +55,7 @@ paq
 ########################
 
 folding for nvim
+indent with treesitter when stable and turn syntax=off
 
 ######################
 # THINGS TO WAIT FOR #
