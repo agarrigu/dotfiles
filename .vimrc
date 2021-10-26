@@ -64,7 +64,7 @@ Plug 'vim-scripts/taglist.vim' " delete when installing coc
 Plug 'tpope/vim-surround'
 
 " Git stuff
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Navigation stuff
