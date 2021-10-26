@@ -35,20 +35,7 @@ sl
 set zsh as deafult
 set nvim as deafult when entering 'vim' in command line
 switch " and @
-
-# Add treesitter parsers 
-
-bash
-java
-python
-css
-sass
-html
-lua
-vim
-regex
-JS
-TS
+install nvim plugins
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
@@ -60,7 +47,6 @@ LSPs
 nvim debugger
 Lua
 convert nvim configuration to Lua from vimscript
-integrate fzf to telescope properly
 paq
 
 ########################
@@ -68,6 +54,7 @@ paq
 ########################
 
 folding for nvim
+
 ######################
 # THINGS TO WAIT FOR #
 ######################
