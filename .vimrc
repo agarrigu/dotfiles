@@ -4,16 +4,22 @@ set nocompatible
 " Big stuff
 filetype plugin indent on
 set mouse=a
+set nobackup
+set noswapfile
+set nowritebackup
 set updatetime=100
 
 " Display and metadata
 syntax on
 set background=dark
 set conceallevel=0
+set foldmethod=syntax
+set foldlevel=99
 set laststatus=2
 set number
 set showmatch
 set wrap
+set wildmenu
 
 " Navigation and editig
 set backspace=indent,eol,start
@@ -25,6 +31,9 @@ set smartindent
 
 " Searches
 set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Tabs and Spaces
 set expandtab
@@ -46,6 +55,7 @@ endif
 let mapleader = "\\"
 inoremap <ESC> <ESC>:w<cr> 
 nnoremap <ESC> :let @/ = "" <CR>
+nnoremap <leader>rn :set relativenumber!<cr>
 
 " PLUGINS!
 
@@ -89,6 +99,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' } " native tele
 Plug 'christoomey/vim-tmux-navigator'
 "Plug 'ervandew/supertab'
 Plug 'kyazdani42/nvim-web-devicons' " icons for telescope
+
+" Other stuff
 
 " LANGUAGE SPECIFIC PLUGINS
 

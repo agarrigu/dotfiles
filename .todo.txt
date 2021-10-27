@@ -17,7 +17,7 @@
 nvim
 tmux
 zsh
-
+fzf
 
 # Tools:
 
