@@ -1,5 +1,4 @@
- _______  _______  ______   _______ 
-|       ||       ||      | |       |
+
 |_     _||   _   ||  _    ||   _   |
   |   |  |  | |  || | |   ||  | |  |
   |   |  |  |_|  || |_|   ||  |_|  |
@@ -15,6 +14,9 @@
 # Essentials:
 
 nvim
+  python3-neovim
+  python-neovim
+  nodejs > 12
 tmux
 zsh
 fzf
@@ -43,8 +45,6 @@ switch " and @
 ####################################
 
 alacritty
-coc
-LSPs
 nvim debugger
 Lua
 convert nvim configuration to Lua from vimscript
@@ -54,8 +54,9 @@ paq
 # CONFIGURATION TO ADD #
 ########################
 
-folding for nvim
+fix telescope health
 indent with treesitter when stable and turn syntax=off
+
 
 ######################
 # THINGS TO WAIT FOR #

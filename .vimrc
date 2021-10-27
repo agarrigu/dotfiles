@@ -80,8 +80,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'       
 
 " Autocomplete stuff
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'npm install' }
 Plug 'SirVer/ultisnips'
-Plug 'vim-scripts/taglist.vim'      " delete when you install coc
 
 " Editing stuff
 Plug 'tpope/vim-surround'
@@ -143,6 +143,23 @@ let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" Coc
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 " Emmet
 let g:user_emmet_leader_key=','
 
