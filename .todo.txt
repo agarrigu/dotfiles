@@ -56,7 +56,7 @@ paq
 
 fix telescope health
 indent with treesitter when stable and turn syntax=off
-
+install coc wanted features
 
 ######################
 # THINGS TO WAIT FOR #
