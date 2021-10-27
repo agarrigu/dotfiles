@@ -1,4 +1,4 @@
-
+ _______  _______  _______  _______
 |_     _||   _   ||  _    ||   _   |
   |   |  |  | |  || | |   ||  | |  |
   |   |  |  |_|  || |_|   ||  |_|  |
@@ -17,6 +17,8 @@ nvim
   python3-neovim
   python-neovim
   nodejs > 12
+  npm -g nodejs
+lua5.3
 tmux
 zsh
 fzf
@@ -46,7 +48,6 @@ switch " and @
 
 alacritty
 nvim debugger
-Lua
 convert nvim configuration to Lua from vimscript
 paq
 
