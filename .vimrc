@@ -77,11 +77,11 @@ Plug 'junegunn/vim-plug'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'       
 
 " Autocomplete stuff
 Plug 'SirVer/ultisnips'
-Plug 'vim-scripts/taglist.vim' " delete when installing coc
+Plug 'vim-scripts/taglist.vim'      " delete when you install coc
 
 " Editing stuff
 Plug 'tpope/vim-surround'
@@ -91,9 +91,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Navigation stuff
-Plug 'sharkdp/fd' " find entries in file system for telescope
+Plug 'sharkdp/fd'                   " find entries in file system for telescope
 Plug 'scrooloose/nerdtree'
-Plug 'BurntSushi/ripgrep' " grep for telescope
+Plug 'BurntSushi/ripgrep'           " grep for telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' } " native telescope sorter
 Plug 'christoomey/vim-tmux-navigator'
@@ -101,6 +101,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-web-devicons' " icons for telescope
 
 " Other stuff
+Plug 'thinca/vim-quickrun'
 
 " LANGUAGE SPECIFIC PLUGINS
 
