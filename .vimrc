@@ -13,12 +13,15 @@ set updatetime=100
 " Display and metadata
 syntax on
 set background=dark
+set cc=80
 set cmdheight=2
 set conceallevel=0
+set cursorline
 set foldmethod=syntax
 set foldlevel=99
 set laststatus=2
 set number
+set ruler
 set shortmess+=c
 set showmatch
 set wrap
@@ -36,6 +39,7 @@ set smartindent
 set hlsearch
 set incsearch
 set ignorecase
+set showmatch
 set smartcase
 
 " Tabs and Spaces
@@ -58,7 +62,7 @@ endif
 let mapleader = "\\"
 inoremap <ESC> <ESC>:w<cr> 
 nnoremap <ESC> :let @/ = "" <CR>
-nnoremap <leader>rn :set relativenumber!<cr>
+nnoremap <leader>re :set relativenumber!<cr>
 
 " PLUGINS!
 

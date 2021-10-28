@@ -18,13 +18,15 @@ nvim
   python-neovim
   nodejs > 12
   npm -g nodejs
-lua5.3
+  lua5.3
 tmux
 zsh
 fzf
 
 # Tools:
 
+alacritty
+  rust
 oh-my-zsh
 chsh
 thefuck
@@ -34,20 +36,20 @@ thefuck
 powerover10k
 lolcat
 figlet
+cowsay
 sl
 
 # CONFIGURATIONS #
 
 set zsh as deafult
 set nvim as deafult when entering 'vim' in command line
-switch " and @
 pull dotfiles on logon
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
 ####################################
 
-alacritty
+zellij innstead of tmux?:
 nvim debugger
 convert nvim configuration to Lua from vimscript
 paq
@@ -64,4 +66,4 @@ indent with treesitter when stable and turn syntax=off
 ######################
 
 advent-of-code 2021
-Neovim 0.6 with Treesitter December 25
+Neovim 0.6 stable with Treesitter December 25
