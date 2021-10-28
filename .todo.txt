@@ -41,6 +41,7 @@ sl
 set zsh as deafult
 set nvim as deafult when entering 'vim' in command line
 switch " and @
+pull dotfiles on logon
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
@@ -57,7 +58,6 @@ paq
 
 fix telescope health
 indent with treesitter when stable and turn syntax=off
-install coc wanted features
 
 ######################
 # THINGS TO WAIT FOR #
