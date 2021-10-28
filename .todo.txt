@@ -41,6 +41,7 @@ sl
 
 # CONFIGURATIONS #
 
+set shh to github:alonsogmunoz
 set zsh as deafult shell
 set alacritty as deafult term emu
 set nvim as deafult vim  
