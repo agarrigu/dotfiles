@@ -30,10 +30,10 @@ alacritty
 oh-my-zsh
 chsh
 thefuck
+powerover10k
 
 # Fancy:
 
-powerover10k
 lolcat
 figlet
 cowsay
@@ -41,9 +41,11 @@ sl
 
 # CONFIGURATIONS #
 
-set zsh as deafult
-set nvim as deafult when entering 'vim' in command line
+set zsh as deafult shell
+set alacritty as deafult term emu
+set nvim as deafult vim  
 pull dotfiles on logon
+push dotfiles on logout/shutdown/sleep/reboot
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
