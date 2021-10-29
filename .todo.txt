@@ -34,6 +34,7 @@ powerover10k
 
 # Fancy:
 
+MesloLSG NF font family
 lolcat
 figlet
 cowsay
