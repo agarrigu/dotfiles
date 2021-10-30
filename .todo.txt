@@ -19,14 +19,12 @@ nvim
   nodejs > 12
   npm -g nodejs
   lua5.3
-tmux
+zellij (or tmux)
+  cargo (try to find cargo alternative)
 zsh
 fzf
 
-# Tools:
-
-alacritty
-  rust
+alacritty from ppa
 oh-my-zsh
 chsh
 thefuck
@@ -42,6 +40,7 @@ sl
 
 # CONFIGURATIONS #
 
+set ~/.zellij.yml as location for zellij config file
 set shh to github:alonsogmunoz
 set zsh as deafult shell
 set alacritty as deafult term emu
@@ -53,7 +52,6 @@ push dotfiles on logout/shutdown/sleep/reboot
 # THINGS TO UNDERSTAND AND INSTALL #
 ####################################
 
-zellij innstead of tmux?:
 nvim debugger
 convert nvim configuration to Lua from vimscript
 paq
