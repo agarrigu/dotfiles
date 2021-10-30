@@ -30,5 +30,4 @@ fi
 # and set ~/.zellij.yml as the configuration file
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
-    ZELLIJ_CONFIG_DIR="$HOME/.zellij.yml"
 fi

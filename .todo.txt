@@ -41,7 +41,6 @@ sl
 # CONFIGURATIONS #
 
 source .profile after login
-set ~/.zellij.yml as location for zellij config file
 set shh to github:alonsogmunoz
 set zsh as deafult shell
 set alacritty as deafult term emu
