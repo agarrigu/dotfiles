@@ -26,5 +26,6 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = true,
   },
 }
-require('telescope').load_extension('fzf')
+require'telescope'.load_extension('fzf')
+require'lspconfig'.pylsp.setup{}
 EOF

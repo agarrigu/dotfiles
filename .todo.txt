@@ -16,19 +16,24 @@
 nvim
   python3-neovim
   python-neovim
-  nodejs > 12
-  npm -g nodejs
   lua5.3
 zellij (or tmux)
   cargo (try to find cargo alternative)
 zsh
 fzf
 
-alacritty from ppa
+# Tools
+
+alacritty
 oh-my-zsh
 chsh
 thefuck
 powerover10k
+
+# LSPs
+
+python-lsp
+  jedi
 
 # Fancy:
 

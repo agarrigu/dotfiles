@@ -14,7 +14,7 @@ set updatetime=100
 syntax on
 set background=dark
 set cc=80
-set cmdheight=2
+set cmdheight=1
 set conceallevel=0
 set cursorline
 set foldmethod=syntax
@@ -22,7 +22,7 @@ set foldlevel=99
 set laststatus=2
 set number
 set ruler
-set shortmess+=c
+set signcolumn=number
 set showmatch
 set wrap
 set wildmenu
@@ -86,16 +86,18 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'       
 
-" Autocomplete stuff
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'npm install' }
-Plug 'SirVer/ultisnips'
-
 " Editing stuff
 Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" LSP stuff
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'glepnir/lspsaga'
 
 " Navigation stuff
 Plug 'sharkdp/fd'                   " find entries in file system for telescope
@@ -107,26 +109,14 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'ervandew/supertab'
 Plug 'kyazdani42/nvim-web-devicons' " icons for telescope
 
-" Other stuff
-Plug 'thinca/vim-quickrun'
 
 " LANGUAGE SPECIFIC PLUGINS
 
-" Front-end stuff
+" HTML stuff
 Plug 'mattn/emmet-vim'
 
-" Java stuff
-
-" JS stuff
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-
 " Lua stuff
-Plug 'nvim-lua/plenary.nvim'
-
-" Python stuff
-Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop' }
-Plug 'vim-python/python-syntax'
+Plug 'nvim-lua/plenary.nvim'        " depency for can't remember
 
 call plug#end()
 
@@ -149,44 +139,6 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" Coc
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-" Show documentation in preview window with K
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Emmet
 let g:user_emmet_leader_key=','
