@@ -59,9 +59,10 @@ if exists('+termguicolors')
 endif 
 
 " MY REMAPS
-let mapleader = "\\"
-inoremap <ESC> <ESC>:w<cr> 
-nnoremap <ESC> :let @/ = "" <CR>
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+inoremap <ESC> <ESC>:w<CR> 
+nnoremap <ESC> :let@/=""<CR>
 nnoremap <leader>re :set relativenumber!<cr>
 
 " PLUGINS!
@@ -104,6 +105,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
                                     " compatibility for ultisnips & nvim-cmp
 Plug 'glepnir/lspsaga.nvim'
+Plug 'williamboman/nvim-lsp-installer'
 
 " Navigation stuff
 Plug 'sharkdp/fd'                   " find entries in file system for telescope
