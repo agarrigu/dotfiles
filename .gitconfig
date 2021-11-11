@@ -5,3 +5,5 @@
     insteadOf = https://github.com/
 [core]
 	excludefile = /home/bob/.gitignore
+[pull]
+	rebase = false
