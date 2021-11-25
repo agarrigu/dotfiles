@@ -84,7 +84,6 @@ Plug 'junegunn/vim-plug'
 " Aesthetics and metadata stuff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'Yggdroot/indentLine'       
 
 " Editing stuff
@@ -95,37 +94,14 @@ Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" LSP stuff
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-                                    " compatibility for ultisnips & nvim-cmp
-Plug 'glepnir/lspsaga.nvim'
-Plug 'williamboman/nvim-lsp-installer'
-
 " Navigation stuff
-Plug 'sharkdp/fd'                   " find entries in file system for telescope
 Plug 'scrooloose/nerdtree'
-Plug 'BurntSushi/ripgrep'           " grep for telescope
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim',  { 'do': 'make' } 
-                                    " native telescope sorter
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'ervandew/supertab'
-Plug 'kyazdani42/nvim-web-devicons' " icons for telescope
-
 
 " LANGUAGE SPECIFIC PLUGINS
 
 " HTML stuff
 Plug 'mattn/emmet-vim'
-
-" Lua stuff
-Plug 'nvim-lua/plenary.nvim'        " depency for can't remember
 
 call plug#end()
 

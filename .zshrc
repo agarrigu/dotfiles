@@ -1,9 +1,14 @@
-figlet_fonts=("$(figlet -I2)"/*.flf)
-figlet -f "${figlet_fonts[$RANDOM % ${#figlet_fonts[@]}]}" Hello World ! | lolcat
+#funcition fcl($input) {
+#    randomFiglet $input | randomCowsay | lolcat
+#}
+alias JSHranFig='figlet -f $(ls $(figlet -I2)/*.flf | shuf -n1)'
+alias JSHranCow='cowsay -n -f $(ls /usr/share/cowsay/cows/ | shuf -n1)'
+JSHranFig 'Hello World !'| JSHranCow | lolcat
 eval $(thefuck --alias)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
