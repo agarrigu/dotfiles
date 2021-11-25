@@ -21,7 +21,15 @@ return require'packer'.startup(function(use)
 
   -- Git stuff
   use'tpope/vim-fugitive'
-  use'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- LSP stuff
   use'hrsh7th/cmp-nvim-lsp'

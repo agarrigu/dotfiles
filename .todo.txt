@@ -17,14 +17,13 @@ nvim
   python3-neovim
   python-neovim
   lua5.3
-zellij (or tmux)
-  cargo (try to find cargo alternative)
+zellij
 zsh
 fzf
 
 # Tools
 
-alacritty
+alacritty or simpleterm
 oh-my-zsh
 chsh
 thefuck
@@ -32,12 +31,10 @@ powerover10k
 
 # LSPs
 
-python-lsp
-  jedi
 
 # Fancy:
 
-MesloLSG NF font family
+ProggyClean TTCC Nerd Font
 lolcat
 figlet
 cowsay
@@ -48,7 +45,7 @@ sl
 source .profile after login
 set shh to github:alonsogmunoz
 set zsh as deafult shell
-set alacritty as deafult term emu
+set alacritty simpleterm as deafult term emu
 set nvim as deafult vim  
 pull dotfiles on logon
 push dotfiles on logout/shutdown/sleep/reboot
@@ -58,15 +55,12 @@ push dotfiles on logout/shutdown/sleep/reboot
 ####################################
 
 nvim debugger
-convert nvim configuration to Lua from vimscript
-paq
 
 ########################
 # CONFIGURATION TO ADD #
 ########################
 
-fix telescope health
-indent with treesitter when stable and turn syntax=off
+Treesitter indent when stable
 
 ######################
 # THINGS TO WAIT FOR #

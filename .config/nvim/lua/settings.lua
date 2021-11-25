@@ -11,7 +11,7 @@ set.updatetime = 100
 -- Colours
 set.background = 'dark'
 vim.cmd([[
-  colorscheme palenight
+  colorscheme ayu
 ]])
 set.termguicolors = true
 
@@ -29,9 +29,8 @@ set.backspace = 'indent,eol,start'
 set.clipboard = 'unnamedplus'
 
 -- Indentation
--- let's see if treesitter can do it
---set.autoindent
---set.smartindent
+set.autoindent = true
+set.smartindent = true
 
 -- Searches
 set.hlsearch = true
