@@ -22,9 +22,13 @@ local function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
-vim.cmd('noremap <ESC> :noh<cr>:call clearmatches()<cr>') -- clear matches ESC
+
+-- Clear mathces wit <esc>
+nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
+
 -- Toggle relative/absolute number ruler
 nmap('<leader>ra', ':set relativenumber!<cr>')
 
@@ -41,21 +45,9 @@ nmap('k', 'gk')
 vmap('j', 'gj')
 vmap('k', 'gk')
 
--- Easy buffer navigation
-nmap('<C-h>', '<C-w>h')
-nmap('<C-j>', '<C-w>j')
-nmap('<C-k>', '<C-w>k')
-nmap('<C-l>', '<C-w>l')
-
 -- home and end line in command mode
 cmap('<C-a>', '<Home>')
 cmap('<C-e>', '<End>')
-
--- Easy window split; C-w v -> vv, C-w - s -> ss
-nmap('vv', '<C-w>v')
-nmap('ss', '<C-w>s')
-vim.o.splitbelow = true -- when splitting horizontally, move coursor to lower pane
-vim.o.splitright = true -- when splitting vertically, mnove coursor to right pane
 
 -- PLUGINS
 
@@ -64,13 +56,15 @@ nmap("<leader>ff", "<cmd>Telescope find_files<cr>")
 nmap("<leader>fg", "<cmd>Telescope live_grep<cr>")
 nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
+nmap("<leader>fu", "<cmd>Telescope lsp_references<cr>") -- find symbol in proj
 
--- LSP
+nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>") --goto definition
 
--- code action
-
-nmap('K', ':Lspsaga hover_doc()<cr>')
+-- Lspsaga
+nmap('K', '<cmd>Lspsaga hover_doc()<cr>')
 -- TODO add intuitive scroll down and up hover doc
+nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
+nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
 nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
-nmap('<leader>gd', '<cmd>Lspsaga preview_definition<cr>')
+nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
 -- TODO add remaining

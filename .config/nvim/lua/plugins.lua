@@ -71,7 +71,7 @@ return require'packer'.startup(function(use)
   use'mattn/emmet-vim'
 
   -- Java stuff
-  use'mfussenegger/nvim-jdtls'      -- depency for jdtls, I think
+--  use'mfussenegger/nvim-jdtls'
 
   -- Lua stuff
   use'nvim-lua/plenary.nvim'        -- depency for many a things

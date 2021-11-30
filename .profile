@@ -30,4 +30,8 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
-. "$HOME/.cargo/env"
+
+# set PATH so it includes snap if it exists
+if [ -d "/snap/bin" ] ; then
+    PATH="/snap/bin:$PATH"
+fi

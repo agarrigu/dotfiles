@@ -17,6 +17,7 @@ set.termguicolors = true
 
 -- Display and metadata
 set.cmdheight = 1
+set.cc = '80'
 set.cursorline = true
 set.foldmethod = 'syntax'
 set.foldlevel = 99

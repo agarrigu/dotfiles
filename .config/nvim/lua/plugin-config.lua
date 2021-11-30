@@ -1,6 +1,0 @@
-require('plugin-config.nvim-cmp')
-require('plugin-config.lspconfig')
-require('plugin-config.lspinstall')
-require('plugin-config.lualine')
-require('plugin-config.telescope')
-require('plugin-config.treesitter')
