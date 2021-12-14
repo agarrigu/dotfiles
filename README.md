@@ -16,6 +16,12 @@ On a second machine, we again define the alias, clone, and checkout.
 
 ❯ dotfiles checkout
 
+For first push in new system
+
+❯ dotfiles push --set-upstream origin main
+
+
+
 If you already have some of the dotfiles present, you will see this error.
 
 error: The following untracked working tree files would be overwritten by checkout:

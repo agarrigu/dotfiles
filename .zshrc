@@ -1,9 +1,9 @@
 #funcition fcl($input) {
 #    randomFiglet $input | randomCowsay | lolcat
 #}
-alias JSHranFig='figlet -f $(ls $(figlet -I2)/*.flf | shuf -n1)'
-alias JSHranCow='cowsay -n -f $(ls /usr/share/cowsay/cows/ | shuf -n1)'
-JSHranFig 'Hello World !'| JSHranCow | lolcat
+alias JSHranFig="figlet -f $(ls $(figlet -I2)/*.flf | shuf -n1)"
+alias JSHranCow="cowsay -n -f $(ls /usr/share/cowsay/cows/ | shuf -n1)"
+JSHranFig "Hello World !"| JSHranCow | lolcat
 eval $(thefuck --alias)
 
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
@@ -11,6 +11,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls"
 export WORKSPACE="%HOME/workspace"
+export PATH="$HOME/.local/bin:$PATH"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.

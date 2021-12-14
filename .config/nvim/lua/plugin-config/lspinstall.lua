@@ -5,9 +5,9 @@ local servers = {
   'dotls',
   'cssls',
   'emmet_ls',
-  'pylsp',
+  'pyright',
   'sumneko_lua',
-  'jdtls',
+--  'jdtls',
 }
 
 for _, name in pairs(servers) do

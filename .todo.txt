@@ -11,42 +11,70 @@
 
 # INSTALL APPS #
 
-# Essentials:
+# Essentials with apt:
 
-nvim
-  python3-neovim
-  python-neovim
-  lua5.3
-zellij
-zsh
-fzf
-
-# Tools
-
-alacritty or simpleterm
-oh-my-zsh
-chsh
+git
+cmake
+tree
 thefuck
+xclip or oher clipboard
+curl
+wget
+zsh
+python3
+python3-pip
+npm
+fzf
+nodejs > 12
+lua5.x > 5
+
+# neovim dependencies
+
+python -m install --user --ugrade pynvim
+npm install -g neovim
+fdfind
+ripgrep
+
+# Essentials from release
+
+neovim
+zellij
+
+# Tools from curl or wget
+
+oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 powerover10k
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# LSPs
+# Fancy from apt:
 
-
-# Fancy:
-
-ProggyClean TTCC Nerd Font
 lolcat
 figlet
 cowsay
 sl
+xfce4-eyes-plugin
+font-manager
+
+# Fancy from release
+
+ProggyClean TTCC Nerd Font (get curl)
+GNU unifont
+FixedSys ?
+# might not need the below depending on how well unifont goes
+fontforge (build !!!)
+python3-fontforge (might not need to build fontforge)
 
 # CONFIGURATIONS #
 
 source .profile after login
 set shh to github:alonsogmunoz
-set zsh as deafult shell
-set alacritty simpleterm as deafult term emu
-set nvim as deafult vim  
+    create ssh key (add to github)
+    $ ssh-keygen -t ed25519 -C "your_email@example.com"
+    add to agent
+    $ eval "$(ssh-agent -s)" //Starts agent in background
+    $ ssh-add ~/.ssh/id_ed25519 //adds to agent from default location
+set zsh as deafult shell (oh-my-zsh does it automatically?)
 pull dotfiles on logon
 push dotfiles on logout/shutdown/sleep/reboot
 
