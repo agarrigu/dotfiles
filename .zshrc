@@ -10,7 +10,7 @@ export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls"
-export WORKSPACE="%HOME/workspace"
+export WORKSPACE="$HOME/workspace"
 export PATH="$HOME/.local/bin:$PATH"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
