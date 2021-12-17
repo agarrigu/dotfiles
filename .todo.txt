@@ -62,6 +62,7 @@ ProggyClean TTCC Nerd Font (get curl)
     curl -fL https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/ProggyClean/Regular/complete/ProggyCleanTT%20Nerd%20Font%20Complete%20Mono.ttf -o $HOME/Downloads/ProggyCleanTT.ttf | font-manager -i
 GNU unifont
     curl -fL http://unifoundry.com/pub/unifont/unifont-14.0.01/font-builds/unifont-14.0.01.ttf -o Downloads/unifont.ttf | font-manager -i
+
 # CONFIGURATIONS #
 
 source .profile after login
@@ -86,6 +87,7 @@ nvim debugger
 ########################
 
 Treesitter indent when stable
+Make single .lua with languages for lspconfig.lua and lspinstall.lua
 
 ######################
 # THINGS TO WAIT FOR #
