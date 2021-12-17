@@ -51,10 +51,3 @@ set.shiftwidth = 4
 set.smarttab = true
 set.softtabstop = 0
 set.tabstop = 4
-
----- MY REMAPS
---nnoremap <SPACE> <Nop>
---let mapleader = " "
---inoremap <ESC> <ESC>:w<CR>
---nnoremap <ESC> :let@/ = ""<CR>
---nnoremap <leader>re :set relativenumber!<cr>
