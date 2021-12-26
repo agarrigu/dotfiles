@@ -14,6 +14,7 @@
 # Essentials with apt:
 
 git
+tmux
 cmake
 tree
 thefuck
@@ -38,7 +39,6 @@ ripgrep
 # Essentials from release
 
 neovim
-zellij
 
 # Tools from curl or wget
 
@@ -53,7 +53,6 @@ lolcat
 figlet
 cowsay
 sl
-xfce4-eyes-plugin
 font-manager
 
 # Fancy from release
@@ -92,6 +91,3 @@ Make single .lua with languages for lspconfig.lua and lspinstall.lua
 ######################
 # THINGS TO WAIT FOR #
 ######################
-
-advent-of-code 2021
-Neovim 0.6 stable with Treesitter December 25
