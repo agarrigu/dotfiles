@@ -53,6 +53,7 @@ return require'packer'.startup(function(use)
     run = 'make',
   }
   use'ThePrimeagen/harpoon'
+  use'christoomey/vim-tmux-navigator'
   use'voldikss/vim-floaterm'
 
   -- Color Scheme themes
