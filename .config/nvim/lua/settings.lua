@@ -11,7 +11,7 @@ set.updatetime = 100
 -- Colours
 set.background = 'dark'
 vim.cmd([[
-  colorscheme ayu
+  colorscheme monokai
 ]])
 set.termguicolors = true
 
@@ -22,6 +22,9 @@ set.cursorline = true
 set.foldmethod = 'syntax'
 set.foldlevel = 99
 set.laststatus = 2
+set.list = true
+set.listchars = 'tab:▸-,trail:·'
+set.scrolloff = 8
 set.showmatch = true
 set.wrap = true
 
@@ -43,7 +46,7 @@ set.smartcase = true
 -- Sideruler
 set.number = true
 set.ruler = true
-set.signcolumn = 'number'
+set.signcolumn = 'yes:2'
 
 -- Tabs and Spaces
 set.expandtab = true

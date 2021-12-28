@@ -17,6 +17,7 @@ return require'packer'.startup(function(use)
 
   -- Editing stuff
   use'tpope/vim-surround'
+  use'tpope/vim-commentary'
   use'L3MON4D3/LuaSnip'
 
   -- Git stuff

@@ -40,13 +40,6 @@ ripgrep
 
 neovim
 
-# Tools from curl or wget
-
-oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-powerover10k
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 # Fancy from apt:
 
 lolcat
@@ -55,16 +48,8 @@ cowsay
 sl
 font-manager
 
-# Fancy from release
-
-ProggyClean TTCC Nerd Font (get curl)
-    curl -fL https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/ProggyClean/Regular/complete/ProggyCleanTT%20Nerd%20Font%20Complete%20Mono.ttf -o $HOME/Downloads/ProggyCleanTT.ttf | font-manager -i
-GNU unifont
-    curl -fL http://unifoundry.com/pub/unifont/unifont-14.0.01/font-builds/unifont-14.0.01.ttf -o Downloads/unifont.ttf | font-manager -i
-
 # CONFIGURATIONS #
 
-source .profile after login
 set shh to github:alonsogmunoz
     create ssh key (add to github)
     $ ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -72,8 +57,8 @@ set shh to github:alonsogmunoz
     $ eval "$(ssh-agent -s)" //Starts agent in background
     $ ssh-add ~/.ssh/id_ed25519 //adds to agent from default location
 set zsh as deafult shell (oh-my-zsh does it automatically?)
-pull dotfiles on logon
-push dotfiles on logout/shutdown/sleep/reboot
+pull dotfiles on logon -- maybe not a great idea. would go in .zshlogin
+push dotfiles on logout/shutdown/sleep/reboot -- in .zshlogout
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
@@ -91,3 +76,5 @@ Make single .lua with languages for lspconfig.lua and lspinstall.lua
 ######################
 # THINGS TO WAIT FOR #
 ######################
+
+ -- This section is empty at the moment -- You have nothing to look forward to.

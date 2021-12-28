@@ -49,6 +49,13 @@ vmap('k', 'gk')
 cmap('<C-a>', '<Home>')
 cmap('<C-e>', '<End>')
 
+-- edit init.vim
+nmap('<leader>ve', ':edit ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vr', ':source ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vs', ':edit ~/.config/nvim/lua/settings.lua<cr>')
+nmap('<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>')
+nmap('<leader>vm', ':edit ~/.config/nvim/lua/mappings.lua<cr>')
+
 -- PLUGINS
 
 -- Telescope
