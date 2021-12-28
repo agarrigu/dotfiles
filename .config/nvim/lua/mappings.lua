@@ -33,7 +33,7 @@ nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 nmap('<leader>ra', ':set relativenumber!<cr>')
 
 -- Save when exiting Insert mode
-imap('<ESC>', '<ESC>:w<CR>')
+imap('<esc>', '<esc>:w<cr>')
 
 -- Begining & End of line in Normal mode
 nmap('H', '^')
@@ -59,19 +59,27 @@ nmap('<leader>vm', ':edit ~/.config/nvim/lua/mappings.lua<cr>')
 -- PLUGINS
 
 -- Telescope
-nmap("<leader>ff", "<cmd>Telescope find_files<cr>")
-nmap("<leader>fg", "<cmd>Telescope live_grep<cr>")
-nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
-nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
-nmap("<leader>fu", "<cmd>Telescope lsp_references<cr>") -- find symbol in proj
+nmap("<leader>ff", ":Telescope find_files<cr>") --list files in wd
+nmap("<leader>fs", ":Telescope live_grep<cr>")  --search for string in wd live!
+nmap("<leader>fb", ":Telescope buffers<cr>")    --list open buffers
+nmap("<leader>fh", ":Telescope help_tags<cr>")  --so useful, search helpdocs
+nmap("<leader>fr", ":Telescope lsp_references<cr>") --list lsp_references
 
-nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>") --goto definition
+nmap("<leader>gd", ":Telescope lsp_definitions<cr>")     --goto definition
+nmap("<leader>gt", ":Telescope lsp_type_definitions<cr>")--goto implementeation
+nmap("<leader>gi", ":Telescope lsp_implementations<cr>") --goto type definition
 
 -- Lspsaga
-nmap('K', '<cmd>Lspsaga hover_doc()<cr>')
--- TODO add intuitive scroll down and up hover doc
-nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
-nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
-nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
-nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
--- TODO add remaining
+nmap('K', ':Lspsaga hover_doc()<cr>')
+nmap('<leader>dn', ':Lspsaga diagnostic_jump_next<cr>')
+nmap('<leader>dp', ':Lspsaga diagnostic_jump_prev<cr>')
+nmap('<leader>rn', ':Lspsaga rename<cr>')
+nmap('<leader>pd', ':Lspsaga preview_definition<cr>')
+nmap('<leader>lf', ':Lspsaga lsp_finder<cr>')
+nmap('<leader>ca', ':Lspsaga code_action<cr>')
+vmap('<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
+nmap('<leader>sh', ':Lspsaga signature_help<cr>')
+nmap('<leader>dl', ':Lspsaga show_line_diagnostics<cr>')
+nmap('<leader>dc', ':Lspsaga show_cursor_diagnostics<cr>')
+nmap('<C-f>', '<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>')
+nmap('<C-b>', '<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>')
