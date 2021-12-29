@@ -50,7 +50,7 @@ cmap('<C-a>', '<Home>')
 cmap('<C-e>', '<End>')
 
 -- edit init.vim
-nmap('<leader>ve', ':edit ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vi', ':edit ~/.config/nvim/init.lua<cr>')
 nmap('<leader>vr', ':source ~/.config/nvim/init.lua<cr>')
 nmap('<leader>vs', ':edit ~/.config/nvim/lua/settings.lua<cr>')
 nmap('<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>')
@@ -81,5 +81,6 @@ vmap('<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
 nmap('<leader>sh', ':Lspsaga signature_help<cr>')
 nmap('<leader>dl', ':Lspsaga show_line_diagnostics<cr>')
 nmap('<leader>dc', ':Lspsaga show_cursor_diagnostics<cr>')
-nmap('<C-f>', '<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>')
-nmap('<C-b>', '<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>')
+-- TODO fix next two commented out lines
+--nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
+--nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')

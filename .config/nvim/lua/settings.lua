@@ -11,7 +11,8 @@ set.updatetime = 100
 -- Colours
 set.background = 'dark'
 vim.cmd([[
-  colorscheme monokai
+  colorscheme kanagawa
+  kanagawa
 ]])
 set.termguicolors = true
 
