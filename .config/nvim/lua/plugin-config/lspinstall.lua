@@ -7,7 +7,7 @@ local servers = {
   'emmet_ls',
   'pyright',
   'sumneko_lua',
-  'sqls',
+  'sqlls',
 --  'jdtls',
 }
 

@@ -7,7 +7,8 @@ nvim_lsp['cssls'].setup { capabilites = capabilites }
 --nvim_lsp['jdtls'].setup { capabilites = capabilites }
 nvim_lsp['pyright'].setup { capabilites = capabilites }
 nvim_lsp['emmet_ls'].setup { capabilites = capabilites }
-nvim_lsp['sqls'].setup { capabilites = capabilites }
+nvim_lsp['sqlls'].setup { capabilites = capabilites }
+-- nvim_lsp['sumneko_lua'].setup {capabilites = capabilites }
 -- TODO fix `vim` to global variable
 --nvim_lsp.sumneko_lua.setup {
 --    settings = {
