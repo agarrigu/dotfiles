@@ -66,18 +66,21 @@ nmap("<leader>fh", ":Telescope help_tags<cr>")  --so useful, search helpdocs
 nmap("<leader>fr", ":Telescope lsp_references<cr>") --list lsp_references
 
 nmap("<leader>gd", ":Telescope lsp_definitions<cr>")     --goto definition
-nmap("<leader>gt", ":Telescope lsp_type_definitions<cr>")--goto implementeation
-nmap("<leader>gi", ":Telescope lsp_implementations<cr>") --goto type definition
+nmap("<leader>gt", ":Telescope lsp_type_definitions<cr>")--goto type definition
+nmap("<leader>gi", ":Telescope lsp_implementations<cr>") --goto implementeation
+
+nmap("<leader>ca", ":Telescope lsp_code_actions<cr>")
+vmap('<leader>ca', ':<C-U>Telescope lsp_range_code_action<cr>')
 
 -- Lspsaga
-nmap('K', ':Lspsaga hover_doc()<cr>')
+nmap("K", ":Lspsaga hover_doc<cr>")
 nmap('<leader>dn', ':Lspsaga diagnostic_jump_next<cr>')
 nmap('<leader>dp', ':Lspsaga diagnostic_jump_prev<cr>')
 nmap('<leader>rn', ':Lspsaga rename<cr>')
 nmap('<leader>pd', ':Lspsaga preview_definition<cr>')
 nmap('<leader>lf', ':Lspsaga lsp_finder<cr>')
-nmap('<leader>ca', ':Lspsaga code_action<cr>')
-vmap('<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
+--nmap('<leader>ca', ':Lspsaga code_action<cr>')
+--vmap('<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
 nmap('<leader>sh', ':Lspsaga signature_help<cr>')
 nmap('<leader>dl', ':Lspsaga show_line_diagnostics<cr>')
 nmap('<leader>dc', ':Lspsaga show_cursor_diagnostics<cr>')
