@@ -33,7 +33,7 @@ fi
 lua_lspr="$HOME/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin"
 python_lspr="$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin"
 bash_lspr="$HOME/.local/share/nvim/lsp_servers/bash/node_modules/.bin"
-rust_lspr="$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin"
+rust_lspr="$HOME/.local/share/nvim/lsp_servers/rust"
 vim_lspr="$HOME/.local/share/nvim/lsp_servers/vim/node_modules/.bin"
 
 lsp_server_routes=($lua_lspr $python_lspr $bash_lspr $rust_lspr $vim_lspr)

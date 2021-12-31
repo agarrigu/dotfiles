@@ -80,6 +80,8 @@ return require'packer'.startup(function(use)
   -- Lua stuff
   use'nvim-lua/plenary.nvim'        -- depency for many a things
 
+  -- Rust stuff
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if Packer_bootstrap then
