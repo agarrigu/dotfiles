@@ -2,6 +2,10 @@ local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
+local function bmap(mode, shortcut, command)
+  vim.api.nvim_buf_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
+end
+
 local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
@@ -30,7 +34,7 @@ vim.g.maplocalleader = '\\'
 nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 
 -- Toggle relative/absolute number ruler
-nmap('<leader>ra', ':set relativenumber!<cr>')
+nmap('<leader>rr', ':set relativenumber!<cr>')
 
 -- Save when exiting Insert mode
 imap('<esc>', '<esc>:w<cr>')
@@ -72,18 +76,21 @@ nmap("<leader>gi", ":Telescope lsp_implementations<cr>") --goto implementeation
 nmap("<leader>ca", ":Telescope lsp_code_actions<cr>")
 vmap('<leader>ca', ':<C-U>Telescope lsp_range_code_action<cr>')
 
+-- LSP buff
+nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+nmap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
 -- Lspsaga
-nmap("K", ":Lspsaga hover_doc<cr>")
-nmap('<leader>dn', ':Lspsaga diagnostic_jump_next<cr>')
-nmap('<leader>dp', ':Lspsaga diagnostic_jump_prev<cr>')
-nmap('<leader>rn', ':Lspsaga rename<cr>')
-nmap('<leader>pd', ':Lspsaga preview_definition<cr>')
-nmap('<leader>lf', ':Lspsaga lsp_finder<cr>')
---nmap('<leader>ca', ':Lspsaga code_action<cr>')
---vmap('<leader>ca', ':<C-U>Lspsaga range_code_action<cr>')
-nmap('<leader>sh', ':Lspsaga signature_help<cr>')
-nmap('<leader>dl', ':Lspsaga show_line_diagnostics<cr>')
-nmap('<leader>dc', ':Lspsaga show_cursor_diagnostics<cr>')
+-- nmap("K", "<cmd>Lspsaga hover_doc<cr>")
+-- nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
+-- nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
+-- nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
+-- nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
+-- nmap('<leader>lf', '<cmd>Lspsaga lsp_finder<cr>')
+-- nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>')
+-- vmap('<leader>ca', '<cmd><C-U>Lspsaga range_code_action<cr>')
+-- nmap('<leader>sh', '<cmd>Lspsaga signature_help<cr>')
+-- nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
+-- nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
 -- TODO fix next two commented out lines
---nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
---nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')
+-- nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
+-- nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')

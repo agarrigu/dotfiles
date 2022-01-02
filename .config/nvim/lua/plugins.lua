@@ -14,11 +14,13 @@ return require'packer'.startup(function(use)
   use'nvim-lualine/lualine.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use'kyazdani42/nvim-web-devicons'
+  use'onsails/lspkind-nvim'
 
   -- Editing stuff
   use'tpope/vim-surround'
   use'tpope/vim-commentary'
-  use'L3MON4D3/LuaSnip'
+  use'hrsh7th/vim-vsnip'
+  use'hrsh7th/cmp-vsnip'
 
   -- Git stuff
   use'tpope/vim-fugitive'
