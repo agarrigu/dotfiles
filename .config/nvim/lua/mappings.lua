@@ -54,28 +54,29 @@ cmap('<C-a>', '<Home>')
 cmap('<C-e>', '<End>')
 
 -- edit init.vim
-nmap('<leader>vi', ':edit ~/.config/nvim/init.lua<cr>')
-nmap('<leader>vr', ':source ~/.config/nvim/init.lua<cr>')
-nmap('<leader>vs', ':edit ~/.config/nvim/lua/settings.lua<cr>')
-nmap('<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>')
-nmap('<leader>vm', ':edit ~/.config/nvim/lua/mappings.lua<cr>')
+nmap('<leader>vi', '<cmd>edit ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vr', '<cmd>source ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vs', '<cmd>edit ~/.config/nvim/lua/settings.lua<cr>')
+nmap('<leader>vp', '<cmd>edit ~/.config/nvim/lua/plugins.lua<cr>')
+nmap('<leader>vm', '<cmd>edit ~/.config/nvim/lua/mappings.lua<cr>')
 
 -- PLUGINS
 
 -- Telescope
-nmap("<leader>ff", ":Telescope find_files<cr>") --list files in wd
-nmap("<leader>fs", ":Telescope live_grep<cr>")  --search for string in wd live!
-nmap("<leader>fb", ":Telescope buffers<cr>")    --list open buffers
-nmap("<leader>fh", ":Telescope help_tags<cr>")  --so useful, search helpdocs
-nmap("<leader>fr", ":Telescope lsp_references<cr>") --list lsp_references
+nmap("<leader>ff", "<cmd>Telescope find_files<cr>") --list files in wd
+nmap("<leader>fs", "<cmd>Telescope live_grep<cr>")  --search for string in wd live!
+nmap("<leader>fb", "<cmd>Telescope buffers<cr>")    --list open buffers
+nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")  --so useful, search helpdocs
+nmap("<leader>fr", "<cmd>Telescope lsp_references<cr>") --list lsp_references
 
-nmap("<leader>gd", ":Telescope lsp_definitions<cr>")     --goto definition
-nmap("<leader>gt", ":Telescope lsp_type_definitions<cr>")--goto type definition
-nmap("<leader>gi", ":Telescope lsp_implementations<cr>") --goto implementeation
+nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>")     --goto definition
+nmap("<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>")--goto type definition
+nmap("<leader>gi", "<cmd>Telescope lsp_implementations<cr>") --goto implementeation
 
-nmap("<leader>ca", ":Telescope lsp_code_actions<cr>")
-vmap('<leader>ca', ':<C-U>Telescope lsp_range_code_action<cr>')
+nmap("<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
+vmap('<leader>ca', '<cmd><C-U>Telescope lsp_range_code_action<cr>')
 
+nmap("<leader>fp", "<cmd>lua require'telescope.builtin'.planets{}<cr>")
 -- LSP buff
 nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 nmap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
