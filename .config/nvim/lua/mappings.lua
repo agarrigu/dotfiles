@@ -68,10 +68,12 @@ nmap("<leader>fs", "<cmd>Telescope live_grep<cr>")  --search for string in wd li
 nmap("<leader>fb", "<cmd>Telescope buffers<cr>")    --list open buffers
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")  --so useful, search helpdocs
 nmap("<leader>fr", "<cmd>Telescope lsp_references<cr>") --list lsp_references
+nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>") --goto implementeation
 
 nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>")     --goto definition
 nmap("<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>")--goto type definition
 nmap("<leader>gi", "<cmd>Telescope lsp_implementations<cr>") --goto implementeation
+
 
 nmap("<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
 vmap('<leader>ca', '<cmd><C-U>Telescope lsp_range_code_action<cr>')
@@ -82,16 +84,16 @@ nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 nmap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
 -- Lspsaga
 -- nmap("K", "<cmd>Lspsaga hover_doc<cr>")
--- nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
--- nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
+nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
+nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
 -- nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
 -- nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
 -- nmap('<leader>lf', '<cmd>Lspsaga lsp_finder<cr>')
 -- nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>')
 -- vmap('<leader>ca', '<cmd><C-U>Lspsaga range_code_action<cr>')
 -- nmap('<leader>sh', '<cmd>Lspsaga signature_help<cr>')
--- nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
--- nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
+ nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
+ nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
 -- TODO fix next two commented out lines
 -- nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
 -- nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')

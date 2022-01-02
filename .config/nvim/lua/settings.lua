@@ -54,3 +54,9 @@ set.shiftwidth = 4
 set.smarttab = true
 set.softtabstop = 0
 set.tabstop = 4
+
+-- LSP stuff
+vim.diagnostic.config({
+  virtual_text = false,
+  underline = false,
+})
