@@ -28,6 +28,7 @@ npm
 fzf
 nodejs > 12
 lua5.x > 5
+(rust)
 
 # neovim dependencies
 
@@ -39,6 +40,10 @@ ripgrep
 # Essentials from release
 
 neovim
+
+# Essentials build
+
+alacritty
 
 # Fancy from apt:
 
@@ -65,6 +70,7 @@ push dotfiles on logout/shutdown/sleep/reboot -- in .zshlogout
 ####################################
 
 nvim debugger
+make proper unifont or Terminus Nerd Font
 
 ########################
 # CONFIGURATION TO ADD #
