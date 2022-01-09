@@ -68,7 +68,7 @@ nmap("<leader>fs", "<cmd>Telescope live_grep<cr>")  --search for string in wd li
 nmap("<leader>fb", "<cmd>Telescope buffers<cr>")    --list open buffers
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")  --so useful, search helpdocs
 nmap("<leader>fr", "<cmd>Telescope lsp_references<cr>") --list lsp_references
-nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>") --goto implementeation
+nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>")
 
 nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>")     --goto definition
 nmap("<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>")--goto type definition
