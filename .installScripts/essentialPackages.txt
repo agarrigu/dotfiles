@@ -1,0 +1,15 @@
+curl
+exa
+fzf
+git
+tmux
+tree
+thefuck
+wget
+xclip
+zsh
+cmake
+lua5.4
+npm
+python3
+python3-pip
