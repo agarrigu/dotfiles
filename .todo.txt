@@ -33,7 +33,6 @@ make proper unifont or Terminus Nerd Font
 ########################
 
 Treesitter indent when stable
-Make single .lua with languages for lspconfig.lua and lspinstall.lua
 
 ######################
 # THINGS TO WAIT FOR #
