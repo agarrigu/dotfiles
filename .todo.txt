@@ -9,58 +9,14 @@
 # THINGS TO AUTOMATE #
 ######################
 
-# INSTALL APPS #
-
-# Essentials with apt:
-
-git
-tmux
-cmake
-tree
-thefuck
-xclip or oher clipboard
-curl
-wget
-zsh
-python3
-python3-pip
-npm
-fzf
-nodejs > 12
-lua5.x > 5
-(rust)
-
-# neovim dependencies
-
-python -m install --user --ugrade pynvim
-npm install -g neovim
-fdfind
-ripgrep
-
-# Essentials from release
-
-neovim
+## INSTALL APPS ##
 
 # Essentials build
 
 alacritty
 
-# Fancy from apt:
+## CONFIGURATIONS ##
 
-lolcat
-figlet
-cowsay
-sl
-font-manager
-
-# CONFIGURATIONS #
-
-set shh to github:alonsogmunoz
-    create ssh key (add to github)
-    $ ssh-keygen -t ed25519 -C "your_email@example.com"
-    add to agent
-    $ eval "$(ssh-agent -s)" //Starts agent in background
-    $ ssh-add ~/.ssh/id_ed25519 //adds to agent from default location
 set zsh as deafult shell (oh-my-zsh does it automatically?)
 pull dotfiles on logon -- maybe not a great idea. would go in .zshlogin
 push dotfiles on logout/shutdown/sleep/reboot -- in .zshlogout
