@@ -19,6 +19,7 @@ return require'packer'.startup(function(use)
   -- Editing stuff
   use'tpope/vim-surround'
   use'tpope/vim-commentary'
+  use'tpope/vim-repeat'
   use'hrsh7th/vim-vsnip'
   use'hrsh7th/cmp-vsnip'
 
