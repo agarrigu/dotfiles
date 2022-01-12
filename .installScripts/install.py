@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import argparse
 from argparse import RawTextHelpFormatter
 import subprocess
@@ -58,8 +58,21 @@ def setup_arguments():
         args.ssh = True
         args.zsh_stuff = True
 
-def run_install_scripts():
-    subprocess.run(['source', '$HOME/.installScripts/installEssentials.sh'])
-    subprocess.run(['source', '$HOME/.installScripts/installFancy.sh'])
-    subprocess.run(['source', '$HOME/.installScripts/installZshStuff.sh'])
-    subprocess.run(['source', '$HOME/.installScripts/setUpSSH.sh'])
+    return args
+
+def run_install_scripts(args):
+    if args.essentials:
+        subprocess.run(['source', '$HOME/.installScripts/installEssentials.sh'])
+    if args.fancy:
+        subprocess.run(['source', '$HOME/.installScripts/installFancy.sh'])
+    if args.zsh_stuff:
+        subprocess.run(['source', '$HOME/.installScripts/installZshStuff.sh'])
+    if args.ssh:
+        subprocess.run(['source', '$HOME/.installScripts/setUpSSH.sh'])
+
+def main():
+    args = setup_arguments()
+    run_install_scripts(args)
+
+if __name__ == '__main__':
+    main()
