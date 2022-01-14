@@ -23,7 +23,7 @@ def setup_arguments():
             dest='essentials',
             default=False,
             action='store_true',
-            help='Install packages referred to in essentialPackages.txt: set up devenv'
+            help='Install packages referred to in essentialPackages.txt: set up devenv except neovim'
             )
 
     parser.add_argument(
@@ -32,6 +32,14 @@ def setup_arguments():
             default=False,
             action='store_true',
             help='Install packages referred to in fancyPackages.txt: make things prettier'
+            )
+    
+    parser.add_argument(
+            '-n', '--neovim',
+            dest='neovim',
+            default=False,
+            action='store_true',
+            help='Install neovim and minor dependecies'
             )
 
     parser.add_argument(
@@ -55,6 +63,7 @@ def setup_arguments():
     if args.all:
         args.essentials = True
         args.fancy = True
+        args.neovim = True
         args.ssh = True
         args.zsh_stuff = True
 
@@ -65,6 +74,8 @@ def run_install_scripts(args):
         subprocess.run(['source', '$HOME/.installScripts/installEssentials.sh'])
     if args.fancy:
         subprocess.run(['source', '$HOME/.installScripts/installFancy.sh'])
+    if args.neovim:
+        subprocess.run(['source', '$HOME/.installScripts/installNeovim.sh'])
     if args.zsh_stuff:
         subprocess.run(['source', '$HOME/.installScripts/installZshStuff.sh'])
     if args.ssh:
