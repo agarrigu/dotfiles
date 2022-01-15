@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-import argparse
+from argparse import ArgumentParser
 from argparse import RawTextHelpFormatter
 import subprocess
 
 def setup_arguments():
-    parser = argparse.ArgumentParser(
+    parser = ArgumentParser(
             description=(
                 'An install script for alonso garr munoz\'s development enviroment'),
-            formatter_class=argparse.RawTextHelpFormatter
+            formatter_class=RawTextHelpFormatter
     )
 
     parser.add_argument(
@@ -15,7 +15,7 @@ def setup_arguments():
             dest='all',
             default=False,
             action='store_true',
-            help='Install everything installable'
+            help='Same as -efnsz: Install everything installable and set up SSH'
             )
 
     parser.add_argument(
@@ -33,7 +33,7 @@ def setup_arguments():
             action='store_true',
             help='Install packages referred to in fancyPackages.txt: make things prettier'
             )
-    
+
     parser.add_argument(
             '-n', '--neovim',
             dest='neovim',
@@ -71,15 +71,15 @@ def setup_arguments():
 
 def run_install_scripts(args):
     if args.essentials:
-        subprocess.run(['source', '$HOME/.installScripts/installEssentials.sh'])
+        subprocess.call("installEssentials.sh")
     if args.fancy:
-        subprocess.run(['source', '$HOME/.installScripts/installFancy.sh'])
+        subprocess.call("installFancy.sh")
     if args.neovim:
-        subprocess.run(['source', '$HOME/.installScripts/installNeovim.sh'])
+        subprocess.call("installNeoVim.sh")
     if args.zsh_stuff:
-        subprocess.run(['source', '$HOME/.installScripts/installZshStuff.sh'])
+        subprocess.call("installZshStuff.sh")
     if args.ssh:
-        subprocess.run(['source', '$HOME/.installScripts/setUpSSH.sh'])
+        subprocess.call("setUpSSH.sh")
 
 def main():
     args = setup_arguments()
