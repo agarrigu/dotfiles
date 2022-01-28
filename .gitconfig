@@ -7,3 +7,5 @@
     excludefile = /home/bob/.gitignore
 [pull]
     rebase = false
+[init]
+	defaultBranch = main
