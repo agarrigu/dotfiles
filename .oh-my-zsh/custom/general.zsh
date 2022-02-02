@@ -10,3 +10,6 @@ alias pasta="xclip -selection c -o"
 #xfce4files git aliases
 alias xfce4files="/usr/bin/git --git-dir=$HOME/.xfce4files/ --work-tree=$HOME"
 alias x4f="/usr/bin/git --git-dir=$HOME/.xfce4files/ --work-tree=$HOME"
+
+# Web Dev aliases
+alias serve="browser-sync start --server --files ."

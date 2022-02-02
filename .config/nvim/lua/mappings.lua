@@ -36,8 +36,8 @@ nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 -- Toggle relative/absolute number ruler
 nmap('<leader>rr', ':set relativenumber!<cr>')
 
--- Save when exiting Insert mode
-imap('<esc>', '<esc>:w<cr>')
+-- Quick Save
+--nmap('jk', '<cmd>w<cr>')
 
 -- Begining & End of line in Normal mode
 nmap('H', '^')
@@ -69,6 +69,7 @@ nmap("<leader>fb", "<cmd>Telescope buffers<cr>")    --list open buffers
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")  --so useful, search helpdocs
 nmap("<leader>fr", "<cmd>Telescope lsp_references<cr>") --list lsp_references
 nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>")
+nmap("<leader>fp", "<cmd>lua require'telescope.builtin'.planets{}<cr>")
 
 nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>")     --goto definition
 nmap("<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>")--goto type definition
@@ -78,22 +79,33 @@ nmap("<leader>gi", "<cmd>Telescope lsp_implementations<cr>") --goto implementeat
 nmap("<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
 vmap('<leader>ca', '<cmd><C-U>Telescope lsp_range_code_action<cr>')
 
-nmap("<leader>fp", "<cmd>lua require'telescope.builtin'.planets{}<cr>")
+
 -- LSP buff
 nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 nmap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
+nmap('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+nmap('gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+nmap('gi', '<cmd>lua vim.lsp.buf.implementeation()<cr>')
+nmap('<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+nmap('<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+nmap('gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+nmap('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
+nmap('[d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
+nmap('<leader>sl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
+nmap('<leader>sc', '<cmd>lua vim.lsp.diagnostic.show_position_diagnostics()<cr>')
+
 -- Lspsaga
--- nmap("K", "<cmd>Lspsaga hover_doc<cr>")
-nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
-nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
+--nmap("K", "<cmd>Lspsaga hover_doc<cr>")
+-- nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
+-- nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
 -- nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
 -- nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
 -- nmap('<leader>lf', '<cmd>Lspsaga lsp_finder<cr>')
 -- nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>')
 -- vmap('<leader>ca', '<cmd><C-U>Lspsaga range_code_action<cr>')
--- nmap('<leader>sh', '<cmd>Lspsaga signature_help<cr>')
- nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
- nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
+-- nmap('gs', '<cmd>Lspsaga signature_help<cr>')
+-- nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
+-- nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
 -- TODO fix next two commented out lines
 -- nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
 -- nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')

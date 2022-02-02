@@ -51,12 +51,20 @@ def setup_arguments():
             )
 
     parser.add_argument(
+            '-w', '--webdev',
+            dest='web_dev',
+            default=False,
+            action='store_true',
+            help='Install web dev tools'
+        )
+
+    parser.add_argument(
             '-z', '--zshstuff',
             dest='zsh_stuff',
             default=False,
             action='store_true',
             help='Install zsh stuff (oh-my-zsh, p10k, etc.)'
-            )
+        )
 
     args = parser.parse_args()
 
@@ -65,6 +73,7 @@ def setup_arguments():
         args.fancy = True
         args.neovim = True
         args.ssh = True
+        args.web_dev = True
         args.zsh_stuff = True
 
     return args

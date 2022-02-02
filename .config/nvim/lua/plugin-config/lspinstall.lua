@@ -5,6 +5,10 @@ local servers = {
   'pyright',
   'sumneko_lua',
   'rust_analyzer',
+  'javascript',
+  'typescript',
+  'html',
+  'css',
 }
 
 for _, name in pairs(servers) do

@@ -16,12 +16,13 @@ vim.cmd([[
 set.termguicolors = true
 
 -- Display and metadata
-set.cmdheight = 1
+set.cmdheight = 2
 set.cc = '80'
 set.cursorline = true
 set.foldmethod = 'syntax'
 set.foldlevel = 99
 set.laststatus = 2
+set.linebreak = true
 set.list = true
 set.listchars = 'tab:▸-,trail:·'
 set.scrolloff = 8
@@ -54,6 +55,8 @@ set.shiftwidth = 4
 set.smarttab = true
 set.softtabstop = 0
 set.tabstop = 4
+
+-- Integrated Terminal
 
 -- LSP stuff
 vim.diagnostic.config({
