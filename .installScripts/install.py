@@ -87,6 +87,8 @@ def run_install_scripts(args):
         subprocess.call("installNeoVim.sh")
     if args.zsh_stuff:
         subprocess.call("installZshStuff.sh")
+    if args.web_dev:
+        subprocess.call("installWebDevStuff.sh")
     if args.ssh:
         subprocess.call("setUpSSH.sh")
 
