@@ -3,3 +3,4 @@ figlet
 cowsay
 sl
 font-manager
+neofetch
