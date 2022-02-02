@@ -4,11 +4,8 @@ local servers = {
   'vimls',
   'pyright',
   'sumneko_lua',
+  'rome',
   'rust_analyzer',
-  'javascript',
-  'typescript',
-  'html',
-  'css',
 }
 
 for _, name in pairs(servers) do

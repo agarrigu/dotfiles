@@ -75,7 +75,6 @@ nmap("<leader>gd", "<cmd>Telescope lsp_definitions<cr>")     --goto definition
 nmap("<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>")--goto type definition
 nmap("<leader>gi", "<cmd>Telescope lsp_implementations<cr>") --goto implementeation
 
-
 nmap("<leader>ca", "<cmd>Telescope lsp_code_actions<cr>")
 vmap('<leader>ca', '<cmd><C-U>Telescope lsp_range_code_action<cr>')
 
