@@ -26,6 +26,8 @@ return require'packer'.startup(function(use)
   use'hrsh7th/vim-vsnip'
   use'hrsh7th/cmp-vsnip'
   use'mg979/vim-visual-multi'
+  use'sbdchd/neoformat'
+
 
   -- Git stuff
   use'tpope/vim-fugitive'
@@ -47,7 +49,6 @@ return require'packer'.startup(function(use)
   use'hrsh7th/nvim-cmp'
   use'neovim/nvim-lspconfig'
   use'williamboman/nvim-lsp-installer'
-  use'glepnir/lspsaga.nvim'
 
   -- Navigation stuff
   use'sharkdp/fd'                   -- find entries in file system for telescope

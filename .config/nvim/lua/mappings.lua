@@ -37,7 +37,7 @@ nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 nmap('<leader>rr', ':set relativenumber!<cr>')
 
 -- Quick Save
---nmap('jk', '<cmd>w<cr>')
+nmap('<leader>w', '<cmd>w<cr>')
 
 -- Begining & End of line in Normal mode
 nmap('H', '^')
@@ -89,22 +89,6 @@ nmap('<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 nmap('<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
 nmap('gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 nmap('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
-nmap('[d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
+nmap(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
 nmap('<leader>sl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
 nmap('<leader>sc', '<cmd>lua vim.lsp.diagnostic.show_position_diagnostics()<cr>')
-
--- Lspsaga
---nmap("K", "<cmd>Lspsaga hover_doc<cr>")
--- nmap('<leader>dn', '<cmd>Lspsaga diagnostic_jump_next<cr>')
--- nmap('<leader>dp', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
--- nmap('<leader>rn', '<cmd>Lspsaga rename<cr>')
--- nmap('<leader>pd', '<cmd>Lspsaga preview_definition<cr>')
--- nmap('<leader>lf', '<cmd>Lspsaga lsp_finder<cr>')
--- nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>')
--- vmap('<leader>ca', '<cmd><C-U>Lspsaga range_code_action<cr>')
--- nmap('gs', '<cmd>Lspsaga signature_help<cr>')
--- nmap('<leader>dl', '<cmd>Lspsaga show_line_diagnostics<cr>')
--- nmap('<leader>dc', '<cmd>Lspsaga show_cursor_diagnostics<cr>')
--- TODO fix next two commented out lines
--- nmap('<C-f>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>')
--- nmap('<C-b>', '<cmd>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>')
