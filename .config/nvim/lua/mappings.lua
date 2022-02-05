@@ -26,6 +26,8 @@ local function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
+local let = vim.g
+
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
@@ -61,6 +63,9 @@ nmap('<leader>vp', '<cmd>edit ~/.config/nvim/lua/plugins.lua<cr>')
 nmap('<leader>vm', '<cmd>edit ~/.config/nvim/lua/mappings.lua<cr>')
 
 -- PLUGINS
+
+-- Emmet
+let.user_emmet_leader_key='<leader>e'
 
 -- Telescope
 nmap("<leader>ff", "<cmd>Telescope find_files<cr>") --list files in wd

@@ -6,6 +6,8 @@ local servers = {
   'sumneko_lua',
   'rome',
   'rust_analyzer',
+  'html',
+  'cssls',
 }
 
 for _, name in pairs(servers) do

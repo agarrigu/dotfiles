@@ -19,19 +19,18 @@ set.termguicolors = true
 set.cmdheight = 2
 set.cc = '80'
 set.cursorline = true
-set.foldmethod = 'syntax'
-set.foldlevel = 99
 set.laststatus = 2
 set.linebreak = true
 set.list = true
 set.listchars = 'tab:▸-,trail:·'
-set.scrolloff = 8
 set.showmatch = true
 set.wrap = true
 
 -- Navigation and editig
 set.backspace = 'indent,eol,start'
-set.clipboard = 'unnamedplus'
+set.foldmethod = 'syntax'
+set.foldlevel = 99
+set.scrolloff = 8
 
 -- Indentation
 set.autoindent = true

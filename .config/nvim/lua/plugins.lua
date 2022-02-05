@@ -15,22 +15,24 @@ return require'packer'.startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use'kyazdani42/nvim-web-devicons'
   use'onsails/lspkind-nvim'
-  use'Xuyuanp/nerdtree-git-plugin'
   use'lukas-reineke/indent-blankline.nvim'
 
   -- Editing stuff
-  use'jiangmiao/auto-pairs'                   -- find entries in file system for telescope
+  -- use'jiangmiao/auto-pairs'
+  use'christoomey/vim-system-copy'
+  use'christoomey/vim-sort-motion'
   use'tpope/vim-surround'
   use'tpope/vim-commentary'
   use'tpope/vim-repeat'
   use'hrsh7th/vim-vsnip'
   use'hrsh7th/cmp-vsnip'
-  use'mg979/vim-visual-multi'
-  use'sbdchd/neoformat'
+  -- use'mg979/vim-visual-multi'
+  -- use'sbdchd/neoformat'
 
 
   -- Git stuff
   use'tpope/vim-fugitive'
+  use'Xuyuanp/nerdtree-git-plugin'
   use {
     'lewis6991/gitsigns.nvim',
     requires = {
@@ -42,6 +44,7 @@ return require'packer'.startup(function(use)
   }
 
   -- LSP stuff
+  -- use'mfussenegger/nvim-dap'
   use'hrsh7th/cmp-nvim-lsp'
   use'hrsh7th/cmp-buffer'
   use'hrsh7th/cmp-path'
@@ -53,6 +56,10 @@ return require'packer'.startup(function(use)
   -- Navigation stuff
   use'sharkdp/fd'                   -- find entries in file system for telescope
   use'BurntSushi/ripgrep'           -- grep for telescope
+  -- use'ThePrimeagen/harpoon'
+  -- use'andymass/vim-matchup'
+  use'preservim/nerdtree'
+  use'christoomey/vim-tmux-navigator'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim'} },
@@ -61,10 +68,13 @@ return require'packer'.startup(function(use)
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
   }
-  use'ThePrimeagen/harpoon'
-  use'andymass/vim-matchup'
-  use'preservim/nerdtree'
-  use'christoomey/vim-tmux-navigator'
+
+  -- Text Objects
+  use'kana/vim-textobj-user'
+  use'kana/vim-textobj-entire'
+  use'kana/vim-textobj-function'
+  use'kana/vim-textobj-indent'
+  use'vim-scripts/argtextobj.vim'
 
   -- Color Scheme themes
   use'drewtempelmeyer/palenight.vim'
@@ -90,9 +100,11 @@ return require'packer'.startup(function(use)
   use'nvim-lua/plenary.nvim'        -- depency for many a things
 
   -- Rust stuff
+  -- use'simrat39/rust-tools.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  -- but does it even lift?
   if Packer_bootstrap then
     require('packer').sync()
   end
