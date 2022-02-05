@@ -17,19 +17,19 @@ set cc=80
 set cmdheight=1
 set conceallevel=0
 set cursorline
-set foldmethod=syntax
-set foldlevel=99
 set laststatus=2
+set linebreak
 set number
 set ruler
-set signcolumn=number
 set showmatch
-set wrap
+" set signcolumn
 set wildmenu
+set wrap
 
 " Navigation and editig
 set backspace=indent,eol,start
-set clipboard=unnamedplus
+set foldmethod=syntax
+set foldlevel=99
 
 " Indentation
 set autoindent
@@ -61,9 +61,14 @@ endif
 " MY REMAPS
 nnoremap <SPACE> <Nop>
 let mapleader=" "
-inoremap <ESC> <ESC>:w<CR> 
+inoremap <leader>w :w<CR> 
 nnoremap <ESC> :let@/=""<CR>
-nnoremap <leader>re :set relativenumber!<cr>
+nnoremap <leader>rr :set relativenumber!<cr>
+
+nnoremap j gj
+nnoremap k gk
+inoremap j gj
+inoremap k gk
 
 " PLUGINS!
 
@@ -83,20 +88,28 @@ Plug 'junegunn/vim-plug'
 
 " Aesthetics and metadata stuff
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'       
 
 " Editing stuff
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips'
+Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-sort-motion'
 
 " Git stuff
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Navigation stuff
-Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+
+" Text Objects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-indent'
+Plug 'vim-scripts/argtextobj.vim'
 
 " LANGUAGE SPECIFIC PLUGINS
 
@@ -126,24 +139,16 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " Emmet
-let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='<c-m>'
 
 " Indent Line
 let g:indentLine_color_term = 239
 let g:indetLine_char = '|'
 
-" NERDTree
-nmap <C-n> :NERDTreeToggle<CR>
-set t_Co=256
-
 " Python syntax
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
 
-" Theme -- molokai
-colorscheme molokai
-let g:airline_theme='molokai'
-let g:rehash256 = 1
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger = "<c-b>"
