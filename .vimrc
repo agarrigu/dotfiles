@@ -61,14 +61,14 @@ endif
 " MY REMAPS
 nnoremap <SPACE> <Nop>
 let mapleader=" "
-inoremap <leader>w :w<CR> 
+nnoremap <leader>w :w<CR> 
 nnoremap <ESC> :let@/=""<CR>
 nnoremap <leader>rr :set relativenumber!<cr>
 
 nnoremap j gj
 nnoremap k gk
-inoremap j gj
-inoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " PLUGINS!
 
@@ -93,7 +93,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-sort-motion'
 
