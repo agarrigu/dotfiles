@@ -19,10 +19,12 @@ set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
+set list
+set listchars="tab:▸ ,trail:·i"
 set number
 set ruler
 set showmatch
-" set signcolumn
+set signcolumn=yes
 set wildmenu
 set wrap
 
@@ -43,7 +45,7 @@ set showmatch
 set smartcase
 
 " Tabs and Spaces
-set expandtab
+" set expandtab
 set shiftwidth=4
 set smarttab
 set softtabstop=0
