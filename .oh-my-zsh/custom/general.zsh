@@ -1,5 +1,5 @@
 # Aesthetic aliases
-alias asciiquarium= perl /usr/local/bin/asciiquarium
+alias asciiquarium="perl /usr/local/bin/asciiquarium"
 alias random-figlet="figlet -f $(ls $(figlet -I2)/*.flf | shuf -n1)"
 alias random-cowsay="cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)"
 

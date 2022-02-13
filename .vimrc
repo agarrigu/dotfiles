@@ -1,26 +1,26 @@
-" Aparently I need this
-set nocompatible
-
 " Big stuff
 filetype plugin indent on
 set hidden
+set nocompatible
 set mouse=a
 set nobackup
 set noswapfile
 set nowritebackup
 set updatetime=100
+set encoding=utf-8
 
 " Display and metadata
 syntax on
 set background=dark
 set cc=80
-set cmdheight=1
+set cmdheight=6
 set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
-set list
-set listchars="tab:▸ ,trail:·i"
+set listchars+=trail:¤
+
+
 set number
 set ruler
 set showmatch
@@ -36,6 +36,9 @@ set foldlevel=99
 " Indentation
 set autoindent
 set smartindent
+
+" Prety
+colorscheme molokai
 
 " Searches
 set hlsearch
@@ -106,12 +109,20 @@ Plug 'airblade/vim-gitgutter'
 " Navigation stuff
 Plug 'christoomey/vim-tmux-navigator'
 
+
+" Syntax
+Plug 'vim-syntastic/syntastic'
+Plug 'alexandregv/norminette-vim'
+
 " Text Objects
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'vim-scripts/argtextobj.vim'
+
+" Themes
+Plug 'sonph/onehalf', { 'rtp': 'vim' } 
 
 " LANGUAGE SPECIFIC PLUGINS
 
