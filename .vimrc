@@ -1,5 +1,5 @@
 " Big stuff
-filetype plugin indent on
+filetype plugin indent on     
 set hidden
 set nocompatible
 set mouse=a
@@ -13,15 +13,15 @@ set encoding=utf-8
 syntax on
 set background=dark
 set cc=80
-set cmdheight=6
+set cmdheight=3
 set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
-set listchars+=trail:¤
-
-
+" set list
+set listchars=trail:·
 set number
+set relativenumber
 set ruler
 set showmatch
 set signcolumn=yes
@@ -109,7 +109,6 @@ Plug 'airblade/vim-gitgutter'
 " Navigation stuff
 Plug 'christoomey/vim-tmux-navigator'
 
-
 " Syntax
 Plug 'vim-syntastic/syntastic'
 Plug 'alexandregv/norminette-vim'
@@ -127,7 +126,7 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " LANGUAGE SPECIFIC PLUGINS
 
 " HTML stuff
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -151,9 +150,6 @@ let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" Emmet
-let g:user_emmet_leader_key='<c-m>'
-
 " Indent Line
 let g:indentLine_color_term = 239
 let g:indetLine_char = '|'
@@ -162,6 +158,21 @@ let g:indetLine_char = '|'
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
 
+" Norminette
+let g:syntastic_c_norminette_args = '-R CheckForbiddenSourceHeader'
+
+" Syntastic
+set statusline+=%#warningsmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_c_checkers = ['norminette', 'gcc']
+let g:syntastic_aggregate_errors = 1
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger = "<c-b>"
