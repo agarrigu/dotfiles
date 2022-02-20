@@ -75,6 +75,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+map q: <nop>
+nnoremap Q <nop>
+
 " PLUGINS!
 
 " Install vim-plug if not found
