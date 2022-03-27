@@ -2,6 +2,7 @@ local set = vim.opt
 local let = vim.g
 
 -- Big stuff
+
 set.encoding = 'utf-8'
 set.mouse = 'a'
 set.backup = false
@@ -45,6 +46,7 @@ set.smartcase = true
 
 -- Sideruler
 set.number = true
+set.relativenumber = true
 set.ruler = true
 set.signcolumn = 'yes:2'
 

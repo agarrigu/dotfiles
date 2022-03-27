@@ -12,18 +12,19 @@ set encoding=utf-8
 " Display and metadata
 syntax on
 set background=dark
-set cc=80
+set colorcolumn=80
 set cmdheight=1
 set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
-" set list
-set listchars=trail:·
+set list
+set listchars=tab:\ \ ,trail:·
 set number
 set relativenumber
 set ruler
 set showmatch
+set scrolloff=8
 set signcolumn=yes
 set wildmenu
 set wrap
@@ -48,11 +49,11 @@ set showmatch
 set smartcase
 
 " Tabs and Spaces
-" set expandtab
 set shiftwidth=4
 set smarttab
 set softtabstop=0
 set tabstop=4
+" set expandtab
 
 " MY REMAPS
 nnoremap <SPACE> <Nop>
@@ -69,7 +70,7 @@ vnoremap k gk
 map q: <nop>
 nnoremap Q <nop>
 
-" PLUGINSr
+" PLUGINS!
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -92,7 +93,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-sort-motion'
 
@@ -103,8 +104,11 @@ Plug 'airblade/vim-gitgutter'
 " Navigation stuff
 Plug 'christoomey/vim-tmux-navigator'
 
-" Syntax
+" Syntax stuff
 Plug 'vim-syntastic/syntastic'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'jayli/vim-easycomplete'
+Plug 'honza/vim-snippets'
 " Plug 'alexandregv/norminette-vim'
 
 " Text Objects
@@ -113,6 +117,10 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'mattn/vim-textobj-url'
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'adolenc/vim-textobj-toplevel'
+Plug 'D4KU/vim-textobj-chainmember'
 
 " Themes
 Plug 'sonph/onehalf', { 'rtp': 'vim' } 
@@ -168,7 +176,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_c_compiler_options = "-Wall -Wextra -Werror"
+
 " Ultisnips
-let g:UltiSnipsExpandTrigger = "<c-b>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-z>"

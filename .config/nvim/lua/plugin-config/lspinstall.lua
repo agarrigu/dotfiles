@@ -4,10 +4,11 @@ local servers = {
   'vimls',
   'pyright',
   'sumneko_lua',
-  'rome',
+  -- 'rome',
   'rust_analyzer',
   'html',
   'cssls',
+  'lemminx',
 }
 
 for _, name in pairs(servers) do
@@ -24,6 +25,9 @@ local capabilites = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.m
 lsp_installer.on_server_ready(function(server)
   local opts = {}
   opts.capabilites = capabilites
+  opts.settings = {
+    root_dir = function() return vim.loop.cwd() end
+  }
   if server.name == 'sumneko_lua' then
     opts.settings = {
       Lua = {

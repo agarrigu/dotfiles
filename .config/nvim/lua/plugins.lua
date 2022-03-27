@@ -70,10 +70,14 @@ return require'packer'.startup(function(use)
   }
 
   -- Text Objects
-  use'kana/vim-textobj-user'
+  use'kana/vim-textobj-user'        -- depency for most other text objects
   use'kana/vim-textobj-entire'
   use'kana/vim-textobj-function'
   use'kana/vim-textobj-indent'
+  use'mattn/vim-textobj-url'
+  use'Julian/vim-textobj-variable-segment'
+  use'adolenc/vim-textobj-toplevel'
+  use'D4KU/vim-textobj-chainmember'
   use'vim-scripts/argtextobj.vim'
 
   -- Color Scheme themes
