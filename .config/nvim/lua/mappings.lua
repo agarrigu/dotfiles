@@ -32,6 +32,9 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
+
+-- imap('<script><expr><c-n>','copilot#Accept("<cr>")')
+-- let.copilot_no_tab_map = true
 -- Clear mathces wit <esc>
 nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 

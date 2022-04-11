@@ -11,9 +11,7 @@
 
 ## INSTALL APPS ##
 
-# Essentials build
-
-alacritty
+-- nothing to install yet
 
 ## CONFIGURATIONS ##
 
@@ -25,6 +23,8 @@ push dotfiles on logout/shutdown/sleep/reboot -- in .zshlogout
 # THINGS TO UNDERSTAND AND INSTALL #
 ####################################
 
+get fzf to work porperly on shell
+get emmet to work properly on nvim/vim
 nvim debugger
 make proper unifont or Terminus Nerd Font
 

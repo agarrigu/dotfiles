@@ -10,6 +10,9 @@ return require'packer'.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Experimental !!!
+  use 'github/copilot.vim'
+
   -- Aesthetics and metadata stuff
   use'nvim-lualine/lualine.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -58,7 +61,6 @@ return require'packer'.startup(function(use)
   use'BurntSushi/ripgrep'           -- grep for telescope
   -- use'ThePrimeagen/harpoon'
   -- use'andymass/vim-matchup'
-  use'preservim/nerdtree'
   use'christoomey/vim-tmux-navigator'
   use {
     'nvim-telescope/telescope.nvim',
@@ -104,7 +106,7 @@ return require'packer'.startup(function(use)
   use'nvim-lua/plenary.nvim'        -- depency for many a things
 
   -- Rust stuff
-  -- use'simrat39/rust-tools.nvim'
+  use'simrat39/rust-tools.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
