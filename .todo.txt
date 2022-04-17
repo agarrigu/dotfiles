@@ -11,7 +11,12 @@
 
 ## INSTALL APPS ##
 
--- nothing to install yet
+# Nvim dependencies
+ripgrep
+fd-find
+
+# Essentials
+g++
 
 ## CONFIGURATIONS ##
 

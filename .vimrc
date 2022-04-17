@@ -62,6 +62,9 @@ nnoremap <leader>w :w<CR>
 nnoremap <ESC> :let@/=""<CR>
 nnoremap <leader>rr :set relativenumber!<cr>
 
+inoremap kj <esc> 
+inoremap kj <esc> 
+
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj

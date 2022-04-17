@@ -35,6 +35,11 @@ vim.g.maplocalleader = '\\'
 
 -- imap('<script><expr><c-n>','copilot#Accept("<cr>")')
 -- let.copilot_no_tab_map = true
+
+-- exit insert/visual
+imap('kj', '<esc>')
+vmap('kj', '<esc>')
+
 -- Clear mathces wit <esc>
 nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 
