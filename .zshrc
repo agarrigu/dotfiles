@@ -1,7 +1,3 @@
-# alias JSHranFig="figlet -f $(ls $(figlet -I2)/*.flf | shuf -n1)"
-# alias JSHranCow="cowsay -n -f $(ls /usr/share/cowsay/cows/ | shuf -n1)"
-# neofetch
-# JSHranFig "Hello World !"| JSHranCow | lolcat
 figlet oh hi | cowsay -n | lolcat
 eval $(thefuck --alias)
 
