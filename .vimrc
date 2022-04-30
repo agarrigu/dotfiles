@@ -90,7 +90,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 " Aesthetics and metadata stuff
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 " Editing stuff
 Plug 'tpope/vim-surround'
@@ -137,24 +137,6 @@ call plug#end()
 
 " PLUGIN CONFIGURATIONS
 
-" Airline
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰ '
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.dirty='⚡'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-
 " Indent Line
 let g:indentLine_color_term = 239
 let g:indetLine_char = '|'
@@ -163,15 +145,12 @@ let g:indetLine_char = '|'
 let g:python_highlight_all = 1
 let g:python_slow_sync = 1
 
-" Norminette
-let g:syntastic_c_norminette_args = '-R CheckForbiddenSourceHeader'
-
 " Syntastic
 set statusline+=%#warningsmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_c_checkers = ['gcc', 'mdl', 'sqlint', 'xmllint' ]
 let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_always_populate_loc_list = 1
