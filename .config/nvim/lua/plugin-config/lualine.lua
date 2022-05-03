@@ -1,6 +1,7 @@
 require'lualine'.setup {
   options = {
-    theme = 'powerline_dark',
+    theme = '16color',
+    component_separators = '',
+    section_separators = '',
   },
 }
-

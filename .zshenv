@@ -30,3 +30,4 @@ fi
 # set jdtls enviroment variables
 #export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls"
 #export WORKSPACE="$HOME/workspace"
+export NVM_DIR="$HOME/.nvm"

@@ -76,7 +76,7 @@ nmap('<leader>vm', '<cmd>edit ~/.config/nvim/lua/mappings.lua<cr>')
 let.user_emmet_leader_key='<c-m>'
 
 -- Telescope
-nmap("<leader>ff", "<cmd>Telescope find_files<cr>") --list files in wd
+nmap("<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") --list files in wd
 nmap("<leader>fs", "<cmd>Telescope live_grep<cr>")  --search for string in wd live!
 nmap("<leader>fb", "<cmd>Telescope buffers<cr>")    --list open buffers
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")  --so useful, search helpdocs
