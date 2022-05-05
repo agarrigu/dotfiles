@@ -18,8 +18,15 @@ if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
-# PATH="$HOME/nvim-osx64/bin:$PATH"
-# PATH="$HOME/homebrew/bin:$PATH"
+# set PATH so it includes user's nvim installation in mac, if it exists
+if [ -d "$HOME/nvim-osx64/bin" ] ; then
+    PATH="$HOME/nvim-osx64/bin:$PATH"
+fi
+
+# set PATH so it includes user's homebrew bin in osX if it exists
+if [ -d "$HOME/homebrew/bin" ] ; then
+    PATH="$HOME/homebrew/bin:$PATH"
+fi
 
 # set JAVA_HOME and add java bin to path if it exists
 #export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
@@ -31,3 +38,4 @@ fi
 #export JDTLS_HOME="$HOME/.local/share/nvim/lsp_servers/jdtls"
 #export WORKSPACE="$HOME/workspace"
 export NVM_DIR="$HOME/.nvm"
+. "$HOME/.cargo/env"

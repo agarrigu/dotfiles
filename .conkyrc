@@ -5,6 +5,7 @@
 # Tested on : Archlinux ARM - XFCE Desktop
 # Email : archit3x@archlinux.us
 # Feel free to modity this script ;)
+# Modified heavily by : agarrigu
 ]]
 
 conky.config = {
@@ -24,12 +25,12 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Ubuntu Condensed:size=11',
+    font = 'UnifontMedium Nerd Font:size=12:style:medium',
     gap_x = 30,
     gap_y = 60,
-    maximum_width = 340,
+    maximum_width = 380,
     minimum_height = 250,
-    minimum_width = 340,
+    minimum_width = 380,
     net_avg_samples = 2,
     no_buffers = true,
     out_to_console = false,
@@ -51,13 +52,13 @@ conky.config = {
 }
 
 conky.text = [[
-${color1}${font} GNU/Linux» $hr${color}
-${color1}${goto 35}OS      ${color2}${goto 84}${execi 86400 cat `ls -atr /etc/*-release | tail -2` | grep "PRETTY_NAME" | cut -d= -f2 |  sed 's/"//g'}
-${color1}${goto 35}Kernel  ${color2}${goto 84}$kernel on $machine
+${color1}${font} GNU/Linux »$hr${color}
+${color1}${goto 35}OS      ${color2}${goto 86}${execi 86400 cat `ls -atr /etc/*-release | tail -2` | grep "PRETTY_NAME" | cut -d= -f2 |  sed 's/"//g'}
+${color1}${goto 35}Kernel  ${color2}${goto 86}$kernel on $machine
 
-${color1}${goto 35}Uptime  ${color2}${goto 84}$uptime_short
+${color1}${goto 35}Uptime  ${color2}${goto 86}$uptime_short
 
-${color1}${font} System» $hr${color}
+${color1}${font} System »$hr${color}
 ${color1}${goto 35}Core 0 : ${color2}${freq_g 1}GHz ${alignr}${cpu cpu1}% ${color3}${cpubar cpu1 4,100}
 ${color1}${goto 35}Core 1 : ${color2}${freq_g 2}GHz ${alignr}${cpu cpu2}% ${color3}${cpubar cpu2 4,100}
 ${color1}${goto 35}Core 2 : ${color2}${freq_g 3}GHz ${alignr}${cpu cpu3}% ${color3}${cpubar cpu3 4,100}
@@ -79,23 +80,23 @@ ${color1}${goto 35}RAM : ${color2}$mem/$memmax ${alignr}$memperc% ${color3}${mem
 ${color1}${goto 35}SWAP: ${color2}$swap/$swapmax $alignr}$swapperc% ${color3}${swapbar 4,100}
 
 ${color1}${font} Processes» $hr${color}
-${color1}${goto 35}CPU usage ${goto 200}Memory Usage${color}
+${color1}${goto 35}CPU usage ${goto 210}Memory Usage${color}
 ${color1}${goto 35}${stippled_hr}${color}
-${color}${goto 35}${top name 1} ${color2}${goto 149}${top cpu 1}% ${color}${goto 200}${top_mem name 1}${color2}${alignr}${top_mem mem_res 1}
-${color}${goto 35}${top name 2} ${color2}${goto 149}${top cpu 2}% ${color}${goto 200}${top_mem name 2}${color2}${alignr}${top_mem mem_res 2}
-${color}${goto 35}${top name 3} ${color2}${goto 149}${top cpu 3}% ${color}${goto 200}${top_mem name 3}${color2}${alignr}${top_mem mem_res 3}
-${color}${goto 35}${top name 4} ${color2}${goto 149}${top cpu 4}% ${color}${goto 200}${top_mem name 4}${color2}${alignr}${top_mem mem_res 4}
-${color}${goto 35}${top name 5} ${color2}${goto 149}${top cpu 5}% ${color}${goto 200}${top_mem name 5}${color2}${alignr}${top_mem mem_res 5}
-${color}${goto 35}${top name 6} ${color2}${goto 149}${top cpu 5}% ${color}${goto 200}${top_mem name 5}${color2}${alignr}${top_mem mem_res 5}
-${color}${goto 35}${top name 7} ${color2}${goto 149}${top cpu 5}% ${color}${goto 200}${top_mem name 5}${color2}${alignr}${top_mem mem_res 5}
-${color}${goto 35}${top name 8} ${color2}${goto 149}${top cpu 5}% ${color}${goto 200}${top_mem name 5}${color2}${alignr}${top_mem mem_res 5}
+${color}${goto 35}${top name 1} ${color2}${goto 149}${top cpu 1}% ${color}${goto 210}${top_mem name 1}${color2}${alignr}${top_mem mem_res 1}
+${color}${goto 35}${top name 2} ${color2}${goto 149}${top cpu 2}% ${color}${goto 210}${top_mem name 2}${color2}${alignr}${top_mem mem_res 2}
+${color}${goto 35}${top name 3} ${color2}${goto 149}${top cpu 3}% ${color}${goto 210}${top_mem name 3}${color2}${alignr}${top_mem mem_res 3}
+${color}${goto 35}${top name 4} ${color2}${goto 149}${top cpu 4}% ${color}${goto 210}${top_mem name 4}${color2}${alignr}${top_mem mem_res 4}
+${color}${goto 35}${top name 5} ${color2}${goto 149}${top cpu 5}% ${color}${goto 210}${top_mem name 5}${color2}${alignr}${top_mem mem_res 5}
+${color}${goto 35}${top name 6} ${color2}${goto 149}${top cpu 5}% ${color}${goto 210}${top_mem name 5}${color2}${alignr}${top_mem mem_res 6}
+${color}${goto 35}${top name 7} ${color2}${goto 149}${top cpu 5}% ${color}${goto 210}${top_mem name 5}${color2}${alignr}${top_mem mem_res 7}
+${color}${goto 35}${top name 8} ${color2}${goto 149}${top cpu 5}% ${color}${goto 210}${top_mem name 5}${color2}${alignr}${top_mem mem_res 8}
 
 ${color1}${goto 35}Processes: ${color2}$processes ${color1}Running: ${color2}$running_processes
 
 ${color1}${font} Storage» $hr${color}
-${color1}${goto 35}/boot ${goto 74}${color2}${fs_used /boot}/${fs_size /boot} ${alignr}${fs_used_perc /boot}% ${color3}${fs_bar 4,100 /boot}
-${color1}${goto 35}/     ${goto 74}${color2}${fs_used /}/${fs_size /} ${alignr}${fs_used_perc /}% ${color3}${fs_bar 4,100 /}
-${color1}${goto 35}/home ${goto 74}${color2}${fs_used /home}/${fs_size /home} ${alignr}${fs_used_perc /home}% ${color3}${fs_bar 4,100 /home}
+${color1}${goto 35}/boot ${goto 78}${color2}${fs_used /boot}/${fs_size /boot} ${alignr}${fs_used_perc /boot}% ${color3}${fs_bar 4,100 /boot}
+${color1}${goto 35}/     ${goto 78}${color2}${fs_used /}/${fs_size /} ${alignr}${fs_used_perc /}% ${color3}${fs_bar 4,100 /}
+${color1}${goto 35}/home ${goto 78}${color2}${fs_used /home}/${fs_size /home} ${alignr}${fs_used_perc /home}% ${color3}${fs_bar 4,100 /home}
 ${goto 35}
 
 #${color1}${font ConkySymbols:size=16}b${font} ${voffset -10} Wireless» $hr${color}
@@ -105,7 +106,7 @@ ${goto 35}
 #${color1}${goto 35}Speed Down/Up : ${color}${downspeed wlan0}/${upspeed wlan0}
 #
 ${color1}${font} Network» $hr$
-${color1}${goto 35} Up   ${goto 74}${color2}${upspeed enp3s0}   ${goto 200}${color1}Total up ${alignr}${color2}${totalup enp3s0}
-${color1}${goto 35} Down ${goto 74}${color2}${downspeed enp3s0} ${goto 200}${color1}Total down ${alignr}${color2}${totaldown enp3s0}
+${color1}${goto 35} Up   ${goto 78}${color2}${upspeed enp3s0}   ${goto 200}${color1}Total up ${alignr}${color2}${totalup enp3s0}
+${color1}${goto 35} Down ${goto 78}${color2}${downspeed enp3s0} ${goto 200}${color1}Total down ${alignr}${color2}${totaldown enp3s0}
 ]]
 
