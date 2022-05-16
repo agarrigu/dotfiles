@@ -40,7 +40,11 @@ vim.g.maplocalleader = '\\'
 imap('kj', '<esc>')
 vmap('kj', '<esc>')
 
--- Clear mathces wit <esc>
+-- Switch G and gg because good game
+nmap('G', 'gg')
+nmap('gg', 'G')
+
+-- Clear mathces with <esc>
 nmap('<esc>', ':noh<cr>:call clearmatches()<cr>')
 
 -- Toggle relative/absolute number ruler

@@ -73,6 +73,8 @@ vnoremap k gk
 map q: <nop>
 nnoremap Q <nop>
 
+nnoremap G gg
+nnoremap gg G
 " PLUGINS!
 
 " Install vim-plug if not found
