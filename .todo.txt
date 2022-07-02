@@ -24,6 +24,8 @@ set zsh as deafult shell (oh-my-zsh does it automatically?)
 pull dotfiles on logon -- maybe not a great idea. would go in .zshlogin
 push dotfiles on logout/shutdown/sleep/reboot -- in .zshlogout
 auto-install tmux and nvim plugins (vim working fine)
+automatically detect apt, rpm, pacman in install script
+create log file with non-available packages.
 
 ####################################
 # THINGS TO UNDERSTAND AND INSTALL #
