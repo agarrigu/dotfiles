@@ -9,15 +9,6 @@
 # THINGS TO AUTOMATE #
 ######################
 
-## INSTALL APPS ##
-
-# Nvim dependencies
-ripgrep
-fd-find
-
-# Essentials
-g++
-
 ## CONFIGURATIONS ##
 
 set zsh as deafult shell (oh-my-zsh does it automatically?)
