@@ -77,7 +77,7 @@ nmap('<leader>vm', '<cmd>edit ~/.config/nvim/lua/mappings.lua<cr>')
 -- PLUGINS
 
 -- Emmet
-let.user_emmet_leader_key='<c-m>'
+let.user_emmet_leader_key='<c-n>'
 
 -- Telescope
 nmap("<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") --list files in wd
