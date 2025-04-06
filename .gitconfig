@@ -12,10 +12,6 @@
 [maintenance]
 	auto = false
 	strategy = incremental
-[include]
-	path = .gitconfig.github
-[includeIf "gitdir:~/repos/kernels/"]
-	path = .gitconfig.kernels
 [alias]
 	a = add
 	adog = log --all --decorate --oneline --graph
