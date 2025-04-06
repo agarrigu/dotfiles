@@ -1,3 +1,7 @@
+# source local/private configs before anything else
+localstuff="$HOME/.localrc"
+[[ -f $localstuff ]] && source $localstuff
+
 # zsh vars
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -21,20 +25,16 @@ ___prompt_to_bottom() {
 # usr path vars
 aliaseses="$HOME/.aliases"
 promt="$HOME/.zsh_prompt"
-hbdir="$HOME/linbrew"
 fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
 fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
 zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-brew_zshsh="$hbdir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-localstuff="$HOME/.localstuff"
 
 # sources and evals
 [[ -f $aliaseses ]] && source $aliaseses
 [[ -f $promt ]] && source $promt
 [[ -f $fzfkb ]] && source $fzfkb
 [[ -f $fzfcmp ]] && source $fzfcmp
-[[ -f $localstuff ]] && source $localstuff
-[[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
+[[ -f $zshsh ]] && source $zshsh
 
 if [[ -f $zshsh ]]; then
 	source $zshsh
