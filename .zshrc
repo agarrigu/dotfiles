@@ -29,9 +29,8 @@ source "$HOME/.zsh_prompt"
 md() { pandoc "$1" | lynx -stdin; }
 
 # Greeting
-if type figlet cowsay lolcat &> /dev/null; then
-	figlet oh hi | cowsay -n | lolcat
-fi
+# alt check: `type figlet cowsay lolcat >/dev/null 2>&1'
+hash figlet cowsay lolcat 2>/dev/null && figlet oh hi | cowsay -n | lolcat
 
 autoload -U compinit; compinit
 if [ -d "/usr/share/zsh-syntax-highlighting" ] ; then
