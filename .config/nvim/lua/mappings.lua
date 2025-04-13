@@ -67,8 +67,8 @@ nmap("<leader>fi", telescope.lsp_implementations)
 nmap("<leader>ftd", telescope.lsp_type_definitions)
 nmap("<leader>fgd", telescope.lsp_definitions)
 nmap("<leader>fgb", telescope.git_bcommits)
-nmap("<leader>fgs", telescope.grep_string)
-nmap("<leader>ft", telescope.tags)
+nmap("<leader>f*", telescope.grep_string)
+nmap("<leader>f]", telescope.tags)
 
 -- LSP buf
 local buff = vim.lsp.buf
