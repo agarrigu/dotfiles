@@ -1,28 +1,28 @@
 #!/bin/sh
 
-dollarhome="
+DH_FILES="
 .aliases
 .gdbinit
 .gitconfig
 .tmux.conf
-.vim
 .vimrc
 .zsh_prompt
 .zshenv
 .zshrc
 "
 
-dotconfig="
-nvim
+DH_DIRS="
+.vim
+.config/nvim
 "
 
-for file in $dollarhome; do
-	[[ -f "$HOME/dotfiles/$file" ]] && [[ ! -f $HOME/$file ]] \
-	&& ln -s "$HOME/dotfiles/$file" "$HOME/$file"
+for f in $DH_FILES; do
+	[[ -f "$HOME/dotfiles/$f" ]] && [[ ! -f $HOME/$f ]] \
+	&& ln -s "$HOME/dotfiles/$f" "$HOME/$f"
 done
 
-for dir in $dotconfig; do
-	[[ -d "$HOME/dotfiles/$dir" ]] && [[ ! -d "$HOME/.config/$dir" ]] \
-	&& ln -s "$HOME/dotfiles/$dir" "$HOME/.config/$dir"
+for d in $DH_DIRS; do
+	[[ -d "$HOME/dotfiles/$d" ]] && [[ ! -d "$HOME/$d" ]] \
+	&& ln -s "$HOME/dotfiles/$d" "$HOME/$d"
 done
 
