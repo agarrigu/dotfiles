@@ -34,6 +34,7 @@
 	l = pull
 	la = pull --all
 	ls = ls-files
+	lr = pull --rebase
 	m = merge
 	p = push
 	pa = push --all
