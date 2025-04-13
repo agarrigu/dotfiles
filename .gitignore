@@ -1,9 +1,9 @@
-*~
-*.swp
 *.swo
+*~
+.vim/.netrwhist
 .vim/autoload/
 .vim/plugged/
-.vim/.netrwhist
-nvim/plugin/packer_compiled.lua
+.vim/skeletons/42*
 nvim/lazy-lock.json
+nvim/plugin/packer_compiled.lua
 nvim/spell/
