@@ -9,3 +9,7 @@ Install Scripts
 ---------------
 - install-script.sh should take as arguments regular files with 
 - tmux should autoinstall plugins
+
+Zshrc & .localstuff
+-------------------
+- Autoload .localstuff and search for absolute brew path
