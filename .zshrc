@@ -45,6 +45,10 @@ fi
 alias ds='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
+# make stuff more colorfull
+alias grep="grep --color=auto"
+alias ls="ls --color=auto"
+
 # Read mds
 md() { pandoc "$1" | lynx -stdin; }
 
