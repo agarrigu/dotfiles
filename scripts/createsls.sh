@@ -3,17 +3,17 @@
 declare -ar DH_FILES=(
 ".aliases"
 ".gdbinit"
-".gitconfig	"
-".tmux.conf"	
-".vimrc	"
-".zsh_prompt	"
-".zshenv	"
-".zshrc	"
+".gitconfig"
+".tmux.conf"
+".vimrc"
+".zsh_prompt"
+".zshenv"
+".zshrc"
 )
 
-declare -ar DH_DIRS=(	
-".vim"	
-".config/nvim"	
+declare -ar DH_DIRS=(
+".vim"
+".config/nvim"
 )
 
 for f in ${DH_FILES[@]}; do
