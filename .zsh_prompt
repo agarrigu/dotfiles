@@ -110,7 +110,7 @@ prompt_purification_setup() {
 
     autoload -Uz add-zsh-hook
     add-zsh-hook precmd prompt_purity_precmd
-    ZSH_THEME_GIT_PROMPT_PREFIX=" %F{red}λ%f:"
+    ZSH_THEME_GIT_PROMPT_PREFIX="%F{red}λ%f:"
     ZSH_THEME_GIT_PROMPT_DIRTY=""
     ZSH_THEME_GIT_PROMPT_CLEAN=""
 
@@ -121,8 +121,8 @@ prompt_purification_setup() {
     ZSH_THEME_GIT_PROMPT_UNMERGED="%F{red}‼%f"
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{yellow}?%f"
     ZSH_THEME_GIT_PROMPT_STASHED="%F{magenta}*%f"
-    ZSH_THEME_GIT_PROMPT_BEHIND="%F{red}↧%f"
-    ZSH_THEME_GIT_PROMPT_AHEAD="%F{yellow}⇛%f"
+    ZSH_THEME_GIT_PROMPT_BEHIND="%F{red}↓%f"
+    ZSH_THEME_GIT_PROMPT_AHEAD="%F{yellow}↑%f"
 
     prompt_git_branch
     RPROMPT='$(prompt_git_info) $(git_prompt_status)'
