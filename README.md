@@ -13,7 +13,7 @@
                 ||----w |
                 ||     ||
 ```
-### Instalation
+### Installation
 
 Clone into your `$HOME` directory
 
@@ -27,11 +27,11 @@ run :
 bash scripts/createsls.sh
 ```
 
-The first script figures out what package-manager you have and installs essential, fancy and neovim packages.
+The first script figures out what package manager you have and installs essential, fancy and neovim packages.
 The second creates soft links in `$HOME` to the configuration files in `$HOME/dotfiles`
 
 ### Notes
 
 The Telescope and Treesitter plugins tend to depend on very recent versions of Neovim.
-If Lazy pakcage manager gives you any trouble when running Neovim for the frist time its probably that.
+If Lazy package manager gives you any trouble when running Neovim for the frist time it's probably that.
 Try manually installing the latest Neovim release from github.
