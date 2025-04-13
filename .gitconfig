@@ -1,12 +1,12 @@
 [core]
-    editor = vi
+	editor = vi
 [init]
-    defaultBranch = main
+	defaultBranch = main
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [mergetool]
-    prompt = false
+	prompt = false
 [rerere]
 	enabled = true
 [maintenance]
