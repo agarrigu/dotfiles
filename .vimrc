@@ -58,6 +58,7 @@ set path+=**
 " Tabs and Spaces
 set shiftwidth=4
 set smarttab
+set noexpandtab
 set softtabstop=0
 set tabstop=4
 

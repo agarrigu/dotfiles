@@ -49,7 +49,7 @@ set.ruler = true
 set.signcolumn = 'yes:1'
 
 -- Tabs and Spaces
-set.expandtab = true
+set.expandtab = false
 set.shiftwidth = 4
 set.smarttab = true
 set.softtabstop = 0
