@@ -72,8 +72,8 @@ nmap("<leader>f]", telescope.tags)
 
 -- LSP buf
 local buff = vim.lsp.buf
-nmap('<leader>K', buff.hover)
-imap('<leader>sh', buff.signature_help)
+nmap('<leader>kk', buff.hover)
+nmap('<leader>sh', buff.signature_help)
 nmap('<leader>gD', buff.declaration)
 nmap('<leader>rn', buff.rename)
 nmap('<leader>fo', buff.format)
