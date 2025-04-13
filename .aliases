@@ -14,8 +14,8 @@ alias paste="xsel -ob"
 
 # Tmux stuff
 alias tmas="tmux attach-session"
-alias tmast="tmux attach-session -t"
-alias tmkst="tmux kill-session -t"
+alias tmat="tmux attach-session -t"
+alias tmkt="tmux kill-session -t"
 alias tmls="tmux list-sessions"
 alias tmns="tmux new -s"
 
