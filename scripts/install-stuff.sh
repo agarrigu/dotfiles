@@ -5,12 +5,11 @@ essentials="$(<packages-essential.txt)"
 fancy="$(<packages-fancy.txt)"
 nvimdeps="$(<packages-nvim-depends.txt)"
 
-# TODO: FIX FIX FIX, argument parser, maybe get neovim release?
 main () {
     determine_package_manager
     install_essential
     install_fancy
-#    install_neovim
+    install_neovim
 }
 
 # use this function for the individualstuff
@@ -38,11 +37,7 @@ install_essential() {
 
 install_neovim() {
     # TODO: install LATEST neovim
-    #
     install_from_txt ${nvimdeps[@]}
-
-    # Set up Packer
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 determine_package_manager() {
