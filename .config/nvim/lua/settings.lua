@@ -11,15 +11,15 @@ set.updatetime = 42
 set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- Display and metadata
-set.cmdheight = 2
 set.cc = '80'
+set.cmdheight = 2
 set.cursorline = true
 set.laststatus = 2
 set.linebreak = true
 set.list = true
-set.listchars = 'tab:  ,trail:·'
+set.listchars = 'tab: ,trail:·'
 set.showmatch = true
-set.wrap = true
+set.wrap = false
 
 -- Navigation and editig
 set.backspace = 'indent,eol,start'

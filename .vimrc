@@ -12,24 +12,24 @@ set encoding=utf-8
 " Display and metadata
 syntax on
 set background=dark
-set colorcolumn=80
 set cmdheight=1
+set colorcolumn=80
 set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
 set list
-set listchars=tab:⇁\ ,trail:·
+set listchars=tab: ,trail:·
+set noshowmode
+set nowrap
 set number
 set relativenumber
 set ruler
-set showmatch
 set scrolloff=8
+set showcmd
+set showmatch
 set signcolumn=no
 set wildmenu
-set wrap
-set noshowmode
-set showcmd
 
 " Navigation and editig
 set backspace=indent,eol,start
@@ -71,11 +71,6 @@ nnoremap <leader>rr :set relativenumber!<cr>
 
 inoremap kj <esc>
 vnoremap kj <esc>
-
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
 
 nnoremap Y y$
 
