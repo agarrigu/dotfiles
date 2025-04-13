@@ -95,6 +95,19 @@ nmap("<leader>fi", telescope.lsp_implementations)
 nmap("<leader>ft", telescope.lsp_type_definitions)
 nmap("<leader>fe", telescope.lsp_definitions)
 
+-- Harpoon
+local harpoon = require'harpoon'
+harpoon:setup() -- REQUIRED
+nmap("<leader>hh", function() harpoon:list():add() end)
+nmap("<leader>hl",
+	function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+nmap("<leader>ha", function() harpoon:list():select(1) end)
+nmap("<leader>hs", function() harpoon:list():select(2) end)
+nmap("<leader>hd", function() harpoon:list():select(3) end)
+nmap("<leader>hf", function() harpoon:list():select(4) end)
+nmap("<leader>hn", function() harpoon:list():next(4) end)
+nmap("<leader>hp", function() harpoon:list():prev(4) end)
+
 -- LSP buf
 local buff = vim.lsp.buf
 nmap('K', buff.hover)

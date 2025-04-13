@@ -54,9 +54,8 @@ return require'packer'.startup(function(use)
   use'williamboman/mason-lspconfig.nvim'
 
   -- Navigation stuff
-  use'sharkdp/fd'                   -- find entries in file system for telescope
-  use'BurntSushi/ripgrep'           -- grep for telescope
-  use'christoomey/vim-tmux-navigator'
+  use'sharkdp/fd'
+  use'BurntSushi/ripgrep'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim'} },
@@ -65,9 +64,14 @@ return require'packer'.startup(function(use)
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
   }
+	use {
+		'ThePrimeagen/harpoon',
+		branch = 'harpoon2',
+    requires = { { 'nvim-lua/plenary.nvim'} },
+	}
 
   -- Text Objects
-  use'kana/vim-textobj-user'        -- depency for most other text objects
+  use'kana/vim-textobj-user' -- depend
   use'kana/vim-textobj-entire'
   use'kana/vim-textobj-function'
   use'kana/vim-textobj-indent'
