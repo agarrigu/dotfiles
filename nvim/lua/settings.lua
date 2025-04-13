@@ -3,7 +3,6 @@ local set = vim.opt
 local setw = vim.wo
 
 -- Big stuff
-
 set.encoding = 'utf-8'
 set.mouse = 'a'
 set.backup = false

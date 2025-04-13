@@ -26,6 +26,7 @@ return require'packer'.startup(function(use)
   use'junegunn/vim-easy-align'
   use'justinmk/vim-sneak'
   use'vim-scripts/ReplaceWithRegister'
+  use'42Paris/42header'
 
   -- Git stuff
   use'tpope/vim-fugitive'
