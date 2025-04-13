@@ -1,5 +1,4 @@
 local cmp = require'cmp'
-local lspkind = require'lspkind'
 
 cmp.setup({
   snippet = {
@@ -23,14 +22,15 @@ cmp.setup({
     { name = 'nvim_lua' },
   }),
   formatting = {
-    format = lspkind.cmp_format({
-      menu = ({
+    format = function(entry, item)
+      item.menu = ({
         buffer = 'buf',
         nvim_lsp = 'lsp',
         vsnip = 'vsp',
         nvim_lua = 'lua',
-      })
-    }),
+      })[entry.source.name]
+      return item
+    end
   },
 })
 

@@ -14,8 +14,6 @@ return require'packer'.startup(function(use)
   -- Aesthetics and metadata stuff
   use'nvim-lualine/lualine.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use'kyazdani42/nvim-web-devicons'
-  use'onsails/lspkind-nvim'
 
   -- Editing stuff
   use'christoomey/vim-system-copy'
