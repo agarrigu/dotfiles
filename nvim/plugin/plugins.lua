@@ -16,7 +16,6 @@ return require'packer'.startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use'kyazdani42/nvim-web-devicons'
   use'onsails/lspkind-nvim'
-  use'lukas-reineke/indent-blankline.nvim'
 
   -- Editing stuff
   use'christoomey/vim-system-copy'
@@ -28,6 +27,7 @@ return require'packer'.startup(function(use)
   use'hrsh7th/cmp-vsnip'
   use'junegunn/vim-easy-align'
   use'justinmk/vim-sneak'
+  use'vim-scripts/ReplaceWithRegister'
 
   -- Git stuff
   use'tpope/vim-fugitive'
@@ -95,9 +95,6 @@ return require'packer'.startup(function(use)
 
   -- HTML stuff
   use'mattn/emmet-vim'
-
-  -- Java stuff
-  -- use'mfussenegger/nvim-jdtls'
 
   -- Lua stuff
   use'nvim-lua/plenary.nvim'        -- depency for many a things

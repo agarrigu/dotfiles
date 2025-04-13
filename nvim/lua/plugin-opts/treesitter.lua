@@ -22,6 +22,7 @@ local languages = {
       "toml",
       "typescript",
       "vim",
+      "vimdoc",
       "yaml",
       }
 require'nvim-treesitter.configs'.setup {

@@ -3,14 +3,14 @@ local mason_lsp    = require'mason-lspconfig'
 local lspconf      = require'lspconfig'
 local capabilities = require'cmp_nvim_lsp'.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local servers      = {
-  'bashls',
+  -- 'bash-language-server',
   'clangd',
   'marksman',
-  'pylsp',
+  -- 'pylsp',
   -- 'rome',       -- js, ts, html, css :o
   -- 'rust_analyzer',
   'lua_ls',
-  'vimls',
+  -- 'vimls',
   -- 'asm_lsp',
 }
 

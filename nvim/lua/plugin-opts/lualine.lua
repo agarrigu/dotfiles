@@ -3,5 +3,6 @@ require'lualine'.setup {
     theme = '16color',
     component_separators = '',
     section_separators = '',
+    icons_enabled = false,
   },
 }

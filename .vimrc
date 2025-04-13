@@ -45,6 +45,9 @@ set smartindent
 
 " Pretty
 colorscheme molokai
+hi Normal ctermbg=NONE
+" hi NonText guibg=NONE ctermbg=NONE
+" hi ColorColumn guibg=NONE ctermbg=NONE
 
 " Searches
 set hlsearch
