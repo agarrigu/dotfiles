@@ -39,3 +39,5 @@ alias gstsh="git stash"
 alias gsp="git stash pop"
 alias gmxt="git merge -X theirs"
 alias gmxo="git merge -X ours"
+alias grs="git reset --soft" #Must point to the last commit you DONT want to squash
+alias gpfo="git push --force origin" #then take <branch>
