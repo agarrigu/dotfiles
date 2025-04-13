@@ -6,7 +6,7 @@ set mouse=a
 set nobackup
 set noswapfile
 set nowritebackup
-set updatetime=100
+set updatetime=42
 set encoding=utf-8
 
 " Display and metadata
@@ -48,7 +48,7 @@ colorscheme molokai
 hi Normal ctermbg=NONE
 
 " Searches
-set hlsearch
+set nohlsearch
 set incsearch
 set ignorecase
 set showmatch
@@ -57,10 +57,8 @@ set path+=**
 
 " Tabs and Spaces
 set shiftwidth=4
-set smarttab
-set noexpandtab
-set softtabstop=0
 set tabstop=4
+set noexpandtab
 
 " MY REMAPS
 nnoremap <SPACE> <Nop>
@@ -83,12 +81,16 @@ nnoremap Y y$
 nnoremap { :<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>
 nnoremap } :<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>
 
+nnoremap J mzJ`z
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
 map q: <nop>
 nnoremap Q <nop>
-
+nnoremap ZZ <nop>
 
 " Create tags file
-command! MakeTags !ctags -R .
+command! maketags !ctags -R .
 
 " PLUGINS!
 
@@ -113,7 +115,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-sort-motion'
 Plug 'vim-scripts/ReplaceWithRegister'
 

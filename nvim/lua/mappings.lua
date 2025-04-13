@@ -36,9 +36,13 @@ nmap('<leader>rl', ':set relativenumber!<cr>') -- Toggle relative number
 nmap('<leader>w', '<cmd>wa<cr>') -- Quick Save All
 nmap('<leader>q', '<cmd>q<cr>') -- Quick quit
 
--- Split screen
-nmap('<C-w>v', '<C-w>s')
-nmap('<C-w>h', '<C-w>v')
+-- Split screen -- I really hate ctrl key
+nmap('<leader>ss', '<C-w>s')
+nmap('<leader>sv', '<C-w>v')
+nmap('<leader>sh', '<C-w><c-h>')
+nmap('<leader>sj', '<C-w><c-j>')
+nmap('<leader>sk', '<C-w><c-k>')
+nmap('<leader>sl', '<C-w><c-l>')
 
 -- more natural movement with wrap on
 nmap('j', 'gj')
