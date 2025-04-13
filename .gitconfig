@@ -9,5 +9,12 @@
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[rerere]
+	enabled = true
+[maintenance]
+	auto = false
+	strategy = incremental
 [include]
 	path = .gitconfig.secret
+[includeIf "gitdir:~/repos/kernel"]
+	path = .gitconfig.kernels
