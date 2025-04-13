@@ -10,12 +10,6 @@ set.swapfile = false
 set.updatetime = 42
 set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
--- Colours
-set.background = 'dark'
-set.termguicolors = true
-vim.highlight.on_yank({timeout=240})
-vim.cmd("highlight Normal ctermbg=none")
-
 -- Display and metadata
 set.cmdheight = 2
 set.cc = '80'

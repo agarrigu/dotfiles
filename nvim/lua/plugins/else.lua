@@ -19,20 +19,9 @@ return {
 	},
 
 	-- Colorshemes
- "ayu-theme/ayu-vim",
- "NLKNguyen/papercolor-theme",
-	{
-		"KabbAmine/yowish.vim",
-		priority = 1000,
-		lazy = false,
-		config = function ()
-			vim.cmd.colorscheme("PaperColor")
-			vim.api.nvim_set_hl(0, "Normal", {ctermbg = "none"})
-			vim.api.nvim_set_hl(0, "Whitespace", {ctermbg = "none"})
-			vim.api.nvim_set_hl(0, "SignColumn", {ctermbg = "none"})
-		end,
-	},
-	"rakr/vim-one",
+	"w0ng/vim-hybrid",
+	"morhetz/gruvbox",
+	"romainl/apprentice",
 
 	-- Editing stuff
 	"christoomey/vim-sort-motion",
