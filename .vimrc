@@ -85,10 +85,10 @@ nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <c-w><c-h> <leader>sh
-nnoremap <c-w><c-h> <leader>sh
-nnoremap <c-w><c-h> <leader>sh
-nnoremap <c-w><c-h> <leader>sh
+nnoremap <leader>sh <c-w><c-h>
+nnoremap <leader>sj <c-w><c-j>
+nnoremap <leader>sk <c-w><c-k>
+nnoremap <leader>sl <c-w><c-l>
 
 map q: <nop>
 nnoremap Q <nop>
