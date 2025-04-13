@@ -1,4 +1,5 @@
 return {
+
 	-- Info
 	{
 		"nvim-lualine/lualine.nvim",

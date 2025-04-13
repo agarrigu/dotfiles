@@ -27,6 +27,13 @@ setw.foldmethod = 'expr' -- Not sure y this needs to be vim.wo but there u go
 setw.foldexpr = 'nvim_treesitter#foldexpr()' -- See comment above
 set.foldlevel = 99
 set.scrolloff = 8
+vim.api.nvim_create_autocmd(
+	"BufRead",
+	{
+		pattern = {"*.c", "*.h"},
+		command = "1;/^{",
+	}
+);
 
 -- Indentation
 set.autoindent = true

@@ -44,7 +44,7 @@ set autoindent
 set smartindent
 
 " Pretty
-colorscheme habamax
+colorscheme molokai
 hi Normal ctermbg=NONE
 
 " Searches
@@ -93,6 +93,10 @@ nnoremap <leader>sl <c-w><c-l>
 map q: <nop>
 nnoremap Q <nop>
 nnoremap ZZ <nop>
+
+nnoremap <leader>dl diffget LOCAL
+nnoremap <leader>dr diffget REMOTE
+nnoremap <leader>db diffget BASE
 
 " Create tags file
 command! Maketags !ctags -R .
