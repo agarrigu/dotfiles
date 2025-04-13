@@ -44,7 +44,7 @@ set autoindent
 set smartindent
 
 " Pretty
-colorscheme molokai
+colorscheme retrobox
 hi Normal ctermbg=NONE
 
 " Searches
@@ -63,6 +63,7 @@ set noexpandtab
 " MY REMAPS
 nnoremap <SPACE> <Nop>
 let mapleader=" "
+let maplocalleader=","
 nnoremap <leader>w :wall<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader><leader> :let@/=""<CR>
@@ -94,9 +95,9 @@ map q: <nop>
 nnoremap Q <nop>
 nnoremap ZZ <nop>
 
-nnoremap <leader>dl diffget LOCAL
-nnoremap <leader>dr diffget REMOTE
-nnoremap <leader>db diffget BASE
+nnoremap <localleader>dl diffget LOCAL
+nnoremap <localleader>dr diffget REMOTE
+nnoremap <localleader>db diffget BASE
 
 " Create tags file
 command! Maketags !ctags -R .
@@ -139,6 +140,9 @@ Plug 'adolenc/vim-textobj-toplevel'
 Plug 'D4KU/vim-textobj-chainmember'
 Plug 'D4KU/vim-textobj-headedblock'
 Plug 'libclang-vim/vim-textobj-clang'
+
+" Tidalcycles
+Plug 'tidalcycles/vim-tidal'
 
 call plug#end()
 
