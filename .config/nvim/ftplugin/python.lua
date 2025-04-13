@@ -1,5 +1,7 @@
 local set = vim.opt_local
-set.tabstop = 4
-set.shiftwidth = 4
-set.expandtab = true
-set.textwidth = 79
+local tab = 4
+
+set.expandtab   = true
+set.tabstop     = tab
+set.shiftwidth  = tab
+set.colorcolumn = "89"
