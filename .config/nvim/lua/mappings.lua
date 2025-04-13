@@ -64,22 +64,23 @@ nmap("<leader>fr", telescope.lsp_references)
 nmap("<leader>fd", telescope.diagnostics)
 nmap("<leader>fp", telescope.planets)
 nmap("<leader>fi", telescope.lsp_implementations)
-nmap("<leader>ft", telescope.lsp_type_definitions)
-nmap("<leader>fe", telescope.lsp_definitions)
+nmap("<leader>ftd", telescope.lsp_type_definitions)
+nmap("<leader>fgd", telescope.lsp_definitions)
+nmap("<leader>fgb", telescope.git_bcommits)
+nmap("<leader>fgs", telescope.grep_string)
+nmap("<leader>ft", telescope.tags)
 
 -- LSP buf
 local buff = vim.lsp.buf
-nmap('K', buff.hover)
-imap('<c-k>', buff.signature_help)
-nmap('gD', buff.declaration)
-nmap('gd', buff.definition)
+nmap('<leader>K', buff.hover)
+imap('<leader>sh', buff.signature_help)
+nmap('<leader>gD', buff.declaration)
 nmap('<leader>rn', buff.rename)
-nmap('<leader>D', buff.type_definition)
 nmap('<leader>fo', buff.format)
 nmap('<leader>ca', buff.code_action)
 
 -- LSP diag
 local diag = vim.diagnostic
-nmap('[d', diag.goto_prev)
-nmap(']d', diag.goto_next)
+nmap('<leader>dp', diag.goto_prev)
+nmap('<leader>dn', diag.goto_next)
 nmap('<leader>df', diag.open_float)
