@@ -27,12 +27,14 @@ fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
 fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
 zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 brew_zshsh="$hbdir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+localstuff="$HOME/.localstuff"
 
 # sources and evals
 [[ -f $aliaseses ]] && source $aliaseses
 [[ -f $promt ]] && source $promt
 [[ -f $fzfkb ]] && source $fzfkb
 [[ -f $fzfcmp ]] && source $fzfcmp
+[[ -f $localstuff ]] && source $localstuff
 [[ -f $zshsh ]] && source $zshsh \
 	|| [[ -f $brew_zshsh ]] && source $brew_zshsh
 [[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
