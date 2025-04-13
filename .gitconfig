@@ -27,6 +27,7 @@
 	cm = commit --message
 	co = checkout
 	cob = checkout -b
+	cp = commit --patch
 	d = diff
 	ds = diff --staged
 	f = fetch --all
@@ -43,6 +44,6 @@
 	sh = show
 	st = stash
 	stp = stash pop
-	stsh = stash show --unified
+	sts = stash show --unified
 	update = commit --all --mesage update
 	wip = commit --all --message wip
