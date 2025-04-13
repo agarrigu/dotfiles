@@ -121,16 +121,16 @@ Plug 'vim-scripts/ReplaceWithRegister'
 
 " Text Objects
 Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-function'
-Plug 'kana/vim-textobj-indent'
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'mattn/vim-textobj-url'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'adolenc/vim-textobj-toplevel'
-Plug 'D4KU/vim-textobj-chainmember'
-Plug 'D4KU/vim-textobj-headedblock'
-Plug 'libclang-vim/vim-textobj-clang'
+Plug 'kana/vim-textobj-entire'             " e
+Plug 'kana/vim-textobj-function'           " f
+Plug 'kana/vim-textobj-indent'             " i
+Plug 'vim-scripts/argtextobj.vim'          " a
+Plug 'mattn/vim-textobj-url'               " u
+Plug 'Julian/vim-textobj-variable-segment' " v
+Plug 'adolenc/vim-textobj-toplevel'        " T
+Plug 'D4KU/vim-textobj-chainmember'        " m
+Plug 'D4KU/vim-textobj-headedblock'        " k
+Plug 'libclang-vim/vim-textobj-clang'      " ;
 
 " Tidalcycles
 Plug 'tidalcycles/vim-tidal'
