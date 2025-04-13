@@ -1,15 +1,5 @@
 return {
-	"jose-elias-alvarez/null-ls.nvim",
-	{
-		"vinicius507/norme.nvim",
-		dependencies = {"jose-elias-alvarez/null-ls.nvim"},
-		config = function ()
-			require("null-ls").setup({})
-			require("norme").setup({
-				cmd = os.getenv('HOME') .. '/bin/norminette'
-			})
-		end
-	},
+
 	-- Info
 	{
 		"nvim-lualine/lualine.nvim",
