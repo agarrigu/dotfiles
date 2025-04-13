@@ -1,6 +1,13 @@
 # Aesthetic aliases
 alias asciiquarium="perl /usr/local/bin/asciiquarium"
 
+# Cmus stuff
+alias crn="cmus-remote --next"
+alias crr="cmus-remote --previous"
+alias crp="cmus-remote --play"
+alias cru="cmus-remote --pause"
+alias crq="cmus-remote --query"
+
 # Clipboard aliases
 alias copy="xsel -ib"
 alias paste="xsel -ob"
