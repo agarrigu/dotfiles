@@ -11,6 +11,9 @@ alias tmast="tmux attach-session -t"
 alias tmkst="tmux kill-session -t"
 alias tmls="tmux list-sessions"
 
+# Misc stuff
+alias bat=batcat
+
 # Git stuff
 alias adog="git log --all --decorate --oneline --graph"
 alias gadd="git add"
