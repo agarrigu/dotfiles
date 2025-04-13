@@ -1,4 +1,3 @@
-require'settings'
-require'mappings'
-require'color'
-require'plugin-opts'
+require("settings")
+require("lazylazy")
+require("mappings")

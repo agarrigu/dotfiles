@@ -1,5 +1,5 @@
 local set = vim.opt
--- local let = vim.g
+local let = vim.g
 local setw = vim.wo
 
 -- Big stuff
@@ -7,11 +7,14 @@ set.encoding = 'utf-8'
 set.mouse = 'a'
 set.backup = false
 set.swapfile = false
-set.updatetime = 100
+set.updatetime = 42
+set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- Colours
 set.background = 'dark'
 set.termguicolors = true
+vim.highlight.on_yank({timeout=240})
+vim.cmd("highlight Normal ctermbg=none")
 
 -- Display and metadata
 set.cmdheight = 2
@@ -36,7 +39,7 @@ set.autoindent = true
 set.smartindent = true
 
 -- Searches
-set.hlsearch = true
+set.hlsearch = false
 set.incsearch = true
 set.ignorecase = true
 set.showmatch = true
@@ -51,9 +54,11 @@ set.signcolumn = 'yes:1'
 -- Tabs and Spaces
 set.expandtab = false
 set.shiftwidth = 4
-set.smarttab = true
-set.softtabstop = 0
 set.tabstop = 4
+
+-- Leaders
+let.mapleader = ' '
+let.maplocalleader = '\\'
 
 -- LSP stuff
 vim.diagnostic.config({
