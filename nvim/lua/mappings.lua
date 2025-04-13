@@ -98,7 +98,7 @@ nmap("<leader>fe", telescope.lsp_definitions)
 -- Harpoon
 local harpoon = require'harpoon'
 harpoon:setup() -- REQUIRED
-nmap("<leader>hh", function() harpoon:list():add() end)
+nmap("<leader>hm", function() harpoon:list():add() end)
 nmap("<leader>hl",
 	function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 nmap("<leader>ha", function() harpoon:list():select(1) end)
