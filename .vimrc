@@ -46,8 +46,6 @@ set smartindent
 " Pretty
 colorscheme molokai
 hi Normal ctermbg=NONE
-" hi NonText guibg=NONE ctermbg=NONE
-" hi ColorColumn guibg=NONE ctermbg=NONE
 
 " Searches
 set hlsearch
@@ -115,11 +113,6 @@ Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-sort-motion'
 Plug 'vim-scripts/ReplaceWithRegister'
 
-" Auto-completion
-
-" Navigation stuff
-Plug 'christoomey/vim-tmux-navigator'
-
 " Text Objects
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
@@ -136,11 +129,3 @@ Plug 'libclang-vim/vim-textobj-clang'
 call plug#end()
 
 " PLUGIN CONFIGURATIONS
-
-" Netrw
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=0
-let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s)\zs\.\S\+'
