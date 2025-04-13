@@ -13,19 +13,18 @@ alias pod="popd"
 alias copy="xsel -ib"
 alias paste="xsel -ob"
 
-# 42 Stuff
-alias norm="norminette -R CheckForbiddenSourceHeader"
-run() {
-	cc -Wall -Wextra -Werror "$1" && ./a.out
-	}
-
 # Git stuff
 alias gadd="git add"
 alias gau="git add -u"
 alias gll="git pull"
+alias glla="git pull --all"
+alias gfa="git fetch --all"
 alias gpsh="git push"
+alias gpa="git push --all"
 alias gcm="git commit -m"
 alias gcam="git commit -am"
+alias gca="git commit -a"
+alias gcom="git commit"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gmrg="git merge"
