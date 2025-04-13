@@ -1,7 +1,7 @@
 set history save
 set verbose off
 set print pretty on
-set print array on
+set print array off
 
 tui new-layout small src 1 {-horizontal asm 2 regs 3} 2 cmd 2 status 1
 tui new-layout big -horizontal {src 2 status 1 asm 1}1 {regs 1 cmd 1}1
@@ -12,8 +12,7 @@ set tui active-border-mode bold
 set tui tab-width 4
 set tui compact-source on
 
-layout small
-
+layout vert
 focus cmd
 
 define p_link_list
@@ -32,5 +31,3 @@ define p_lldata
 		set var $n = $n->next
 	end
 end
-
-*(t_token *) tokens->next->next->data
