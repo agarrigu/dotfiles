@@ -10,10 +10,10 @@ main () {
     determine_package_manager
     install_essential
     install_fancy
-    install_neovim
+#    install_neovim
 }
 
-#use this function for the individualstuff
+# use this function for the individualstuff
 install_from_txt() {
     a=("$@")
     for app in ${a[@]}; do
