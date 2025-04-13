@@ -17,6 +17,7 @@ alias tmas="tmux attach-session"
 alias tmast="tmux attach-session -t"
 alias tmkst="tmux kill-session -t"
 alias tmls="tmux list-sessions"
+alias tmns="tmux new -s"
 
 # Misc stuff
 alias bat=batcat
