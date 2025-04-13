@@ -6,3 +6,4 @@
 .vim/.netrwhist
 nvim/plugin/packer_compiled.lua
 nvim/lazy-lock.json
+nvim/spell/
