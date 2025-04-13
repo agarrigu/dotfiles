@@ -9,3 +9,5 @@
     conflictstyle = diff3
 [mergetool]
     prompt = false
+[include]
+	path = .gitconfig.secret
