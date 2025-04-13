@@ -2,6 +2,7 @@
 
 dollarhome="
 .aliases
+.gdbinit
 .gitconfig
 .tmux.conf
 .vim

@@ -4,3 +4,5 @@ cowsay
 sl
 bat
 btop
+zsh-autosuggestions
+zsh-syntax-highlighting

@@ -3,6 +3,7 @@ curl
 fzf
 g++
 gcc
+gdb
 git
 lldb
 tmux
@@ -11,5 +12,3 @@ wget
 xclip
 xsel
 zsh
-zsh-autosugestions
-zsh-syntax-highlighting
