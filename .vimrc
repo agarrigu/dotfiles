@@ -86,11 +86,6 @@ nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-nnoremap <leader>sh <c-w><c-h>
-nnoremap <leader>sj <c-w><c-j>
-nnoremap <leader>sk <c-w><c-k>
-nnoremap <leader>sl <c-w><c-l>
-
 map q: <nop>
 nnoremap Q <nop>
 nnoremap ZZ <nop>
@@ -121,11 +116,12 @@ Plug 'junegunn/vim-plug'
 " Aesthetics and metadata stuff
 Plug 'itchyny/lightline.vim'
 
-" Editing stuff
+" Editing & Navigation stuff
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/ReplaceWithRegister'
 
 " Text Objects
