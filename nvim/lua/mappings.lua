@@ -16,9 +16,9 @@ local function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
-local function cmap(shortcut, command)
-  map('c', shortcut, command)
-end
+-- local function cmap(shortcut, command)
+--   map('c', shortcut, command)
+-- end
 
 -- local function tmap(shortcut, command)
 --   map('t', shortcut, command)
@@ -46,10 +46,6 @@ nmap('<leader>w', '<cmd>wa<cr>')
 -- Quick quit
 nmap('<leader>q', '<cmd>q<cr>')
 
--- Begining & End of line in Normal mode
-nmap('H', '^')
-nmap('L', 'g_')
-
 -- Split screen
 nmap('<C-w>v', '<C-w>s')
 nmap('<C-w>h', '<C-w>v')
@@ -60,15 +56,9 @@ nmap('k', 'gk')
 vmap('j', 'gj')
 vmap('k', 'gk')
 
--- home and end line in command mode
-cmap('<C-a>', '<Home>')
-cmap('<C-e>', '<End>')
-
--- edit init.vim
-nmap('<leader>vi', '<cmd>edit ~/.config/nvim/init.lua<cr>')
-nmap('<leader>vs', '<cmd>edit ~/.config/nvim/lua/settings.lua<cr>')
-nmap('<leader>vp', '<cmd>edit ~/.config/nvim/plugin/plugins.lua<cr>')
-nmap('<leader>vm', '<cmd>edit ~/.config/nvim/lua/mappings.lua<cr>')
+-- Remove {} from jump list
+nmap('{', ':<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>')
+nmap('}', ':<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>')
 
 -- PLUGINS --
 

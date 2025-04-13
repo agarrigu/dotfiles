@@ -80,6 +80,9 @@ vnoremap k gk
 
 nnoremap Y y$
 
+nnoremap { :<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>
+nnoremap } :<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>
+
 map q: <nop>
 nnoremap Q <nop>
 
