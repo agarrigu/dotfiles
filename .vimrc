@@ -44,7 +44,7 @@ set autoindent
 set smartindent
 
 " Pretty
-colorscheme retrobox
+colorscheme habamax
 hi Normal ctermbg=NONE
 
 " Searches
