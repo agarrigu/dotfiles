@@ -5,6 +5,7 @@ print ${(pl:$LINES::\n:):-}
 ALIASESFILE="$HOME/.aliases"
 PROMTFILE="$HOME/.zsh_prompt"
 HOMEBREWDIR="$HOME/linbrew"
+# TODO: do something with this [[ -v HOMEBREW_PREFIX ]]
 
 # zsh vars
 HISTFILE="$HOME/.zsh_history"
