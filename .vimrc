@@ -19,7 +19,7 @@ set cursorline
 set laststatus=2
 set linebreak
 set list
-set listchars=tab: ,trail:·
+set listchars=tab:\ \ ,trail:·
 set noshowmode
 set nowrap
 set number

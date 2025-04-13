@@ -17,7 +17,7 @@ set.cursorline = true
 set.laststatus = 2
 set.linebreak = true
 set.list = true
-set.listchars = 'tab: ,trail:·'
+set.listchars = 'tab:  ,trail:·'
 set.showmatch = true
 set.wrap = false
 
