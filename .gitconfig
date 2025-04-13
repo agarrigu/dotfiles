@@ -16,3 +16,33 @@
 	path = .gitconfig.github
 [includeIf "gitdir:~/repos/kernels/"]
 	path = .gitconfig.kernels
+[alias]
+	a = add
+	adog = log --all --decorate --oneline --graph
+	au = add --update
+	b = branch
+	c = commit
+	ca = commit --all
+	cam = commit --all --message
+	cm = commit --message
+	co = checkout
+	cob = checkout -b
+	d = diff
+	ds = diff --staged
+	f = fetch --all
+	l = pull
+	la = pull --all
+	ls = ls-files
+	m = merge
+	p = push
+	pa = push --all
+	r = reset --mixed
+	rb = rebase
+	rs = reset --soft
+	s = status --short
+	sh = show
+	st = stash
+	stp = stash pop
+	stsh = stash show --unified
+	update = commit --all --mesage update
+	wip = commit --all --message wip
