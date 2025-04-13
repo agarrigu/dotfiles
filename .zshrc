@@ -35,9 +35,11 @@ localstuff="$HOME/.localstuff"
 [[ -f $fzfkb ]] && source $fzfkb
 [[ -f $fzfcmp ]] && source $fzfcmp
 [[ -f $localstuff ]] && source $localstuff
-[[ -f $zshsh ]] && source $zshsh \
-	|| [[ -f $brew_zshsh ]] && source $brew_zshsh
 [[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
+
+if [[ -f $zshsh ]]; then source $zshsh
+elif [[ -f $brew_zshsh ]]; then;source $brew_zshsh
+fi
 
 # do the cool directory thing
 alias ds='dirs -v'
