@@ -1,10 +1,6 @@
 # Keep prompt at bottom, mostly.
 print ${(pl:$LINES::\n:):-}
 
-# usr path vars
-ALIASESFILE="$HOME/.aliases"
-PROMTFILE="$HOME/.zsh_prompt"
-HOMEBREWDIR="$HOME/linbrew"
 # TODO: do something with this [[ -v HOMEBREW_PREFIX ]]
 
 # zsh vars
@@ -22,10 +18,22 @@ setopt PUSHD_SILENT
 bindkey -v
 export KEYTIMEOUT=1
 
+# usr path vars
+aliases="$HOME/.aliases"
+promt="$HOME/.zsh_prompt"
+hbdir="$HOME/linbrew"
+fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
+fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
+
 # sources and evals
-ls $ALIASESFILE &>/dev/null && source $ALIASESFILE
-ls $PROMTFILE &>/dev/null && source $PROMTFILE
-ls $HOMEBREWDIR &>/dev/null && eval "$($HOMEBREWDIR/bin/brew shellenv)"
+[[ -f $aliases ]]        && source $aliases
+[[ -f $promt ]]          && source $promt
+[[ -f $fzfkb ]]          && source $fzfkb
+[[ -f $fzfcmp ]]         && source $fzfcmp
+[[ -f $hbdir/bin/brew ]] && eval "$($homewbredir/bin/brew shellenv)"
+
+# plugis
+plugins=(zsh-syntax-hightlighting zsh-autosuggestions)
 
 # do the cool directory thing
 alias ds='dirs -v'
@@ -38,7 +46,3 @@ md() { pandoc "$1" | lynx -stdin; }
 # alt check: `type figlet cowsay lolcat >/dev/null 2>&1'
 hash figlet cowsay lolcat 2>/dev/null && figlet oh hi | cowsay -n | lolcat
 
-autoload -U compinit; compinit
-if [ -d "/usr/share/zsh-syntax-highlighting" ] ; then
-	source "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
