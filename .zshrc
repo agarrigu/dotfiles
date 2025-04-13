@@ -1,8 +1,3 @@
-# Keep prompt at bottom, mostly.
-print ${(pl:$LINES::\n:):-}
-
-# TODO: do something with this [[ -v HOMEBREW_PREFIX ]]
-
 # zsh vars
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -18,6 +13,10 @@ setopt PUSHD_SILENT
 bindkey -v
 export KEYTIMEOUT=1
 autoload -U compinit; compinit
+
+___prompt_to_bottom() {
+	tput cup $LINES
+}
 
 # usr path vars
 aliaseses="$HOME/.aliases"
@@ -37,8 +36,10 @@ localstuff="$HOME/.localstuff"
 [[ -f $localstuff ]] && source $localstuff
 [[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
 
-if [[ -f $zshsh ]]; then source $zshsh
-elif [[ -f $brew_zshsh ]]; then;source $brew_zshsh
+if [[ -f $zshsh ]]; then
+	source $zshsh
+elif [[ -f $brew_zshsh ]]; then
+	source $brew_zshsh
 fi
 
 # do the cool directory thing
@@ -49,6 +50,8 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias tree="tree -C"
+alias clear="clear && ___prompt_to_bottom"
+___prompt_to_bottom
 
 # Read mds
 md() { pandoc "$1" | lynx -stdin; }
