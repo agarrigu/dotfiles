@@ -36,14 +36,6 @@ nmap('<leader>rl', ':set relativenumber!<cr>') -- Toggle relative number
 nmap('<leader>w', '<cmd>wa<cr>') -- Quick Save All
 nmap('<leader>q', '<cmd>q<cr>') -- Quick quit
 
--- Split screen -- I really hate ctrl key
-nmap('<leader>ss', '<C-w>s')
-nmap('<leader>sv', '<C-w>v')
-nmap('<leader>sh', '<C-w><c-h>')
-nmap('<leader>sj', '<C-w><c-j>')
-nmap('<leader>sk', '<C-w><c-k>')
-nmap('<leader>sl', '<C-w><c-l>')
-
 -- more natural movement with wrap on
 nmap('j', 'gj')
 nmap('k', 'gk')
@@ -68,35 +60,10 @@ nmap("ZZ", "<nop>")
 -- Easy Align
 nymap('ga', '<Plug>(EasyAlign)');
 
--- Undotree
-nmap("<leader>u", ":UndotreeShow<cr>" )
-
 -- Telescope
 local telescope = require'telescope.builtin'
 nmap("<leader>ff", telescope.find_files)
 nmap("<leader>fs", telescope.live_grep)
 nmap("<leader>fb", telescope.buffers)
 nmap("<leader>fh", telescope.help_tags)
-nmap("<leader>fr", telescope.lsp_references)
-nmap("<leader>fd", telescope.diagnostics)
 nmap("<leader>fp", telescope.planets)
-nmap("<leader>fi", telescope.lsp_implementations)
-nmap("<leader>ft", telescope.lsp_type_definitions)
-nmap("<leader>fe", telescope.lsp_definitions)
-
--- LSP buf
-local buff = vim.lsp.buf
-nmap('K', buff.hover)
-imap('<c-k>', buff.signature_help)
-nmap('gD', buff.declaration)
-nmap('gd', buff.definition)
-nmap('<leader>rn', buff.rename)
-nmap('<leader>D', buff.type_definition)
-nmap('<leader>fo', buff.format)
-nmap('<leader>ca', buff.code_action)
-
--- LSP diag
-local diag = vim.diagnostic
-nmap('[d', diag.goto_prev)
-nmap(']d', diag.goto_next)
-nmap('<leader>df', diag.open_float)

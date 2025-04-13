@@ -30,12 +30,9 @@ return {
 	"tpope/vim-commentary",
 	"tpope/vim-repeat",
 	"junegunn/vim-easy-align",
-	"justinmk/vim-sneak",
 	"vim-scripts/ReplaceWithRegister",
-	"42Paris/42header",
 
 	-- Navigation stuff
-	"mbbill/undotree",
 	"sharkdp/fd",
 	"BurntSushi/ripgrep",
 	{
