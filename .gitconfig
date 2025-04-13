@@ -15,6 +15,7 @@
 [alias]
 	a = add
 	adog = log --all --decorate --oneline --graph
+	ap = add --patch
 	au = add --update
 	b = branch
 	c = commit
@@ -29,8 +30,8 @@
 	f = fetch --all
 	l = pull
 	la = pull --all
-	ls = ls-files
 	lr = pull --rebase
+	ls = ls-files
 	m = merge
 	p = push
 	pa = push --all
