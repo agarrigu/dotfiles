@@ -85,12 +85,17 @@ nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+nnoremap <c-w><c-h> <leader>sh
+nnoremap <c-w><c-h> <leader>sh
+nnoremap <c-w><c-h> <leader>sh
+nnoremap <c-w><c-h> <leader>sh
+
 map q: <nop>
 nnoremap Q <nop>
 nnoremap ZZ <nop>
 
 " Create tags file
-command! maketags !ctags -R .
+command! Maketags !ctags -R .
 
 " PLUGINS!
 
