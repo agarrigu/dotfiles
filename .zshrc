@@ -25,15 +25,17 @@ promt="$HOME/.zsh_prompt"
 hbdir="$HOME/linbrew"
 fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
 fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
-zshsh="source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+brew_zshsh="$hbdir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # sources and evals
 [[ -f $aliaseses ]] && source $aliaseses
 [[ -f $promt ]] && source $promt
 [[ -f $fzfkb ]] && source $fzfkb
 [[ -f $fzfcmp ]] && source $fzfcmp
-[[ -f $zshsh ]] && source $zshsh
-[[ -f $hbdir/bin/brew ]] && eval "$($homewbredir/bin/brew shellenv)"
+[[ -f $zshsh ]] && source $zshsh \
+	|| [[ -f $brew_zshsh ]] && source $brew_zshsh
+[[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
 
 # do the cool directory thing
 alias ds='dirs -v'
