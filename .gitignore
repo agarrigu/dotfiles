@@ -5,6 +5,6 @@
 .vim/autoload/
 .vim/plugged/
 .vim/skeletons/42*
-nvim/lazy-lock.json
-nvim/plugin/packer_compiled.lua
-nvim/spell/
+lazy-lock.json
+packer_compiled.lua
+.config/nvim/spell/
