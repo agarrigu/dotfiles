@@ -45,5 +45,5 @@
 	st = stash
 	stp = stash pop
 	sts = stash show --unified
-	update = commit --all --mesage update
+	update = commit --all --message update
 	wip = commit --all --message wip
