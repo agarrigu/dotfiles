@@ -1,44 +1,41 @@
 # Aesthetic aliases
 alias asciiquarium="perl /usr/local/bin/asciiquarium"
 
-# Nvim config aliases
-alias ftplugin="$HOME/.conifg/nvim/ftplugin"
-alias nvimlua="$HOME/.config/nvim/lua"
-
-# Navigation aliases
-alias pud="pushd"
-alias pod="popd"
-
 # Clipboard aliases
 alias copy="xsel -ib"
 alias paste="xsel -ob"
 
+# Tmux stuff
+alias tas="tmux attach-session"
+alias tast="tmux attach-session -t"
+alias tkst="tmux kill-session -t"
+alias tls="tmux list-sessions"
+
 # Git stuff
-alias wip="git commit -am \"wip\""
 alias adog="git log --all --decorate --oneline --graph"
 alias gadd="git add"
 alias gau="git add -u"
-alias gll="git pull"
-alias glla="git pull --all"
-alias gfa="git fetch --all"
-alias gpsh="git push"
-alias gpa="git push --all"
-alias gcm="git commit -m"
-alias gcam="git commit -am"
+alias gbr="git branch"
 alias gca="git commit -a"
-alias gcom="git commit"
+alias gcam="git commit -am"
+alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
-alias gmrg="git merge"
-alias gst="git status"
-alias glf="git ls-files"
-alias gshow="git show"
+alias gcom="git commit"
 alias gdf="git diff"
-alias gb="git branch"
-alias grhh="git reset HEAD --hard"
-alias gstsh="git stash"
-alias gsp="git stash pop"
-alias gmxt="git merge -X theirs"
+alias gfa="git fetch --all"
+alias glf="git ls-files"
+alias gll="git pull"
+alias glla="git pull --all"
+alias gmrg="git merge"
 alias gmxo="git merge -X ours"
-alias grs="git reset --soft" #Must point to the last commit you DONT want to squash
-alias gpfo="git push --force origin" #then take <branch>
+alias gmxt="git merge -X theirs"
+alias gpa="git push --all"
+alias gpsh="git push"
+alias grhh="git reset HEAD --hard"
+alias grs="git reset --soft"
+alias gshow="git show"
+alias gsp="git stash pop"
+alias gst="git status"
+alias gstsh="git stash"
+alias wip="git commit -am \"wip\""
