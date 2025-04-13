@@ -1,0 +1,8 @@
+# Temp files
+*~
+*.swp
+*.swo
+.vim/autoload/
+.vim/plugged/
+.vim/.netrwhist
+nvim/plugin/packer_compiled.lua

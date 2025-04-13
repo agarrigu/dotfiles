@@ -1,0 +1,39 @@
+# Aesthetic aliases
+alias asciiquarium="perl /usr/local/bin/asciiquarium"
+
+# Nvim config aliases
+alias ftplugin="$HOME/.conifg/nvim/ftplugin"
+alias nvimlua="$HOME/.config/nvim/lua"
+
+# Navigation aliases
+alias pud="pushd"
+alias pod="popd"
+
+# Clipboard aliases
+alias copy="xsel -ib"
+alias paste="xsel -ob"
+
+# 42 Stuff
+alias norm="norminette -R CheckForbiddenSourceHeader"
+run() {
+	cc -Wall -Wextra -Werror "$1" && ./a.out
+	}
+
+# Git stuff
+alias gadd="git add"
+alias gau="git add -u"
+alias gll="git pull"
+alias gpsh="git push"
+alias gcm="git commit -m"
+alias gcam="git commit -am"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gmrg="git merge"
+alias gst="git status"
+alias glf="git ls-files"
+alias gsh="git show"
+alias gdf="git diff"
+alias adog="git log --all --decorate --oneline --graph"
+alias gb="git branch"
+alias grhh="git reset HEAD --hard"
+alias gstsh="git stash"

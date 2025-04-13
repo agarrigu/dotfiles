@@ -1,0 +1,37 @@
+ _______  _______  _______  _______
+|_     _||   _   ||  _    ||   _   |
+  |   |  |  | |  || | |   ||  | |  |
+  |   |  |  |_|  || |_|   ||  |_|  |
+  |   |  |       ||       ||       |
+  |___|  |_______||______| |_______|
+
+######################
+# THINGS TO AUTOMATE #
+######################
+
+## INSTALLATION SCRIPT ##
+
+
+
+Rethink
+auto-install tmux and nvim plugins (vim working fine) -- wip
+    still a bit janky
+don't let installation errors bring you down, gotta catch 'em all.
+
+####################################
+# THINGS TO UNDERSTAND AND INSTALL #
+####################################
+
+-- you know all the things you knew you didn't know
+
+########################
+# CONFIGURATION TO ADD #
+########################
+
+Treesitter indent when stable
+
+######################
+# THINGS TO WAIT FOR #
+######################
+
+jai

@@ -1,0 +1,5 @@
+neovim
+fd-find
+ripgrep
+python3-pynvim
+lua5.4

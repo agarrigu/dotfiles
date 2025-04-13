@@ -1,0 +1,15 @@
+cmake
+curl
+fzf
+g++
+gcc
+git
+lldb
+tmux
+vim
+wget
+xclip
+xsel
+zsh
+zsh-autosugestions
+zsh-syntax-highlighting

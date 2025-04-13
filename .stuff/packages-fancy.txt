@@ -1,0 +1,6 @@
+lolcat
+figlet
+cowsay
+sl
+bat
+btop

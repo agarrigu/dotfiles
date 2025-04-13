@@ -1,0 +1,14 @@
+# Formatting options for Norminette
+---
+Language: Cpp
+DisableFormat:   false
+AlignConsecutiveDeclarations: Consecutive
+BitFieldColonSpacing: Both
+BreakBeforeBraces:  Allman
+ColumnLimit:     80
+IndentWidth:     4
+MaxEmptyLinesToKeep:  1
+PointerAlignment:  Right
+TabWidth: 4
+UseTab: Always
+---
