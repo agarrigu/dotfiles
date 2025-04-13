@@ -11,8 +11,6 @@
 
 ## INSTALLATION SCRIPT ##
 
-
-
 Rethink
 auto-install tmux and nvim plugins (vim working fine) -- wip
     still a bit janky

@@ -1,14 +1,11 @@
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
 [core]
-    excludefile = ~/.gitignore
     editor = vim
-[pull]
-    rebase = false
 [init]
     defaultBranch = main
 [merge]
-    tool = nvimdiff
+    tool = vimdiff
     conflictstyle = diff3
 [mergetool]
     prompt = false

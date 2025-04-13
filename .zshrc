@@ -1,29 +1,34 @@
-# Keep prompt at bottom
+# Keep prompt at bottom, mostly.
 print ${(pl:$LINES::\n:):-}
 
+# usr path vars
+ALIASESFILE="$HOME/.aliases"
+PROMTFILE="$HOME/.zsh_prompt"
+HOMEBREWDIR="$HOME/linbrew"
+
+# zsh vars
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
+
+# opts
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt PUSHD_SILENT
-
-alias ds='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index
-
 bindkey -v
 export KEYTIMEOUT=1
 
-# edit commands in the best text-editor
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
+# sources and evals
+ls $ALIASESFILE &>/dev/null && source $ALIASESFILE
+ls $PROMTFILE &>/dev/null && source $PROMTFILE
+ls $HOMEBREWDIR &>/dev/null && eval "$($HOMEBREWDIR/bin/brew shellenv)"
 
-source "$HOME/.aliases"
-source "$HOME/.zsh_prompt"
+# do the cool directory thing
+alias ds='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Read mds
 md() { pandoc "$1" | lynx -stdin; }
