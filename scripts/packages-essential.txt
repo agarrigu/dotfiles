@@ -1,6 +1,5 @@
-make
-cmake
 clang
+cmake
 curl
 dwarves
 fzf
@@ -10,6 +9,8 @@ gdb
 git
 lldb
 llvm
+make
+nasm
 tmux
 vim
 wget
