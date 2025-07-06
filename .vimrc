@@ -89,6 +89,11 @@ nnoremap <localleader>dl diffget LOCAL
 nnoremap <localleader>dr diffget REMOTE
 nnoremap <localleader>db diffget BASE
 
+map [[ :silent! eval search('{', 'b')<cr>w99[{
+map ][ :silent! eval search('{')<cr>b99]}
+map ]] j0[[%:silent! eval search('{')<cr>
+map [] k$][%:silent! eval search('}', '')<cr>
+
 " Create tags file
 command! Maketags !ctags -R .
 
