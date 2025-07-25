@@ -30,8 +30,10 @@ set showcmd
 set showmatch
 set signcolumn=no
 set wildmenu
+set spell
+set spelllang=en_gb
 
-" Navigation and editig
+" Navigation and editing
 set backspace=indent,eol,start
 set foldmethod=syntax
 set foldlevel=99
