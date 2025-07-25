@@ -12,5 +12,5 @@ done
 export EDITOR="vi"
 export VISUAL="vi"
 
-# Workaround for nvim crashing the shell  when trying to suspend with <c-z>
+# Workaround for nvim crashing the shell when trying to suspend with <c-z>
 export UV_USE_IO_URING=0
