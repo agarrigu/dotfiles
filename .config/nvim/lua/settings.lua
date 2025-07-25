@@ -21,19 +21,16 @@ set.listchars = 'tab:  ,trail:·'
 set.showmatch = true
 set.wrap = false
 
--- Navigation and editig
+-- Spell checking
+set.spell = true
+set.spelllang = 'en_gb'
+
+-- Navigation and editing
 set.backspace = 'indent,eol,start'
 setw.foldmethod = 'expr' -- Not sure y this needs to be vim.wo but there u go
 setw.foldexpr = 'nvim_treesitter#foldexpr()' -- See comment above
 set.foldlevel = 99
 set.scrolloff = 8
-vim.api.nvim_create_autocmd(
-	"BufRead",
-	{
-		pattern = {"*.c", "*.h"},
-		command = "1;/^{",
-	}
-);
 
 -- Indentation
 set.autoindent = true
