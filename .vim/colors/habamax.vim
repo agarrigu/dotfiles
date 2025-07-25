@@ -99,7 +99,7 @@ hi MoreMsg guifg=#87af87 guibg=NONE gui=NONE cterm=NONE
 hi Question guifg=#afaf87 guibg=NONE gui=NONE cterm=NONE
 hi WarningMsg guifg=#d7875f guibg=NONE gui=NONE cterm=NONE
 hi Todo guifg=#d7d787 guibg=#1c1c1c gui=reverse cterm=reverse
-hi MatchParen guifg=#5f8787 guibg=#1c1c1c gui=reverse cterm=reverse
+hi MatchParen guifg=#1c1c1c guibg=#5f8787 gui=reverse cterm=reverse
 hi Search guifg=#1c1c1c guibg=#87af87 gui=NONE cterm=NONE
 hi IncSearch guifg=#1c1c1c guibg=#ffaf5f gui=NONE cterm=NONE
 hi CurSearch guifg=#1c1c1c guibg=#afaf87 gui=NONE cterm=NONE
@@ -222,7 +222,7 @@ if s:t_Co >= 256
   hi Question ctermfg=144 ctermbg=NONE cterm=NONE
   hi WarningMsg ctermfg=173 ctermbg=NONE cterm=NONE
   hi Todo ctermfg=186 ctermbg=234 cterm=reverse
-  hi MatchParen ctermfg=66 ctermbg=234 cterm=reverse
+  hi MatchParen ctermfg=234 ctermbg=66 cterm=reverse
   hi Search ctermfg=234 ctermbg=108 cterm=NONE
   hi IncSearch ctermfg=234 ctermbg=215 cterm=NONE
   hi CurSearch ctermfg=234 ctermbg=144 cterm=NONE
@@ -305,7 +305,7 @@ if s:t_Co >= 16
   hi Question ctermfg=darkyellow ctermbg=NONE cterm=NONE
   hi WarningMsg ctermfg=red ctermbg=NONE cterm=NONE
   hi Todo ctermfg=yellow ctermbg=black cterm=reverse
-  hi MatchParen ctermfg=darkcyan ctermbg=black cterm=reverse
+  hi MatchParen ctermfg=black ctermbg=darkcyan cterm=reverse
   hi Search ctermfg=black ctermbg=darkgreen cterm=NONE
   hi IncSearch ctermfg=black ctermbg=red cterm=NONE
   hi CurSearch ctermfg=black ctermbg=darkyellow cterm=NONE
@@ -379,7 +379,7 @@ if s:t_Co >= 8
   hi Question ctermfg=darkyellow ctermbg=NONE cterm=NONE
   hi WarningMsg ctermfg=darkred ctermbg=NONE cterm=NONE
   hi Todo ctermfg=darkyellow ctermbg=black cterm=reverse
-  hi MatchParen ctermfg=darkcyan ctermbg=black cterm=reverse
+  hi MatchParen ctermfg=black ctermbg=darkcyan cterm=reverse
   hi Search ctermfg=black ctermbg=darkgreen cterm=NONE
   hi IncSearch ctermfg=black ctermbg=darkyellow cterm=NONE
   hi CurSearch ctermfg=black ctermbg=darkyellow cterm=NONE
