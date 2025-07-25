@@ -4,6 +4,7 @@
 .vim/.netrwhist
 .vim/autoload/
 .vim/plugged/
+.vim/spell/
 .vim/skeletons/42*
 lazy-lock.json
 packer_compiled.lua
