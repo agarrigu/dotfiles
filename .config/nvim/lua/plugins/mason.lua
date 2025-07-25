@@ -5,7 +5,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function ()
-		local lspconf      = require("lspconfig")
+		local lspconf = require("lspconfig")
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
@@ -13,15 +13,10 @@ return {
 				'marksman',
 				'lua_ls',
 			},
-			handlers = {
-				function(server)
-					lspconf[server].setup {}
-				end,
-				['lua_ls'] = function ()
-					lspconf.lua_ls.setup {
-						settings = { Lua = { diagnostics = { globals = { 'vim' }}}}}
-				end,
-			},
+			automatic_enable = true,
+		})
+		vim.lsp.config('lua_ls', {
+			settings = { Lua = { diagnostics = { globals = { 'vim', }, }, }, },
 		})
 	end
 }
