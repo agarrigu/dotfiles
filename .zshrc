@@ -69,7 +69,9 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # make stuff more colorfull
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
+alias less="less -R"
 alias tree="tree -C"
+
 alias clear="clear && ___prompt_to_bottom"
 
 # init stuff
