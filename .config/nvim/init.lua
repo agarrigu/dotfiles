@@ -1,3 +1,11 @@
+--   _       _ _     _               --
+--  (_)_ __ (_) |_  | |_   _  __ _   --
+--  | | '_ \| | __| | | | | |/ _` |  --
+--  | | | | | | |_ _| | |_| | (_| |  --
+--  |_|_| |_|_|\__(_)_|\__,_|\__,_|  --
+
+-- SETTINGS --
+
 -- Big stuff
 vim.o.encoding = 'utf-8'
 vim.o.mouse = 'a' -- enabled in all modes
@@ -20,7 +28,7 @@ vim.o.spelllang = 'en_gb'
 -- Navigation and editing
 vim.o.backspace = 'indent,eol,start'
 vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo.foldexpr = 'lua vim.treesitter.foldexpr()'
 vim.o.foldlevel = 99
 vim.o.scrolloff = 8
 
@@ -77,8 +85,9 @@ vim.pack.add({
 	{ src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim', },
 	{ src = 'https://github.com/jbyuki/venn.nvim', },
 	{ src = 'https://github.com/nguyenvukhang/nvim-toggler', },
+	{ src = 'https://github.com/echasnovski/mini.pick', },
 
-	-- For fuzzy stuff
+	-- Picker stuff
 	{ src = 'https://github.com/sharkdp/fd', },
 	{ src = 'https://github.com/BurntSushi/ripgrep', },
 
@@ -106,7 +115,8 @@ vim.pack.add({
 -- PLUGIN CONFIG --
 
 require('nvim-toggler').setup()
-	local bool = false
+
+require('mini.pick').setup()
 
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
@@ -136,9 +146,6 @@ require'nvim-treesitter.configs'.setup {
 
 local NORQ = { noremap = true, silent = true}
 
--- exit insert/visual
--- vim.keymap.set({'v', 'x', 'i'}, 'kj', '<esc>', NORQ)
-
 -- Remove {} from jump list
 vim.keymap.set('n', '{', ':<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>', NORQ)
 vim.keymap.set('n', '}', ':<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>', NORQ)
@@ -153,44 +160,35 @@ vim.keymap.set('n', 'Q', '<nop>', NORQ)
 vim.keymap.set('n', 'ZZ', '<nop>', NORQ)
 
 -- Easy Align
-vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', { noremap = true });
+vim.keymap.set({ 'n', 'x' }, '<leader>ga', '<Plug>(EasyAlign)', { noremap = true });
 
-local function nmap (shortcut, command)
-	vim.keymap.set('n', shortcut, command, NORQ)	
-end
+-- LSP buffer
+local buf = vim.lsp.buf
+vim.keymap.set('n', 'K', buf.hover, NORQ)
+vim.keymap.set('n', '<leader>K', buf.signature_help, NORQ)
+vim.keymap.set('n', 'gD', buf.declaration, NORQ)
+vim.keymap.set('n', 'gd', buf.definition, NORQ)
+vim.keymap.set('n', '<leader>gi', buf.implementation, NORQ)
+vim.keymap.set('n', '<leader>rn', buf.rename, NORQ)
+vim.keymap.set('n', '=', buf.format, NORQ)
+vim.keymap.set({ 'n', 'x', }, '<leader>ca', buf.code_action, NORQ)
 
--- Telescope
--- local telescope = require'telescope.builtin'
--- nmap("<leader>ff", telescope.find_files)
--- nmap("<leader>fs", telescope.live_grep)
--- nmap("<leader>fb", telescope.buffers)
--- nmap("<leader>fh", telescope.help_tags)
--- nmap("<leader>fr", telescope.lsp_references)
--- nmap("<leader>fd", telescope.diagnostics)
--- nmap("<leader>fp", telescope.planets)
--- nmap("<leader>fi", telescope.lsp_implementations)
--- nmap("<leader>ftd", telescope.lsp_type_definitions)
--- nmap("<leader>fgd", telescope.lsp_definitions)
--- nmap("<leader>fgb", telescope.git_bcommits)
--- nmap("<leader>f*", telescope.grep_string)
--- nmap("<leader>f]", telescope.tags)
--- 
--- -- LSP buf
--- local buff = vim.lsp.buf
--- nmap('<leader>kk', buff.hover)
--- nmap('<leader>sh', buff.signature_help)
--- nmap('<leader>gD', buff.declaration)
--- nmap('<leader>rn', buff.rename)
--- nmap('<leader>fo', buff.format)
--- nmap('<leader>ca', buff.code_action)
--- 
--- -- LSP diag
--- local diag = vim.diagnostic
--- nmap('<leader>dp', diag.goto_prev)
--- nmap('<leader>dn', diag.goto_next)
--- nmap('<leader>df', diag.open_float)
+-- LSP diag
+local diag = vim.diagnostic
+vim.keymap.set('n', '<leader>dp', diag.goto_prev, NORQ)
+vim.keymap.set('n', '<leader>dn', diag.goto_next, NORQ)
+vim.keymap.set('n', '<leader>df', diag.open_float, NORQ)
 
--- Colours
+-- MiniPick
+local pick = require('mini.pick').builtin
+vim.keymap.set('n', '<leader>ff', pick.files, NORQ)
+vim.keymap.set('n', '<leader>gl', pick.grep_live, NORQ)
+vim.keymap.set('n', '<leader>fs', pick.grep, NORQ)
+vim.keymap.set('n', '<leader>fb', pick.buffers, NORQ)
+vim.keymap.set('n', '<leader>fh', pick.help, NORQ)
+
+-- COLOURS --
+
 vim.opt.background = 'dark'
 vim.cmd.colorscheme('habamax')
 vim.api.nvim_set_hl(0, 'Normal', {ctermbg = 'none'})
