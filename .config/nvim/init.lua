@@ -103,7 +103,7 @@ vim.pack.add({
 -- LSP CONFIG --
 
 vim.diagnostic.config({ virtual_text = false, underline = false, })
-vim.lsp.enable({ 'lua_ls', 'marksman', 'clangd' })
+vim.lsp.enable({ 'lua_ls', 'clangd' })
 vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
 
 vim.api.nvim_create_autocmd('LspAttach', {
