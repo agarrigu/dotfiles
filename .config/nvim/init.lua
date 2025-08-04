@@ -63,21 +63,6 @@ vim.o.tabstop = 4
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- LSP stuff
-vim.diagnostic.config({ virtual_text = false, underline = false, })
-vim.lsp.enable({ 'lua_ls', 'marksman', 'clangd' })
-vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
-
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(ev)
-		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		if client:supports_method('textDocument/completion') then
-			vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
-		end
-	end
-})
-vim.cmd('set completeopt+=noselect')
-
 -- PLUGINS --
 
 vim.pack.add({
@@ -86,6 +71,9 @@ vim.pack.add({
 	{ src = 'https://github.com/jbyuki/venn.nvim', },
 	{ src = 'https://github.com/nguyenvukhang/nvim-toggler', },
 	{ src = 'https://github.com/echasnovski/mini.pick', },
+
+	-- LSP stuff
+	{ src = 'https://github.com/neovim/nvim-lspconfig', },
 
 	-- Picker stuff
 	{ src = 'https://github.com/sharkdp/fd', },
@@ -111,6 +99,22 @@ vim.pack.add({
 	{ src = 'https://github.com/Julian/vim-textobj-variable-segment', },
 	{ src = 'https://github.com/vim-scripts/argtextobj.vim', },
 })
+
+-- LSP CONFIG --
+
+vim.diagnostic.config({ virtual_text = false, underline = false, })
+vim.lsp.enable({ 'lua_ls', 'marksman', 'clangd' })
+vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(ev)
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+		if client:supports_method('textDocument/completion') then
+			vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
+		end
+	end
+})
+vim.cmd('set completeopt+=noselect')
 
 -- PLUGIN CONFIG --
 
@@ -164,28 +168,23 @@ vim.keymap.set({ 'n', 'x' }, '<leader>ga', '<Plug>(EasyAlign)', { noremap = true
 
 -- LSP buffer
 local buf = vim.lsp.buf
-vim.keymap.set('n', 'K', buf.hover, NORQ)
-vim.keymap.set('n', '<leader>K', buf.signature_help, NORQ)
-vim.keymap.set('n', 'gD', buf.declaration, NORQ)
-vim.keymap.set('n', 'gd', buf.definition, NORQ)
-vim.keymap.set('n', '<leader>gi', buf.implementation, NORQ)
-vim.keymap.set('n', '<leader>rn', buf.rename, NORQ)
-vim.keymap.set('n', '=', buf.format, NORQ)
-vim.keymap.set({ 'n', 'x', }, '<leader>ca', buf.code_action, NORQ)
+vim.keymap.set('n', 'grD', buf.declaration, NORQ)
+vim.keymap.set('n', 'grd', buf.definition, NORQ)
+vim.keymap.set('n', 'gr=', buf.format, NORQ)
 
 -- LSP diag
 local diag = vim.diagnostic
-vim.keymap.set('n', '<leader>dp', diag.goto_prev, NORQ)
-vim.keymap.set('n', '<leader>dn', diag.goto_next, NORQ)
-vim.keymap.set('n', '<leader>df', diag.open_float, NORQ)
+vim.keymap.set('n', 'sd[', diag.goto_prev, NORQ)
+vim.keymap.set('n', 'sd]', diag.goto_next, NORQ)
+vim.keymap.set('n', 'sdf', diag.open_float, NORQ)
 
 -- MiniPick
 local pick = require('mini.pick').builtin
-vim.keymap.set('n', '<leader>ff', pick.files, NORQ)
-vim.keymap.set('n', '<leader>gl', pick.grep_live, NORQ)
-vim.keymap.set('n', '<leader>fs', pick.grep, NORQ)
-vim.keymap.set('n', '<leader>fb', pick.buffers, NORQ)
-vim.keymap.set('n', '<leader>fh', pick.help, NORQ)
+vim.keymap.set('n', 'sf', pick.files, NORQ)
+vim.keymap.set('n', 'sl', pick.grep_live, NORQ)
+vim.keymap.set('n', 'ss', pick.grep, NORQ)
+vim.keymap.set('n', 'sb', pick.buffers, NORQ)
+vim.keymap.set('n', 'sh', pick.help, NORQ)
 
 -- COLOURS --
 
