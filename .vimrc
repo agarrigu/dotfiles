@@ -6,14 +6,22 @@
 
 " Big stuff
 filetype plugin indent on
+set autoread
+set noautowrite
 set hidden
 set nocompatible
 set mouse=a
 set nobackup
 set noswapfile
 set nowritebackup
-set updatetime=42
+set timeoutlen=640
 set encoding=utf-8
+set undofile
+if !has('nvim')
+	set undodir=~/.vim/undodir
+elseif has('nvim')
+	set undodir=~/.config/nvim/undodir
+endif
 
 " Display and metadata
 syntax on
@@ -32,9 +40,10 @@ set ruler
 set scrolloff=8
 set showcmd
 set showmatch
-set wildmenu
 set spell
 set spelllang=en_gb
+set synmaxcol=300
+set wildmenu
 
 " Navigation and editing
 set backspace=indent,eol,start
@@ -85,6 +94,8 @@ nnoremap } :<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>
 nnoremap J mzJ`z
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
 
 map q: <nop>
 nnoremap Q <nop>
@@ -94,8 +105,12 @@ nnoremap <localleader>dl diffget LOCAL
 nnoremap <localleader>dr diffget REMOTE
 nnoremap <localleader>db diffget BASE
 
+nnoremap <leader>ff :find<space>
+
 " Create tags file
 command! Maketags !ctags -R .
+
+autocmd BufReadPost * silent! normal! g`"zv
 
 " PLUGINS!
 
