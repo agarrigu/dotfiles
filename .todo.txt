@@ -7,9 +7,15 @@
 
 Install Scripts
 ---------------
-- install-script.sh should take as arguments regular files with 
-- tmux should autoinstall plugins
+- `install-script.sh` should accept as input a list of programs.
+- `tmux (1)` should autoinstall plugins.
 
-Zshrc & .localstuff
+.zshrc & .localstuff
 -------------------
-- Autoload .localstuff and search for absolute brew path
+- Autoload .localstuff and search for absolute brew path.
+
+Vim
+---
+- [C] Find a way to easily check the size in bytes of an array.
+- [spell] Fix 'et al. word' considering 'word' incorrect.
+- [redo] Find a way to do e.g. `i()<esc>iwords<esc>` a redoable action
