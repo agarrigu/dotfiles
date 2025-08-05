@@ -1,3 +1,9 @@
+""        _                     ""
+"" __   _(_)_ __ ___  _ __ ___  ""
+"" \ \ / / | '_ ` _ \| '__/ __| ""
+""  \ V /| | | | | | | | | (__  ""
+"" (_)_/ |_|_| |_| |_|_|  \___| ""
+
 " Big stuff
 filetype plugin indent on
 set hidden
@@ -12,9 +18,7 @@ set encoding=utf-8
 " Display and metadata
 syntax on
 set background=dark
-set cmdheight=1
 set colorcolumn=80
-set conceallevel=0
 set cursorline
 set laststatus=2
 set linebreak
@@ -28,7 +32,6 @@ set ruler
 set scrolloff=8
 set showcmd
 set showmatch
-set signcolumn=no
 set wildmenu
 set spell
 set spelllang=en_gb
@@ -41,35 +44,35 @@ set foldlevel=99
 " Auto Completion
 set omnifunc=syntaxcomplete#Complete
 
-" Indentation
-set autoindent
-set smartindent
-
-" Pretty
-colorscheme habamax
-hi Normal ctermbg=NONE
-
-" Searches
-set nohlsearch
-set incsearch
-set ignorecase
-set showmatch
-set smartcase
-set path+=**
-
 " Tabs and Spaces
 set shiftwidth=4
 set tabstop=4
 set noexpandtab
 
-" MY REMAPS
+" Indentation
+set autoindent
+set smartindent
+
+" Searches
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+set path+=**
+
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
+" Pretty
+colorscheme habamax
+hi Normal ctermbg=NONE
+
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 let maplocalleader=","
-nnoremap <leader>w :wall<CR>
-nnoremap <leader>q :q<CR>
+
+" MY REMAPS
 nnoremap <leader><leader> :let@/=""<CR>
-nnoremap <leader>rr :set relativenumber!<cr>
 
 inoremap kj <esc>
 vnoremap kj <esc>
@@ -91,57 +94,54 @@ nnoremap <localleader>dl diffget LOCAL
 nnoremap <localleader>dr diffget REMOTE
 nnoremap <localleader>db diffget BASE
 
-map [[ :silent! eval search('{', 'b')<cr>w99[{
-map ][ :silent! eval search('{')<cr>b99]}
-map ]] j0[[%:silent! eval search('{')<cr>
-map [] k$][%:silent! eval search('}', '')<cr>
-
 " Create tags file
 command! Maketags !ctags -R .
 
 " PLUGINS!
 
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let my_plugins = [
+	"\ Editing and navigation
+	\'https://github.com/christoomey/vim-tmux-navigator',
+	\'https://github.com/tpope/vim-repeat',
+	\'https://github.com/tpope/vim-surround',
+	"\ Text Objects
+	\'https://github.com/kana/vim-textobj-user',
+	\'https://github.com/kana/vim-textobj-entire',
+	\'https://github.com/kana/vim-textobj-indent',
+	\'https://github.com/kana/vim-textobj-function',
+	\'https://github.com/adolenc/vim-textobj-toplevel',
+	\'https://github.com/D4KU/vim-textobj-chainmember',
+	\'https://github.com/mattn/vim-textobj-url',
+	\'https://github.com/Julian/vim-textobj-variable-segment',
+	\'https://github.com/vim-scripts/argtextobj.vim',
+	\]
+
+if !has('nvim')
+
+	" Install vim-plug if not found
+	if empty(glob('~/.vim/autoload/plug.vim'))
+	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	endif
+
+	" Run PlugInstall if there are missing plugins
+	autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+	  \| PlugInstall --sync | source $MYVIMRC
+	\| endif
+
+	call plug#begin('~/.vim/plugged')
+	Plug 'junegunn/vim-plug'
+
+	for p in my_plugins
+		Plug p
+	endfor
+
+	Plug 'itchyny/lightline.vim'
+	Plug 'tpope/vim-commentary'
+
+	" Tidalcycles
+	Plug 'tidalcycles/vim-tidal'
+
+	call plug#end()
+
 endif
-
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-plug'
-
-" Aesthetics and metadata stuff
-Plug 'itchyny/lightline.vim'
-
-" Editing & Navigation stuff
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-sort-motion'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-scripts/ReplaceWithRegister'
-
-" Text Objects
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'             " e
-Plug 'kana/vim-textobj-function'           " f
-Plug 'kana/vim-textobj-indent'             " i
-Plug 'vim-scripts/argtextobj.vim'          " a
-Plug 'mattn/vim-textobj-url'               " u
-Plug 'Julian/vim-textobj-variable-segment' " v
-Plug 'adolenc/vim-textobj-toplevel'        " T
-Plug 'D4KU/vim-textobj-chainmember'        " m
-Plug 'D4KU/vim-textobj-headedblock'        " k
-Plug 'libclang-vim/vim-textobj-clang'      " ;
-
-" Tidalcycles
-Plug 'tidalcycles/vim-tidal'
-
-call plug#end()
-
-" PLUGIN CONFIGURATIONS

@@ -6,105 +6,19 @@
 
 -- SETTINGS --
 
--- Big stuff
-vim.o.encoding = 'utf-8'
-vim.o.mouse = 'a' -- enabled in all modes
-vim.o.backup = false
-vim.o.swapfile = false
+-- Import `.vimrc`
+vim.cmd('source ~/.vimrc')
 
--- Display and metadata
-vim.o.cc = '80'
-vim.o.cursorline = true
-vim.o.laststatus = 2 -- always
-vim.o.list = true
-vim.o.listchars = 'tab:  ,trail:·'
-vim.o.showmatch = true
-vim.o.wrap = false
-
--- Spell checking
-vim.o.spell = true
-vim.o.spelllang = 'en_gb'
-
--- Navigation and editing
-vim.o.backspace = 'indent,eol,start'
+vim.o.signcolumn='yes:1'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'lua vim.treesitter.foldexpr()'
-vim.o.foldlevel = 99
-vim.o.scrolloff = 8
-
--- Indentation
-vim.o.autoindent = true
-vim.o.smartindent = true
-
--- Searches
-vim.o.hlsearch = false
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Ruler
-vim.o.ruler = true
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.signcolumn = 'yes:1'
-vim.api.nvim_create_autocmd('InsertEnter', {
-	callback = function() vim.o.relativenumber = false end
-})
-vim.api.nvim_create_autocmd('InsertLeave', {
-	callback = function() vim.o.relativenumber = true end
-})
-
--- Tabs and Spaces
-vim.o.expandtab = false
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-
--- Leaders
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
-
--- PLUGINS --
-
-vim.pack.add({
-	-- Trying
-	{ src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim', },
-	{ src = 'https://github.com/jbyuki/venn.nvim', },
-	{ src = 'https://github.com/nguyenvukhang/nvim-toggler', },
-	{ src = 'https://github.com/echasnovski/mini.pick', },
-
-	-- LSP stuff
-	{ src = 'https://github.com/neovim/nvim-lspconfig', },
-
-	-- Picker stuff
-	{ src = 'https://github.com/sharkdp/fd', },
-	{ src = 'https://github.com/BurntSushi/ripgrep', },
-
-	-- Treesitter stuff
-	{ src = 'https://github.com/nvim-treesitter/nvim-treesitter', },
-
-	-- Display, editing, and navigation
-	{ src = 'https://github.com/christoomey/vim-tmux-navigator', },
-	{ src = 'https://github.com/lewis6991/gitsigns.nvim', config = true, },
-	{ src = 'https://github.com/tpope/vim-repeat', },
-	{ src = 'https://github.com/tpope/vim-surround', },
-
-	-- Text objects
-	{ src = 'https://github.com/kana/vim-textobj-user', },
-	{ src = 'https://github.com/kana/vim-textobj-entire', },
-	{ src = 'https://github.com/kana/vim-textobj-indent', },
-	{ src = 'https://github.com/kana/vim-textobj-function', },
-	{ src = 'https://github.com/adolenc/vim-textobj-toplevel', },
-	{ src = 'https://github.com/D4KU/vim-textobj-chainmember', },
-	{ src = 'https://github.com/mattn/vim-textobj-url', },
-	{ src = 'https://github.com/Julian/vim-textobj-variable-segment', },
-	{ src = 'https://github.com/vim-scripts/argtextobj.vim', },
-})
 
 -- LSP CONFIG --
 
 vim.diagnostic.config({ virtual_text = false, underline = false, })
 vim.lsp.enable({ 'lua_ls', 'clangd' })
-vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
+-- vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
+vim.lsp.config('lua_ls', { settings = { Lua = { workspace = { library = { vim.api.nvim_get_runtime_file("", true),}}}}})
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
@@ -115,6 +29,55 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end
 })
 vim.cmd('set completeopt+=noselect')
+
+-- MAPPINGS --
+
+local NORQ = { noremap = true, silent = true}
+
+-- LSP buffer
+local buf = vim.lsp.buf
+vim.keymap.set('n', 'grD', buf.declaration, NORQ)
+vim.keymap.set('n', 'grd', buf.definition, NORQ)
+vim.keymap.set('n', 'gr=', buf.format, NORQ)
+
+-- LSP diagnostics
+local diag = vim.diagnostic
+vim.keymap.set('n', 'sd[', diag.goto_prev, NORQ)
+vim.keymap.set('n', 'sd]', diag.goto_next, NORQ)
+vim.keymap.set('n', 'sdf', diag.open_float, NORQ)
+
+-- COLOURS --
+
+vim.opt.background = 'dark'
+vim.cmd.colorscheme('habamax')
+vim.api.nvim_set_hl(0, 'Normal', {ctermbg = 'none'})
+vim.api.nvim_set_hl(0, 'Whitespace', {ctermbg = 'none'})
+vim.api.nvim_set_hl(0, 'SignColumn', {ctermbg = 'none'})
+vim.hl.on_yank({higroup = 'Visual', timeout = 200})
+
+-- PLUGINS --
+
+-- TODO: Does this really need to be a for loop?
+for _, plug in pairs(vim.g.my_plugins) do
+	vim.pack.add({ plug })
+end
+
+vim.pack.add({
+	-- Trying
+	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+	'https://github.com/jbyuki/venn.nvim',
+	'https://github.com/nguyenvukhang/nvim-toggler',
+	'https://github.com/echasnovski/mini.pick',
+
+	-- Very important
+	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/sharkdp/fd',
+	'https://github.com/BurntSushi/ripgrep',
+	'https://github.com/nvim-treesitter/nvim-treesitter',
+
+	-- Nice to have
+	'https://github.com/lewis6991/gitsigns.nvim',
+})
 
 -- PLUGIN CONFIG --
 
@@ -146,37 +109,7 @@ require'nvim-treesitter.configs'.setup {
 	additional_vim_regex_highlighting = false,
 }
 
--- MAPPINGS --
-
-local NORQ = { noremap = true, silent = true}
-
--- Remove {} from jump list
-vim.keymap.set('n', '{', ':<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>', NORQ)
-vim.keymap.set('n', '}', ':<c-u>execute "keepjumps norm! " . v:count1 . "}"<cr>', NORQ)
-
--- Keep cursor in place
-vim.keymap.set('n', 'J', 'mzJ`z', NORQ)
-vim.keymap.set('n', 'n', 'nzzzv', NORQ)
-vim.keymap.set('n', 'N', 'Nzzzv', NORQ)
-
--- nops
-vim.keymap.set('n', 'Q', '<nop>', NORQ)
-vim.keymap.set('n', 'ZZ', '<nop>', NORQ)
-
--- Easy Align
-vim.keymap.set({ 'n', 'x' }, '<leader>ga', '<Plug>(EasyAlign)', { noremap = true });
-
--- LSP buffer
-local buf = vim.lsp.buf
-vim.keymap.set('n', 'grD', buf.declaration, NORQ)
-vim.keymap.set('n', 'grd', buf.definition, NORQ)
-vim.keymap.set('n', 'gr=', buf.format, NORQ)
-
--- LSP diag
-local diag = vim.diagnostic
-vim.keymap.set('n', 'sd[', diag.goto_prev, NORQ)
-vim.keymap.set('n', 'sd]', diag.goto_next, NORQ)
-vim.keymap.set('n', 'sdf', diag.open_float, NORQ)
+-- PLUGIN MAPPINGS --
 
 -- MiniPick
 local pick = require('mini.pick').builtin
@@ -185,12 +118,3 @@ vim.keymap.set('n', 'sl', pick.grep_live, NORQ)
 vim.keymap.set('n', 'ss', pick.grep, NORQ)
 vim.keymap.set('n', 'sb', pick.buffers, NORQ)
 vim.keymap.set('n', 'sh', pick.help, NORQ)
-
--- COLOURS --
-
-vim.opt.background = 'dark'
-vim.cmd.colorscheme('habamax')
-vim.api.nvim_set_hl(0, 'Normal', {ctermbg = 'none'})
-vim.api.nvim_set_hl(0, 'Whitespace', {ctermbg = 'none'})
-vim.api.nvim_set_hl(0, 'SignColumn', {ctermbg = 'none'})
-vim.hl.on_yank({higroup = 'Visual', timeout = 200})
