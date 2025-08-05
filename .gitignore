@@ -6,6 +6,8 @@
 .vim/plugged/
 .vim/spell/
 .vim/skeletons/42*
+.vim/undodir/
 lazy-lock.json
 packer_compiled.lua
 .config/nvim/spell/
+.config/nvim/undodir/
