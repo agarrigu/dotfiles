@@ -6,29 +6,12 @@
 
 -- SETTINGS --
 
--- Import `.vimrc`
 vim.cmd('source ~/.vimrc')
 
 vim.o.signcolumn='yes:1'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'lua vim.treesitter.foldexpr()'
-
--- LSP CONFIG --
-
-vim.diagnostic.config({ virtual_text = false, underline = false, })
-vim.lsp.enable({ 'lua_ls', 'clangd' })
-vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
-
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(ev)
-		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		if client:supports_method('textDocument/completion') then
-			vim.lsp.completion.enable(true, client.id, ev.buf)
-		end
-	end
-})
-vim.cmd('set completeopt+=noselect')
-vim.hl.priorities.semantic_tokens = 99
+vim.o.winborder='single'
 
 -- MAPPINGS --
 
@@ -72,6 +55,23 @@ vim.pack.add({
 	-- Nice to have
 	'https://github.com/echasnovski/mini.pick',
 	'https://github.com/lewis6991/gitsigns.nvim',
+})
+
+-- LSP CONFIG --
+
+vim.diagnostic.config({ virtual_text = false, underline = false, })
+vim.lsp.enable({ 'lua_ls', 'clangd' })
+vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
+vim.o.completeopt = 'fuzzy,menu,noselect,popup,preview'
+vim.hl.priorities.semantic_tokens = 99
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+		if client:supports_method('textDocument/completion') then
+			vim.lsp.completion.enable(true, client.id, args.buf)
+		end
+	end,
 })
 
 -- PLUGIN CONFIG --
