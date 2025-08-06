@@ -53,7 +53,6 @@ vim.cmd.colorscheme('habamax')
 vim.api.nvim_set_hl(0, 'Normal', {ctermbg = 'none'})
 vim.api.nvim_set_hl(0, 'Whitespace', {ctermbg = 'none'})
 vim.api.nvim_set_hl(0, 'SignColumn', {ctermbg = 'none'})
-vim.hl.on_yank({higroup = 'Visual', timeout = 200})
 
 -- PLUGINS --
 

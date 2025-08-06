@@ -110,7 +110,49 @@ nnoremap <leader>ff :find<space>
 " Create tags file
 command! Maketags !ctags -R .
 
-autocmd BufReadPost * silent! normal! g`"zv
+augroup remember_cursor_on_reopen
+	autocmd!
+	autocmd BufReadPost * silent! normal! g`"zv
+augroup end
+
+augroup yank_restore_cursor
+	autocmd!
+	autocmd VimEnter,CursorMoved *
+		\ let s:cursor = getpos('.')
+	autocmd TextYankPost *
+		\ if v:event.operator ==? 'y' |
+			\ call setpos('.', s:cursor) |
+		\ endif
+augroup end
+
+augroup highlight_yanked_text
+	autocmd!
+	autocmd TextYankPost * call FlashYankText()
+augroup end
+
+function! FlashYankText()
+	if (!exists('g:yank_text_matches'))
+		let g:yank_text_matches = []
+	endif
+
+	let match_id = matchadd('IncSearch', ".\\%>'\\[\\_.*\\%<']..")
+	let win_id = winnr()
+
+	call add(g:yank_text_matches, [win_id, match_id])
+	call timer_start(120, 'DeleteTempMatch')
+endfunction
+
+function! DeleteTempMatch(timer_id)
+	while !empty(g:yank_text_matches)
+		let match = remove(g:yank_text_matches, 0)
+		let win_id = match[0]
+		let match_id = match[1]
+
+		try
+			call matchdelete(match_id, win_id)
+		endtry
+	endwhile
+endfunction
 
 " PLUGINS!
 
