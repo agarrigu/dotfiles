@@ -173,6 +173,7 @@ let my_plugins = [
 	\'https://github.com/mattn/vim-textobj-url',
 	\'https://github.com/Julian/vim-textobj-variable-segment',
 	\'https://github.com/vim-scripts/argtextobj.vim',
+	\'https://github.com/itchyny/lightline.vim',
 	\]
 
 if !has('nvim')
@@ -195,7 +196,6 @@ if !has('nvim')
 		Plug p
 	endfor
 
-	Plug 'itchyny/lightline.vim'
 	Plug 'tpope/vim-commentary'
 
 	" Tidalcycles
