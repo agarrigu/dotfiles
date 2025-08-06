@@ -32,6 +32,6 @@ The second creates soft links in `$HOME` to the configuration files in `$HOME/do
 
 ### Notes
 
-The Telescope and Treesitter plugins tend to depend on very recent versions of Neovim.
-If Lazy package manager gives you any trouble when running Neovim for the frist time it's probably that.
+The Treesitter plugin tend to depend on very recent versions of Neovim.
+If the package manager gives you any trouble time it's probably that.
 Try manually installing the latest Neovim release from github.
