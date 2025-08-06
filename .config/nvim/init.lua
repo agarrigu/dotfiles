@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end
 })
 vim.cmd('set completeopt+=noselect')
+vim.hl.priorities.semantic_tokens = 99
 
 -- MAPPINGS --
 
