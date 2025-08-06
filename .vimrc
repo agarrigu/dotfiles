@@ -82,7 +82,7 @@ hi Normal ctermbg=NONE
 
 nnoremap <SPACE> <Nop>
 let mapleader=" "
-let maplocalleader=","
+let maplocalleader="\\"
 
 " MY REMAPS
 nnoremap <leader><leader> :let@/=""<CR>

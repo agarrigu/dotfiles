@@ -29,6 +29,7 @@ vim.keymap.set('n', 'sd[', diag.goto_prev, NORQ)
 vim.keymap.set('n', 'sd]', diag.goto_next, NORQ)
 vim.keymap.set('n', 'sdf', diag.open_float, NORQ)
 
+
 -- COLOURS --
 
 vim.opt.background = 'dark'
@@ -42,6 +43,7 @@ vim.api.nvim_set_hl(0, 'SignColumn', {ctermbg = 'none'})
 vim.pack.add(vim.g.my_plugins)
 
 vim.pack.add({
+
 	-- Trying
 	'https://github.com/jbyuki/venn.nvim',
 	'https://github.com/nguyenvukhang/nvim-toggler',
