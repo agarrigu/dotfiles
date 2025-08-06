@@ -69,8 +69,11 @@ set ignorecase
 set smartcase
 set path+=**
 
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+augroup toggle_relnum
+	autocmd!
+	autocmd InsertEnter * :set norelativenumber
+	autocmd InsertLeave * :set relativenumber
+augroup end
 
 " Pretty
 colorscheme habamax
