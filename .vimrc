@@ -47,11 +47,12 @@ set wildmenu
 
 " Navigation and editing
 set backspace=indent,eol,start
-set foldmethod=syntax
-set foldlevel=99
 
-" Auto Completion
-set omnifunc=syntaxcomplete#Complete
+if !has('nvim')
+	set foldmethod=syntax
+	set foldlevel=99
+	setlocal omnifunc=syntaxcomplete#Complete
+endif
 
 " Tabs and Spaces
 set shiftwidth=4
