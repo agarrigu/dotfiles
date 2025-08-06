@@ -57,7 +57,6 @@ vim.hl.on_yank({higroup = 'Visual', timeout = 200})
 
 -- PLUGINS --
 
--- TODO: Does this really need to be a for loop?
 vim.pack.add(vim.g.my_plugins)
 
 vim.pack.add({
