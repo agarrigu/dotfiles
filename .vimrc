@@ -47,10 +47,12 @@ set wildmenu
 
 " Navigation and editing
 set backspace=indent,eol,start
+set autoindent
+set smartindent
+set foldlevel=99
 
 if !has('nvim')
 	set foldmethod=syntax
-	set foldlevel=99
 	setlocal omnifunc=syntaxcomplete#Complete
 endif
 
@@ -58,10 +60,6 @@ endif
 set shiftwidth=4
 set tabstop=4
 set noexpandtab
-
-" Indentation
-set autoindent
-set smartindent
 
 " Searches
 set nohlsearch
