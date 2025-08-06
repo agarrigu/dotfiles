@@ -60,10 +60,8 @@ vim.pack.add(vim.g.my_plugins)
 
 vim.pack.add({
 	-- Trying
-	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 	'https://github.com/jbyuki/venn.nvim',
 	'https://github.com/nguyenvukhang/nvim-toggler',
-	'https://github.com/echasnovski/mini.pick',
 
 	-- Very important
 	'https://github.com/neovim/nvim-lspconfig',
@@ -72,6 +70,7 @@ vim.pack.add({
 	'https://github.com/nvim-treesitter/nvim-treesitter',
 
 	-- Nice to have
+	'https://github.com/echasnovski/mini.pick',
 	'https://github.com/lewis6991/gitsigns.nvim',
 })
 
