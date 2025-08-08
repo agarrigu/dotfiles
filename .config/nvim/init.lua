@@ -23,13 +23,6 @@ vim.keymap.set('n', 'grD', buf.declaration, NORQ)
 vim.keymap.set('n', 'grd', buf.definition, NORQ)
 vim.keymap.set('n', 'gr=', buf.format, NORQ)
 
--- LSP diagnostics
-local diag = vim.diagnostic
-vim.keymap.set('n', 'sd[', diag.goto_prev, NORQ)
-vim.keymap.set('n', 'sd]', diag.goto_next, NORQ)
-vim.keymap.set('n', 'sdf', diag.open_float, NORQ)
-
-
 -- COLOURS --
 
 vim.opt.background = 'dark'
