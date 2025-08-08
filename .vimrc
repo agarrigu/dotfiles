@@ -165,7 +165,6 @@ let my_plugins = [
 	\'https://github.com/tpope/vim-surround',
 	"\ Text Objects
 	\'https://github.com/kana/vim-textobj-user',
-	\'https://github.com/kana/vim-textobj-entire',
 	\'https://github.com/kana/vim-textobj-indent',
 	\'https://github.com/kana/vim-textobj-function',
 	\'https://github.com/adolenc/vim-textobj-toplevel',
