@@ -43,6 +43,7 @@ set showmatch
 set spell
 set spelllang=en_gb
 set synmaxcol=300
+set title
 set wildmenu
 
 " Navigation and editing
@@ -57,8 +58,9 @@ if !has('nvim')
 endif
 
 " Tabs and Spaces
-set shiftwidth=4
-set tabstop=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 set noexpandtab
 
 " Searches
