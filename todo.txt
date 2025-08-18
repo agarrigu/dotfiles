@@ -23,3 +23,7 @@ Vim
 - [C] Find a way to easily check the size in bytes of an array.
 - [spell] Fix 'et al. word' considering 'word' incorrect.
 - [redo] Find a way to do e.g. `i()<esc>iwords<esc>` a redoable action
+
+*vim
+----
+- [ftplugin] connect nvim ftplugins to vim's.
