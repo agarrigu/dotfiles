@@ -1,6 +1,4 @@
-" C for Norminette for 42
-setlocal tabstop=4
-setlocal shiftwidth=4
+setlocal tabstop=8
+setlocal shiftwidth=8
+setlocal softtabstop=8
 setlocal noexpandtab
-setlocal autoindent
-setlocal smarttab
