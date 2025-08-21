@@ -74,7 +74,7 @@ augroup toggle_relnum
 	autocmd!
 	autocmd InsertEnter * :set norelativenumber
 	autocmd InsertLeave * :set relativenumber
-augroup end
+augroup END
 
 " Pretty
 colorscheme habamax
@@ -117,7 +117,7 @@ command! Maketags !ctags -R .
 augroup remember_cursor_on_reopen
 	autocmd!
 	autocmd BufReadPost * silent! normal! g`"zv
-augroup end
+augroup END
 
 augroup yank_restore_cursor
 	autocmd!
@@ -127,12 +127,12 @@ augroup yank_restore_cursor
 		\ if v:event.operator ==? 'y' |
 			\ call setpos('.', s:cursor) |
 		\ endif
-augroup end
+augroup END
 
 augroup highlight_yanked_text
 	autocmd!
 	autocmd TextYankPost * call FlashYankText()
-augroup end
+augroup END
 
 function! FlashYankText()
 	if (!exists('g:yank_text_matches'))
