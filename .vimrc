@@ -158,6 +158,24 @@ function! DeleteTempMatch(timer_id)
 	endwhile
 endfunction
 
+" FileType autocmds
+
+augroup filetype_settings
+	autocmd!
+	autocmd FileType gitcommit
+		\ setlocal colorcolumn=72
+	autocmd FileType python
+		\ setlocal tabstop=4		|
+		\ setlocal softtabstop=4	|
+		\ setlocal shiftwidth=4		|
+		\ setlocal expandtab
+	autocmd FileType html,js,css
+		\ setlocal tabstop=2		|
+		\ setlocal softtabstop=2	|
+		\ setlocal shiftwidth=2		|
+		\ setlocal expandtab
+augroup END
+
 " PLUGINS!
 
 let my_plugins = [
