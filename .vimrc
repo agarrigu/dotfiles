@@ -180,7 +180,6 @@ augroup END
 
 let my_plugins = [
 	"\ Editing and navigation
-	\'https://github.com/christoomey/vim-tmux-navigator',
 	\'https://github.com/tpope/vim-repeat',
 	\'https://github.com/tpope/vim-surround',
 	"\ Text Objects
