@@ -2,6 +2,7 @@
 
 declare -ar DH_FILES=(
 ".aliases"
+".bashrc"
 ".gdbinit"
 ".gitconfig"
 ".tmux.conf"

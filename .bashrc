@@ -1,24 +1,33 @@
-print ${(pl:$LINES::\n:):-}
-PS1="\e[0;37m\w \l\e[1;35m > \e[0m"
+#
+# ~/.bashrc
+#
 
-set -o	vi
-set -o	history
-shopt	histappend
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+aliases=.aliases
+localstuff=.localrc
+
+set -o history
+shopt -qs histappend
 HISTSIZE=100000
 HISTCONTROL=ignorespace:ignoredups:erasedups
 
-aliaseses="$HOME/.aliases"
-hbdir="$HOME/linbrew"
-localstuff="$HOME/.localstuff"
+[[ -f $aliaseses ]]	&& source $aliaseses
+[[ -f $localstuff ]]	&& source $localstuff
 
-[[ -f $aliaseses ]] && source $aliaseses
-[[ -f $hbdir/bin/brew ]] && eval "$($hbdir/bin/brew shellenv)"
-[[ -f $localstuff ]] && source $localstuff
-
-alias grep="grep --color=auto"
-alias ls="ls --color=auto"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias tree="tree -C"
+alias du='du -h'
+
+# print ${(pl:$LINES::\n:):-}
+PS1='\e[0;32m[\u@\h \w]\e[0m\$ '
+
+alias cat="bat -pp"
+
+source /usr/share/bash-completion/bash_completion
 
 md() { pandoc "$1" | lynx -stdin; }
 
-hash figlet cowsay lolcat 2>/dev/null && figlet 'allo 42!' | cowsay -n | lolcat
+hash figlet cowsay lolcat 2>/dev/null && figlet 'Oh Hi!' | cowsay -n | lolcat
