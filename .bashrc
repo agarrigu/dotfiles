@@ -24,7 +24,7 @@
  HISTSIZE=100000
  HISTCONTROL=ignorespace:ignoredups:erasedups
  
- [[ -f $aliaseses ]]	&& source $aliaseses
+ [[ -f $aliases ]]	&& source $aliases
  [[ -f $localstuff ]]	&& source $localstuff
  [[ -f $bashcomp ]]	&& source $bashcomp
  
