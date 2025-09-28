@@ -15,7 +15,6 @@
  CS_CYA='\e[0;36m'
  CS_WHT='\e[0;37m'
  
- aliases=.aliases
  localstuff=.localrc
  bashcomp=/usr/share/bash-completion/bash_completion
  
@@ -24,7 +23,6 @@
  HISTSIZE=100000
  HISTCONTROL=ignorespace:ignoredups:erasedups
  
- [[ -f $aliases ]]	&& source $aliases
  [[ -f $localstuff ]]	&& source $localstuff
  [[ -f $bashcomp ]]	&& source $bashcomp
  
