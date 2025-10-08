@@ -10,9 +10,6 @@ Install Scripts
 - `install-script.sh` should accept as input a list of programs.
 - `tmux (1)` should autoinstall plugins.
 
-.bashrc
--------
-- Get a working customized .bashrc
 
 Vim
 ---
