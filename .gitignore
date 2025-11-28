@@ -11,3 +11,4 @@ lazy-lock.json
 packer_compiled.lua
 .config/nvim/spell/
 .config/nvim/undodir/
+.config/nvim/nvim-pack-lock.json
