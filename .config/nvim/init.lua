@@ -59,7 +59,6 @@ vim.pack.add({
 vim.diagnostic.config({ virtual_text = false, underline = false, })
 vim.lsp.enable({ 'lua_ls', 'clangd' })
 vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { 'vim' }}}}})
-vim.o.completeopt = 'fuzzy,menu,noselect,popup,preview'
 vim.hl.priorities.semantic_tokens = 99
 
 vim.api.nvim_create_autocmd('LspAttach', {

@@ -51,6 +51,7 @@ set backspace=indent,eol,start
 set autoindent
 set smartindent
 set foldlevel=99
+set completeopt=fuzzy,menu,menuone,preview,nosort,noinsert
 
 if !has('nvim')
 	set foldmethod=syntax
