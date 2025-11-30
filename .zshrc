@@ -54,17 +54,17 @@ md() { pandoc "$1" | lynx -stdin; }
 
 # usr path vars
 aliaseses="$HOME/.aliases"
-promt="$HOME/.zsh_prompt"
 fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
 fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
 zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # sources and evals
 [[ -f $aliaseses ]] && source $aliaseses
-[[ -f $promt ]] && source $promt
 [[ -f $fzfkb ]] && source $fzfkb
 [[ -f $fzfcmp ]] && source $fzfcmp
 [[ -f $zshsh ]] && source $zshsh
+
+PROMPT=$'%F{white}%~ %B%F{magenta}>%f%b '
 
 # do the cool directory thingy
 alias ds='dirs -v'
