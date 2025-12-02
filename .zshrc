@@ -50,6 +50,16 @@ function sshx {
 	_dt_term_socket_ssh $t
 }
 
+function _get_git_branch {
+	local out=$(git branch --show-current 2> /dev/null)
+	test "$out" && echo "λ$out "
+}
+
+function ___clearx_to_bottom {
+	clear -x && ___prompt_to_bottom && zle reset-prompt
+}
+zle -N ___clearx_to_bottom
+
 # Read mds
 md() { pandoc "$1" | lynx -stdin; }
 
@@ -65,7 +75,13 @@ zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [[ -f $fzfcmp ]] && source $fzfcmp
 [[ -f $zshsh ]] && source $zshsh
 
-PROMPT=$'%F{white}%~ %B%F{magenta}>%f%b '
+
+if command -v git > /dev/null; then
+	setopt PROMPT_SUBST
+	PROMPT=$'%F{cyan}%n@%m %F{white}%~ %F{red}$(_get_git_branch)%F{magenta}>%f '
+else
+	PROMPT=$'%F{cyan}%n@%m %F{white}%~ %F{magenta}>%f '
+fi
 
 # do the cool directory thingy
 alias ds='dirs -v'
@@ -78,6 +94,7 @@ alias less="less -R"
 alias tree="tree -C"
 
 alias clear="clear && ___prompt_to_bottom"
+bindkey ^L ___clearx_to_bottom
 
 # init stuff
 ___prompt_to_bottom
