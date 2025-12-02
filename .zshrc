@@ -20,6 +20,7 @@ setopt PUSHD_SILENT
 setopt SHARE_HISTORY
 export KEYTIMEOUT=1
 autoload -U compinit; compinit
+bindkey -e
 
 ___prompt_to_bottom() {
 	tput cup $LINES
