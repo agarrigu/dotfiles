@@ -52,7 +52,7 @@ function sshx {
 
 function _get_git_branch {
 	local out=$(git branch --show-current 2> /dev/null)
-	test "$out" && echo "λ$out "
+	test "$out" && echo "\e[31mλ\e[0m$out "
 }
 
 function ___clearx_to_bottom {
@@ -78,7 +78,7 @@ zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 if command -v git > /dev/null; then
 	setopt PROMPT_SUBST
-	PROMPT=$'%F{cyan}%n@%m %F{white}%~ %F{red}$(_get_git_branch)%F{magenta}>%f '
+	PROMPT=$'%F{cyan}%n@%m %F{white}%~%f $(_get_git_branch)%F{magenta}>%f '
 else
 	PROMPT=$'%F{cyan}%n@%m %F{white}%~ %F{magenta}>%f '
 fi
