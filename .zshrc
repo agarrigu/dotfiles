@@ -50,14 +50,17 @@ function sshx {
 	_dt_term_socket_ssh $t
 }
 
-function _get_git_branch {
-	local out=$(git branch --show-current 2> /dev/null)
-	test "$out" && echo "\e[31mλ\e[0m$out "
+function _update-psvar() {
+	emulate -L zsh
+	[[ -v commands[git] ]] &&
+		psvar=("$(git branch --show-current 2> /dev/null) ") ||
+			psvar=('')
 }
 
 function ___clearx_to_bottom {
 	clear -x && ___prompt_to_bottom && zle reset-prompt
 }
+
 zle -N ___clearx_to_bottom
 
 # Read mds
@@ -75,13 +78,10 @@ zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [[ -f $fzfcmp ]] && source $fzfcmp
 [[ -f $zshsh ]] && source $zshsh
 
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _update-psvar
 
-if command -v git > /dev/null; then
-	setopt PROMPT_SUBST
-	PROMPT=$'%F{cyan}%n@%m %F{white}%~%f $(_get_git_branch)%F{magenta}>%f '
-else
-	PROMPT=$'%F{cyan}%n@%m %F{white}%~ %F{magenta}>%f '
-fi
+PROMPT=$'%F{cyan}%n@%m%f %F{white}%~ %(1V:%F{red}λ%F{white}:)%1v%F{magenta}>%f '
 
 # do the cool directory thingy
 alias ds='dirs -v'
