@@ -72,6 +72,9 @@ add-zsh-hook precmd ___update-psvar
 
 PROMPT=$'%F{cyan}%n@%m%f %F{white}%~ %(1V:%F{red}λ%F{white}:)%1v%F{magenta}>%f '
 
+# source fzf
+command -v fzf &> /dev/null && source <(fzf --zsh)
+
 # do the cool directory thingy
 alias ds='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
