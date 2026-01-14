@@ -18,21 +18,17 @@ export KEYTIMEOUT=1
 autoload -U compinit; compinit
 bindkey -e
 
-___prompt_to_bottom() {
-	tput cup $LINES
-}
-
 # do the cool ssh with clipboard capabilites thingy
-_dt_term_socket_ssh() {
+___dt_term_socket_ssh() {
 	ssh -oControlPath=$1 -O exit DUMMY_HOST
 }
 
-function sshx {
+sshx {
 	local t=$(mktemp -u --tmpdir ssh.sock.XXXXXXXXXX)
 	local f="~/clip"
 	ssh -f -oControlMaster=yes -oControlPath=$t $@ tail\ -f\ /dev/null || return 1
 	ssh -S$t DUMMY_HOST "bash -c 'if ! [ -p $f ]; then mkfifo $f; fi'" \
-		|| { _dt_term_socket_ssh $t; return 1; }
+		|| { ___dt_term_socket_ssh $t; return 1; }
 	(
 	set -e
 	set -o pipefail
@@ -41,20 +37,32 @@ function sshx {
 	done &
 	)
 	ssh -S$t DUMMY_HOST \
-		|| { _dt_term_socket_ssh $t; return 1; }
+		|| { ___dt_term_socket_ssh $t; return 1; }
 	ssh -S$t DUMMY_HOST "command rm $f"
-	_dt_term_socket_ssh $t
+	___dt_term_socket_ssh $t
 }
 
-function _update-psvar() {
+# Read mds
+md() {
+	pandoc "$1" | lynx -stdin
+}
+
+
+# Keep prompt at last line
+___prompt_to_bottom() {
+	tput cup $LINES
+}
+
+___clearx_to_bottom() {
+	clear -x && ___prompt_to_bottom && zle reset-prompt
+}
+
+# Prompt
+___update-psvar() {
 	emulate -L zsh
 	[[ -v commands[git] ]] &&
 		psvar=("$(git branch --show-current 2> /dev/null) ") ||
 			psvar=('')
-}
-
-function ___clearx_to_bottom {
-	clear -x && ___prompt_to_bottom && zle reset-prompt
 }
 
 zle -N ___clearx_to_bottom
@@ -75,7 +83,7 @@ zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 [[ -f $zshsh ]] && source $zshsh
 
 autoload -Uz add-zsh-hook
-add-zsh-hook precmd _update-psvar
+add-zsh-hook precmd ___update-psvar
 
 PROMPT=$'%F{cyan}%n@%m%f %F{white}%~ %(1V:%F{red}λ%F{white}:)%1v%F{magenta}>%f '
 
