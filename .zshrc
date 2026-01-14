@@ -67,21 +67,6 @@ ___update-psvar() {
 
 zle -N ___clearx_to_bottom
 
-# Read mds
-md() { pandoc "$1" | lynx -stdin; }
-
-# usr path vars
-aliaseses="$HOME/.aliases"
-fzfkb="/usr/share/doc/fzf/examples/key-bindings.zsh"
-fzfcmp="/usr/share/doc/fzf/examples/completion.zsh"
-zshsh="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-# sources and evals
-[[ -f $aliaseses ]] && source $aliaseses
-[[ -f $fzfkb ]] && source $fzfkb
-[[ -f $fzfcmp ]] && source $fzfcmp
-[[ -f $zshsh ]] && source $zshsh
-
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd ___update-psvar
 
