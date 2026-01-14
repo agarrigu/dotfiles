@@ -1,7 +1,3 @@
-# source local/private configs before anything else
-localstuff="$HOME/.localrc"
-[[ -f $localstuff ]] && source $localstuff
-
 # zsh vars
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
