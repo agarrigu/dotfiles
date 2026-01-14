@@ -23,7 +23,7 @@ ___dt_term_socket_ssh() {
 	ssh -oControlPath=$1 -O exit DUMMY_HOST
 }
 
-sshx {
+sshx() {
 	local t=$(mktemp -u --tmpdir ssh.sock.XXXXXXXXXX)
 	local f="~/clip"
 	ssh -f -oControlMaster=yes -oControlPath=$t $@ tail\ -f\ /dev/null || return 1
