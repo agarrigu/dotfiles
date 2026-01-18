@@ -5,4 +5,3 @@ gtk-chtheme
 lxappearance
 keyrings
 network-manager
-parcellite

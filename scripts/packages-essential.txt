@@ -3,7 +3,6 @@ cmake
 curl
 dwarves
 fzf
-g++
 gcc
 gdb
 git
