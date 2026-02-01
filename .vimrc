@@ -41,7 +41,7 @@ set scrolloff=8
 set showcmd
 set showmatch
 set spell
-set spelllang=en_gb
+set spelllang=en_us
 set synmaxcol=300
 set title
 set wildmenu
