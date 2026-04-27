@@ -78,7 +78,11 @@ augroup toggle_relnum
 augroup END
 
 " Pretty
-colorscheme habamax
+if !has('nvim')
+	colorscheme slate
+elseif has('nvim')
+	colorscheme habamax
+endif
 hi Normal ctermbg=NONE
 
 nnoremap <SPACE> <Nop>
