@@ -170,7 +170,7 @@ augroup filetype_settings
 		\ setlocal softtabstop=4	|
 		\ setlocal shiftwidth=4		|
 		\ setlocal expandtab
-	autocmd FileType html,js,css
+	autocmd FileType html,js,css,tex
 		\ setlocal tabstop=2		|
 		\ setlocal softtabstop=2	|
 		\ setlocal shiftwidth=2		|
