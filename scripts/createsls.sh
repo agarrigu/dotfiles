@@ -13,6 +13,7 @@ declare -ar DH_FILES=(
 declare -ar DH_DIRS=(
 ".vim"
 ".config/nvim"
+".config/foot"
 )
 
 for f in ${DH_FILES[@]}; do
