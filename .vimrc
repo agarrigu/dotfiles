@@ -50,6 +50,7 @@ set wildmenu
 set backspace=indent,eol,start
 set autoindent
 set smartindent
+set cindent
 set foldlevel=99
 set completeopt=fuzzy,menu,popup
 
