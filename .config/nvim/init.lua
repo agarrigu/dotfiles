@@ -104,7 +104,10 @@ require'nvim-treesitter.configs'.setup {
 	auto_install = true,
 	highlight = { enable = true, },
 	incremental_selection = { enable = true, },
-	indent = { enable = true, },
+	indent = {
+		enable = true,
+		disable = { "c", "cpp", },
+	},
 	additional_vim_regex_highlighting = false,
 
 	textobjects = {
