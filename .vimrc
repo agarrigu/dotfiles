@@ -41,7 +41,7 @@ set scrolloff=8
 set showcmd
 set showmatch
 set spell
-set spelllang=en_us
+set spelllang=en_us,en_gb
 set spellcapcheck=
 set spellsuggest=fast
 set synmaxcol=300
