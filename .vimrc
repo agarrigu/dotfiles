@@ -42,6 +42,8 @@ set showcmd
 set showmatch
 set spell
 set spelllang=en_us
+set spellcapcheck=
+set spellsuggest=fast
 set synmaxcol=300
 set title
 set wildmenu
