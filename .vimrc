@@ -26,7 +26,7 @@ endif
 " Display and metadata
 syntax on
 set background=dark
-set colorcolumn=80
+set colorcolumn=100
 set cursorline
 set laststatus=2
 set linebreak
