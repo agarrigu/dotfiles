@@ -98,6 +98,9 @@ nnoremap <leader><leader> :let@/=""<CR>
 inoremap kj <esc>
 vnoremap kj <esc>
 
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 nnoremap Y y$
 
 nnoremap { :<c-u>execute "keepjumps norm! " . v:count1 . "{"<cr>
