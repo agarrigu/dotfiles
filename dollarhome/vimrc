@@ -175,6 +175,11 @@ augroup filetype_settings
 	autocmd!
 	autocmd FileType gitcommit
 		\ setlocal colorcolumn=72
+	autocmd FileType cpp
+		\ setlocal colorcolumn=120	|
+		\ setlocal tabstop=4		|
+		\ setlocal softtabstop=4	|
+		\ setlocal shiftwidth=4
 	autocmd FileType python
 		\ setlocal tabstop=4		|
 		\ setlocal softtabstop=4	|
