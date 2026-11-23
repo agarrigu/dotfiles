@@ -112,10 +112,6 @@ nnoremap N Nzzzv
 nnoremap <c-d> <c-d>zz
 nnoremap <c-u> <c-u>zz
 
-map q: <nop>
-nnoremap Q <nop>
-nnoremap ZZ <nop>
-
 nnoremap <localleader>dl diffget LOCAL
 nnoremap <localleader>dr diffget REMOTE
 nnoremap <localleader>db diffget BASE
