@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 fflag=	# Force
 vflag=	# Verbose
@@ -13,27 +13,27 @@ shift $((OPTIND - 1))
 
 askforce=
 
-if [[ -n $vflag ]] ; then
-	RM() { rm -v "$@" ; }
-	LN() { ln -v "$@" ; }
-	MKDIR() { mkdir -v "$@" ; }
+if [ -n "$vflag" ]; then
+	RM() { rm -v "$@"; }
+	LN() { ln -v "$@"; }
+	MKDIR() { mkdir -v "$@"; }
 else
-	RM() { rm "$@" ; }
-	LN() { ln "$@" ; }
-	MKDIR() { mkdir "$@" ; }
+	RM() { rm "$@"; }
+	LN() { ln "$@"; }
+	MKDIR() { mkdir "$@"; }
 fi
 
-DF_WD="$HOME/dotfiles"
-DH_TARGETS_DIR="$DF_WD/dollarhome"
-DC_TARGETS_DIR="$DF_WD/dotconfig"
-DH_LINKS_DIR="$HOME"
-DC_LINKS_DIR=${XDG_CONFIG_HOME:-"$HOME/.config"}
+WORKDIR="${DOTFILES_WD:-$HOME/dotfiles}"
+DF_TARGETS_DIR="$WORKDIR/dollarhome"
+CH_TARGETS_DIR="$WORKDIR/dotconfig"
+DF_LINKS_DIR="$HOME"
+CH_LINKS_DIR=${XDG_CONFIG_HOME:-"$HOME/.config"}
 
-for f in $(ls "$DH_TARGETS_DIR") ; do
-	TARGET="$DH_TARGETS_DIR/$f"
-	LINK_NAME="$DH_LINKS_DIR/.$f" # NB! Dot in front of $f
-	if [[ -f "$LINK_NAME" || -L "$LINK_NAME" ]] ; then
-		if [[ -z $fflag ]] ; then
+for f in $(ls "$DF_TARGETS_DIR") ; do
+	TARGET="$DF_TARGETS_DIR/$f"
+	LINK_NAME="$DF_LINKS_DIR/.$f" # NB! Dot in front of $f
+	if [ -f "$LINK_NAME" || -L "$LINK_NAME" ] ; then
+		if [ -z "$fflag" ] ; then
 			echo "Error: Dotfile already exists: .$f" >&2
 			askforce=1
 			continue
@@ -63,4 +63,4 @@ for d in $(ls "$DC_TARGETS_DIR") ; do
 	LN -s "$TARGET" "$LINK_NAME"
 done
 
-[[ -n $askforce ]] && echo "Use -f flag to force overwrite" >&2
+[ -n $askforce ] && echo 'Use -f flag to force overwrite' >&2
