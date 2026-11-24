@@ -32,7 +32,7 @@ CH_LINKS_DIR=${XDG_CONFIG_HOME:-"$HOME/.config"}
 for f in $(ls "$DF_TARGETS_DIR") ; do
 	TARGET="$DF_TARGETS_DIR/$f"
 	LINK_NAME="$DF_LINKS_DIR/.$f" # NB! Dot in front of $f
-	if [ -f "$LINK_NAME" || -L "$LINK_NAME" ] ; then
+	if [ -f "$LINK_NAME" ] || [ -L "$LINK_NAME" ] ; then
 		if [ -z "$fflag" ] ; then
 			echo "Error: Dotfile already exists: .$f" >&2
 			askforce=1
