@@ -60,4 +60,4 @@ for TARGET in $(find "$CH_TARGETS_DIR" -type f -print); do
 	LN -s "$TARGET" "$LINK_NAME"
 done
 
-[ -n $askforce ] && echo 'Use -f flag to force overwrite' >&2
+[ -n "$askforce" ] && echo 'Use -f flag to force overwrite' >&2
