@@ -44,22 +44,19 @@ for f in $(ls "$DF_TARGETS_DIR") ; do
 	LN -s "$TARGET" "$LINK_NAME"
 done
 
-[[ ! -d $DC_LINKS_DIR ]] && MKDIR $DC_LINKS_DIR
-
-for d in $(ls "$DC_TARGETS_DIR") ; do
-	TARGET="$DC_TARGETS_DIR/$d"
-	LINK_NAME="$DC_LINKS_DIR/$d"
-	if [[ -d "$LINK_NAME" || -L "$LINK_NAME" ]] ; then
-		if [[ -z $fflag ]] ; then
-			echo "Error: Directory already exists: $d" >&2
+for TARGET in $(find "$CH_TARGETS_DIR" -type f -print); do
+	RPART="${TARGET##$CH_TARGETS_DIR/}" # NB! Trailing forward-slash
+	LINK_NAME="$CH_LINKS_DIR/$RPART"
+	if [ -f "$LINK_NAME" ] || [ -L "$LINK_NAME" ]; then
+		if [ -z "$fflag" ]; then
+			echo "Error: File already exists: $LINK_NAME" >&2
 			askforce=1
 			continue
 		else
-			# Not gonna use -f flag as there shouldn't be any
-			# protected files/directories
-			RM -r "$LINK_NAME"
+			RM "$LINK_NAME"
 		fi
 	fi
+	MKDIR -p $(dirname "$LINK_NAME")
 	LN -s "$TARGET" "$LINK_NAME"
 done
 
