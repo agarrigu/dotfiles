@@ -12,7 +12,7 @@ vim.o.signcolumn = 'yes:1'
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'lua vim.treesitter.foldexpr()'
 vim.o.winborder = 'single'
-vim.o.cursorline = 'yes'
+vim.o.cursorline = true
 
 -- MAPPINGS --
 
